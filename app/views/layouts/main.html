@@ -4,3 +4,29 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block beforeContent %}
+  {% include "/_includes/phase-banner.html"%}
+
+  {{ mojPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [
+      {
+        text: 'My Claims',
+        href: '',
+        active: true
+      },
+      {
+        text: 'All Claims',
+        href: '',
+        active: false
+      },
+      {
+        text: 'Search',
+        href: '',
+        active: false
+      }
+    ]
+  }) }}
+
+  {% endblock %}

@@ -2,19 +2,41 @@
 
 {% set pageName="Home" %}
 
+{% block beforeContent %}
+  {% include "/_includes/phase-banner.html"%}  
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Current work</h2>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="current/my-claims">Claims page (caseworker)</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Claims page (all)</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="current/claim-detail">View of claim</a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+  <p class="govuk-body"><a href="manage-prototype" class="govuk-link">Manage prototype</a></p>
+  </div>
+
+
 </div>
 
 {% endblock %}
