@@ -1,3 +1,4 @@
 {
-  "serviceName": "LAA Billing Alpha"
+  "serviceName": "Billing Alpha",
+  "useAuth": true
 }
