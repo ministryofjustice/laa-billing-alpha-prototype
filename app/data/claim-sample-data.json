@@ -6,7 +6,7 @@
         "dateReceived": "3 February 2024",
         "firmName": "Legal Aiders Ltd",
         "clientName": "Kiley Hedgehopper",
-        "claimMatterType": "Very High Cost Cases",
+        "claimMatterType": "Type A",
         "claimStatus": "Granted",
         "claimTags": [
             { "tagType": "Previous payments" },
@@ -22,7 +22,7 @@
         "dateReceived": "8 February 2024",
         "firmName": "ABC Legal Ltd",
         "clientName": "Roslyn Gardner",
-        "claimMatterType": "Advocates' Graduated Fee Scheme (AGFS)",
+        "claimMatterType": "Type B",
         "claimStatus": "Granted",
         "claimTags": [
             { "tagType": "Previous payments" },
@@ -36,7 +36,7 @@
         "dateReceived": "9 February 2024",
         "firmName": "Pro Vidor Plc",
         "clientName": "Imbert Hopesinger",
-        "claimMatterType": "Very High Cost Cases",
+        "claimMatterType": "Type A",
         "claimStatus": "Part granted",
         "claimTags": [
             { "tagType": "Counsel payment" },
@@ -50,7 +50,7 @@
         "dateReceived": "12 February 2024",
         "firmName": "Law Firm LLP",
         "clientName": "Adaldrida Swiftfoot",
-        "claimMatterType": "Prison Law",
+        "claimMatterType": "Type C",
         "claimStatus": "Rejected",
         "claimTags": [
             { "tagType": "Certificate discharged" }
@@ -63,7 +63,7 @@
         "dateReceived": "1 March 2024",
         "firmName": "Legal Aiders Ltd",
         "clientName": "Berenga Pott",
-        "claimMatterType": "Advocates' Graduated Fee Scheme (AGFS)",
+        "claimMatterType": "Type B",
         "claimStatus": "Part granted",
         "claimTags": [
             { "tagType": "Redetermination/Appeal" }
@@ -75,7 +75,7 @@
         "dateReceived": "8 March 2024",
         "firmName": "Law Firm LLP",
         "clientName": "Ingund Sandyman",
-        "claimMatterType": "Criminal Proceedings",
+        "claimMatterType": "Type E",
         "claimStatus": "Rejected",
         "claimTags": [
         ]
@@ -87,7 +87,7 @@
         "dateReceived": "12 March 2024",
         "firmName": "Law Team Ltd",
         "clientName": "Ericka Montgomery",
-        "claimMatterType": "Higher Courts",
+        "claimMatterType": "Type D",
         "claimStatus": "Part granted",
         "claimTags": [
             { "tagType": "Previous payments" },
@@ -103,7 +103,7 @@
         "dateReceived": "14 March 2024",
         "firmName": "Pro Vidor Plc",
         "clientName": "Sallie Moreno",
-        "claimMatterType": "Criminal Proceedings",
+        "claimMatterType": "Type E",
         "claimStatus": "In progress",
         "claimTags": [
             { "tagType": "Counsel payment" }
@@ -116,7 +116,7 @@
         "dateReceived": "15 March 2024",
         "firmName": "Law Firm LLP",
         "clientName": "Rodrick Barajas",
-        "claimMatterType": "Prison Law",
+        "claimMatterType": "Type C",
         "claimStatus": "Not assigned",
         "claimTags": [
             { "tagType": "Previous payments" }
@@ -129,7 +129,7 @@
         "dateReceived": "15 March 2024",
         "firmName": "Law & Law Ltd",
         "clientName": "Cecil Hart",
-        "claimMatterType": "Advocates' Graduated Fee Scheme (AGFS)",
+        "claimMatterType": "Type B",
         "claimStatus": "Not assigned",
         "claimTags": [
             { "tagType": "Certificate discharged" }

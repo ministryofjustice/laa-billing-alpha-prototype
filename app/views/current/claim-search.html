@@ -4,19 +4,15 @@
   Page name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set activeTab = [true, false, false] %}
-
-<!-- call JSON file -->
-{% set claimList = data.sampleCaseListData %}
+{% set activeTab = [false, false, true] %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">My Claims</h1>
+    <h1 class="govuk-heading-l">Search</h1>
     
     </div>
 </div>
-  
 
 {% endblock %}

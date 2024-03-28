@@ -1,19 +1,11 @@
 <!-- Check status and display colour coded tag based on status -->
 {% if item.tagType == 'Previous payments'%}
-    <strong class="govuk-tag govuk-tag--turquoise">
-        Previous payments
-    </strong>
+    <span class="moj-badge moj-badge--purple">Previous payments</span>
 {% elseif item.tagType == 'Redetermination/Appeal'%}
-    <strong class="govuk-tag govuk-tag--purple">
-        Redetermination / Appeal
-    </strong>
+    <span class="moj-badge moj-badge--green">Redetermination / Appeal</span>
 {% elseif item.tagType == 'Counsel payment'%}
-    <strong class="govuk-tag govuk-tag--pink">
-        Counsel payment
-    </strong>
+    <span class="moj-badge moj-badge--blue">Counsel payment</span>    
 {% elseif item.tagType == 'Certificate discharged'%}
-    <strong class="govuk-tag govuk-tag--yellow">
-        Certificate discharged
-    </strong>
+    <span class="moj-badge moj-badge--black">Certificate discharged</span>
 {% endif %}
 

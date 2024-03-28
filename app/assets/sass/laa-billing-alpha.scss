@@ -1,0 +1,49 @@
+// CSS for LAA BILLING specific components
+// These in addition to styles from the GOV and MOJ Design Systems
+// Do not use this code in a production environment
+
+/*
+-------------------------------
+COLOURS START
+some maybe dupes of gov colours
+-------------------------------
+*/
+
+/*
+--------------------------------------------------------------------
+TOP FILTERS
+If we use filters at the top of page vs. MOJ Filter a list component
+--------------------------------------------------------------------
+*/
+
+.inline-inputs {
+    display: flex;
+
+    &__fields {
+        padding-right: 80px;
+    }
+}
+
+
+/* TOP FILTERS ENDS */
+
+
+.moj-action-bar {
+    font-size: 0; // Removes white space
+  }
+  
+  .moj-action-bar__filter {
+    display: inline-block;
+    position: relative;
+  
+      &:after {
+        content: "";
+        background-color: govuk-colour("light-grey");
+        height: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2px;
+      }
+    } 
+  
