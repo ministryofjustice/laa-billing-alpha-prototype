@@ -1,0 +1,208 @@
+[
+    {
+        "claimRef": "tuvwxyz1",
+        "legalAidType": "Civil",
+        "claimTotal": "£152.20",
+        "dateReceived": "3 February 2024",
+        "firmName": "Legal Aiders Ltd",
+        "firmAccountNumber": "1A234B",
+        "clientName": "Teckla Berenk",
+        "clientDob": "20/03/2001",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type A",
+        "claimStatus": "Granted",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Redetermination/Appeal" },
+            { "tagType": "Counsel paid" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [
+            {
+                "refNo": "12345",
+                "type": "Type X"
+            },
+            {
+                "refNo": "23456",
+                "type": "Type Y"
+            }
+        ],
+        "claims": [
+            {
+                "refNo": "12345",
+                "type": "Type X"
+            },
+            {
+                "refNo": "23456",
+                "type": "Type Y"
+            }
+        ]
+    },
+    {
+        "claimRef": "tuvwxyz2",
+        "legalAidType": "Civil",
+        "claimTotal": "£270.50",
+        "dateReceived": "8 February 2024",
+        "firmName": "ABC Legal Ltd",
+        "firmAccountNumber": "2A234B",
+        "clientName": "Lantha Shulo",
+        "clientDob": "01/02/2006",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Granted",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Counsel unpaid" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz3",
+        "legalAidType": "Civil",
+        "claimTotal": "£112.00",
+        "dateReceived": "9 February 2024",
+        "firmName": "Pro Vidor Plc",
+        "firmAccountNumber": "3A234B",
+        "clientName": "Doma Carden",
+        "clientDob": "12/05/1975",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type A",
+        "claimStatus": "Part granted",
+        "claimTags": [
+            { "tagType": "Counsel payment" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz4",
+        "legalAidType": "Civil",
+        "claimTotal": "£812.90",
+        "dateReceived": "12 February 2024",
+        "firmName": "Law Firm LLP",
+        "firmAccountNumber": "4A234B",
+        "clientName": "Daro Ancim",
+        "clientDob": "06/07/1994",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type C",
+        "claimStatus": "Rejected",
+        "claimTags": [
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz5",
+        "legalAidType": "Civil",
+        "claimTotal": "£21.12",
+        "dateReceived": "1 March 2024",
+        "firmName": "Legal Aiders Ltd",
+        "firmAccountNumber": "5A234B",
+        "clientName": "Rysi Angarch",
+        "clientDob": "30/05/1998",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Part granted",
+        "claimTags": [
+            { "tagType": "Redetermination/Appeal" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz6",
+        "legalAidType": "Civil",
+        "claimTotal": "£1024.50",
+        "dateReceived": "8 March 2024",
+        "firmName": "Law Firm LLP",
+        "firmAccountNumber": "6A234B",
+        "clientName": "Metam Dara",
+        "clientDob": "05/09/2002",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type E",
+        "claimStatus": "Rejected",
+        "claimTags": [
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz7",
+        "legalAidType": "Civil",
+        "claimTotal": "£398.25",
+        "dateReceived": "12 March 2024",
+        "firmName": "Law Team Ltd",
+        "firmAccountNumber": "7A234B",
+        "clientName": "Vitiion Pavan",
+        "feeEarner": "Bob Jones",
+        "clientDob": "01/11/1985",
+        "claimMatterType": "Type D",
+        "claimStatus": "Part granted",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Redetermination/Appeal" },
+            { "tagType": "Counsel payment" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz8",
+        "legalAidType": "Civil",
+        "claimTotal": "£119.98",
+        "dateReceived": "14 March 2024",
+        "firmName": "Pro Vidor Plc",
+        "firmAccountNumber": "8A234B",
+        "clientName": "Verse Minne",
+        "clientDob": "11/11/2011",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type E",
+        "claimStatus": "In progress",
+        "claimTags": [
+            { "tagType": "Counsel payment" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz9",
+        "legalAidType": "Civil",
+        "claimTotal": "£2112.00",
+        "dateReceived": "15 March 2024",
+        "firmName": "Law Firm LLP",
+        "clientName": "Jaa Baize",
+        "clientDob": "25/12/1996",
+        "feeEarner": "Bob Jones",
+        "firmAccountNumber": "9A234B",
+        "claimMatterType": "Type C",
+        "claimStatus": "Not assigned",
+        "claimTags": [
+            { "tagType": "Previous payments" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "tuvwxyz10",
+        "legalAidType": "Civil",
+        "claimTotal": "£425.25",
+        "dateReceived": "15 March 2024",
+        "firmName": "Law & Law Ltd",
+        "firmAccountNumber": "1B234B",
+        "clientName": "Nella Ingbinn",
+        "clientDob": "04/05/1977",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Not assigned",
+        "claimTags": [
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    }
+]

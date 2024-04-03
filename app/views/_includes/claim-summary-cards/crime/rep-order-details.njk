@@ -1,0 +1,56 @@
+<!-- REP ORDER CARD -->
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+            Rep order details
+        </h2>
+        <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">Action 1<span class="govuk-visually-hidden"> description of what happens here</span></a>
+        </li>
+        <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">Action 2<span class="govuk-visually-hidden"> description of what happens here</span></a>
+        </li>
+        </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                MAAT number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ item.maatNumber }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Rep order date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ item.repOrderDate }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Amended rep order
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ item.amendedRepOrder }}
+                {% if item.amendedRepOrder == 'Yes' %}
+                <br><a href="{{ item.amendedRepOrderLink }}" class="govuk-link">{{ item.amendedRepOrderLink }}</a>
+                {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div> 

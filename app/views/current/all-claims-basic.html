@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- tabs: my claims, all claims, search -->
+{% set activeTab = [false, true, false] %}
+
+<!-- call JSON file -->
+{% set claimList = data.sampleCaseListData %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">All Claims</h1>
+    <!-- INCLUDE FILTERS -->
+    {% set filterHtml %}
+    {% include "/_includes/caselist-filters-top.njk"%}  
+    {% endset %}
+    {{ govukDetails({
+      summaryText: "Filter claims",
+      html: filterHtml
+    }) }}
+
+        <!-- TABLE IS HERE -->
+        {% include "/_includes/all-claims-table.njk"%} 
+    </div>
+</div>
+  
+
+{% endblock %}

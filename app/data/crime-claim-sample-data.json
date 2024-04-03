@@ -1,0 +1,258 @@
+[
+    {
+        "claimRef": "abcdefg1",
+        "legalAidType": "Crime",
+        "claimTotal": "£152.20",
+        "dateReceived": "3 February 2024",
+        "repOrderDate": "10 October 2023",
+        "firmName": "Legal Aiders Ltd",
+        "firmAccountNumber": "1A234B",
+        "clientName": "Kiley Hedgehopper",
+        "clientDob": "20/03/2001",
+        "courtName": "Bridlington Magistrates' Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type A",
+        "claimStatus": "Granted",
+        "maatNumber": "12245428",
+        "amendedRepOrder": "Yes",
+        "amendedRepOrderLink": "linkhere",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Redetermination/Appeal" },
+            { "tagType": "Counsel paid" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [
+            {
+                "refNo": "12345",
+                "type": "Type X"
+            },
+            {
+                "refNo": "23456",
+                "type": "Type Y"
+            }
+        ],
+        "claims": [
+            {
+                "refNo": "12345",
+                "type": "Type X"
+            },
+            {
+                "refNo": "23456",
+                "type": "Type Y"
+            }
+        ]
+    },
+    {
+        "claimRef": "abcdefg2",
+        "legalAidType": "Crime",
+        "claimTotal": "£270.50",
+        "dateReceived": "8 February 2024",
+        "repOrderDate": "2 November 2023",
+        "firmName": "ABC Legal Ltd",
+        "firmAccountNumber": "2A234B",
+        "clientName": "Roslyn Gardner",
+        "clientDob": "01/02/2006",
+        "courtName": "Liverpool Magistrates' Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Granted",
+        "maatNumber": "48186293",
+        "amendedRepOrder": "Yes",
+        "amendedRepOrderLink": "linkhere",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Counsel unpaid" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg3",
+        "legalAidType": "Crime",
+        "claimTotal": "£112.00",
+        "dateReceived": "9 February 2024",
+        "repOrderDate": "10 November 2023",
+        "firmName": "Pro Vidor Plc",
+        "firmAccountNumber": "3A234B",
+        "clientName": "Imbert Hopesinger",
+        "clientDob": "12/05/1975",
+        "courtName": "Reading Magistrates' Court and Family Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type A",
+        "claimStatus": "Part granted",
+        "maatNumber": "69174001",
+        "amendedRepOrder": "No",
+        "amendedRepOrderLink": "",
+        "claimTags": [
+            { "tagType": "Counsel payment" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg4",
+        "legalAidType": "Crime",
+        "claimTotal": "£812.90",
+        "dateReceived": "12 February 2024",
+        "repOrderDate": "12 January 2024",
+        "firmName": "Law Firm LLP",
+        "firmAccountNumber": "4A234B",
+        "clientName": "Adaldrida Swiftfoot",
+        "clientDob": "06/07/1994",
+        "courtName": "Lavender Hill Magistrates' Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type C",
+        "claimStatus": "Rejected",
+        "maatNumber": "06390169",
+        "amendedRepOrder": "Yes",
+        "amendedRepOrderLink": "linkhere",
+        "claimTags": [
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg5",
+        "legalAidType": "Crime",
+        "claimTotal": "£21.12",
+        "dateReceived": "1 March 2024",
+        "repOrderDate": "25 January 2024",
+        "firmName": "Legal Aiders Ltd",
+        "firmAccountNumber": "5A234B",
+        "clientName": "Berenga Pott",
+        "clientDob": "30/05/1998",
+        "courtName": "Portsmouth Magistrates' Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Part granted",
+        "maatNumber": "06390169",
+        "amendedRepOrder": "No",
+        "amendedRepOrderLink": "",
+        "claimTags": [
+            { "tagType": "Redetermination/Appeal" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg6",
+        "legalAidType": "Crime",
+        "claimTotal": "£1024.50",
+        "dateReceived": "8 March 2024",
+        "repOrderDate": "9 February 2024",
+        "firmName": "Law Firm LLP",
+        "firmAccountNumber": "6A234B",
+        "clientName": "Ingund Sandyman",
+        "clientDob": "05/09/2002",
+        "courtName": "Barnsley Law Courts",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type E",
+        "claimStatus": "Rejected",
+        "maatNumber": "06390169",
+        "amendedRepOrder": "No",
+        "amendedRepOrderLink": "",
+        "claimTags": [
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg7",
+        "legalAidType": "Crime",
+        "claimTotal": "£398.25",
+        "dateReceived": "12 March 2024",
+        "repOrderDate": "13 February 2024",
+        "firmName": "Law Team Ltd",
+        "firmAccountNumber": "7A234B",
+        "clientName": "Ericka Montgomery",
+        "feeEarner": "Bob Jones",
+        "clientDob": "01/11/1985",
+        "courtName": "Oxford and Southern Oxfordshire Magistrates' Court",
+        "claimMatterType": "Type D",
+        "claimStatus": "Part granted",
+        "maatNumber": "06390169",
+        "amendedRepOrder": "Yes",
+        "amendedRepOrderLink": "linkhere",
+        "claimTags": [
+            { "tagType": "Previous payments" },
+            { "tagType": "Redetermination/Appeal" },
+            { "tagType": "Counsel payment" },
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg8",
+        "legalAidType": "Crime",
+        "claimTotal": "£119.98",
+        "dateReceived": "14 March 2024",
+        "repOrderDate": "21 February 2024",
+        "firmName": "Pro Vidor Plc",
+        "firmAccountNumber": "8A234B",
+        "clientName": "Sallie Moreno",
+        "clientDob": "11/11/2011",
+        "courtName": "Barnsley Law Courts",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type E",
+        "claimStatus": "In progress",
+        "maatNumber": "06390169",
+        "amendedRepOrder": "No",
+        "amendedRepOrderLink": "",
+        "claimTags": [
+            { "tagType": "Counsel payment" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg9",
+        "legalAidType": "Crime",
+        "claimTotal": "£2112.00",
+        "dateReceived": "15 March 2024",
+        "repOrderDate": "4 March 2024",
+        "firmName": "Law Firm LLP",
+        "clientName": "Rodrick Barajas",
+        "clientDob": "25/12/1996",
+        "courtName": "xxx",
+        "feeEarner": "Bob Jones",
+        "firmAccountNumber": "9A234B",
+        "claimMatterType": "Type C",
+        "claimStatus": "Not assigned",
+        "maatNumber": "88934763",
+        "amendedRepOrder": "No",
+        "amendedRepOrderLink": "",
+        "claimTags": [
+            { "tagType": "Previous payments" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    },
+    {
+        "claimRef": "abcdefg10",
+        "legalAidType": "Crime",
+        "claimTotal": "£425.25",
+        "dateReceived": "15 March 2024",
+        "repOrderDate": "21 March 2024",
+        "firmName": "Law & Law Ltd",
+        "firmAccountNumber": "1B234B",
+        "clientName": "Cecil Hart",
+        "clientDob": "04/05/1977",
+        "courtName": "Portsmouth Magistrates' Court",
+        "feeEarner": "Bob Jones",
+        "claimMatterType": "Type B",
+        "claimStatus": "Not assigned",
+        "maatNumber": "19371888",
+        "amendedRepOrder": "Yes",
+        "amendedRepOrderLink": "linkhere",
+        "claimTags": [
+            { "tagType": "Certificate discharged" }
+        ],
+        "linkedApplications": [],
+        "claims": []
+    }
+]

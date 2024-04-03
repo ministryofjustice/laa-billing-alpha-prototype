@@ -3,8 +3,10 @@
     <span class="moj-badge moj-badge--purple">Previous payments</span>
 {% elseif item.tagType == 'Redetermination/Appeal'%}
     <span class="moj-badge moj-badge--green">Redetermination / Appeal</span>
-{% elseif item.tagType == 'Counsel payment'%}
-    <span class="moj-badge moj-badge--blue">Counsel payment</span>    
+{% elseif item.tagType == 'Counsel paid' %}
+    <span class="moj-badge moj-badge--blue">Counsel paid</span>    
+{% elseif item.tagType == 'Counsel unpaid' %}
+    <span class="moj-badge moj-badge--blue">Counsel unpaid</span>    
 {% elseif item.tagType == 'Certificate discharged'%}
     <span class="moj-badge moj-badge--black">Certificate discharged</span>
 {% endif %}

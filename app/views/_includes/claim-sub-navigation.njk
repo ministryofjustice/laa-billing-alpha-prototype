@@ -1,0 +1,24 @@
+{{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Claim summary',
+      href: 'claim-summary',      
+      active: + activeSubNav[0] | default('true')
+    }, {
+      text: 'Apply adjustments',
+      href: 'claim-apply-adjustments',
+      active: + activeSubNav[1]
+    }, {
+      text: 'Related claims',
+      href: 'claim-related-claims',
+      active: + activeSubNav[2]
+    }, {
+      text: 'Claims history',
+      href: 'claim-claims-history',
+      active: + activeSubNav[3]
+    }, {
+      text: 'Messages',
+      href: 'claim-messages',
+      active: + activeSubNav[4]
+    }]
+  }) }}

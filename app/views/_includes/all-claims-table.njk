@@ -1,0 +1,35 @@
+<div class="moj-scrollable-pane govuk-!-margin-top-6">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <!-- <th scope="col" class="govuk-table__header">Claim reference</th> -->
+          <th scope="col" class="govuk-table__header">Client name</th>  
+          <th scope="col" class="govuk-table__header">Firm name</th>  
+          <th scope="col" class="govuk-table__header">Claim type</th>  
+          <th scope="col" class="govuk-table__header">Date received</th>  
+          <th scope="col" class="govuk-table__header">Claim total</th>
+          <th scope="col" class="govuk-table__header">Claim status</th>
+          <th scope="col" class="govuk-table__header"></th>
+          <!-- <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
+        {% for item in claimList %}
+        <tr class="govuk-table__row">  
+          <!-- <td class="govuk-table__cell">{{ item.claimRef }}</td> -->
+          <td class="govuk-table__cell"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a></td> 
+          <td class="govuk-table__cell">{{ item.firmName }}</td>  
+          <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
+          <td class="govuk-table__cell">{{ item.dateReceived }}</td>  
+          <td class="govuk-table__cell">{{ item.claimTotal }}</td>  
+          <td class="govuk-table__cell">{% include "/_includes/status-checker.njk" %}</td>  
+          <td class="govuk-table__cell">{{ govukButton({
+            text: "Assign",
+            classes: "govuk-button--secondary"
+          }) }}</td>  
+          <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

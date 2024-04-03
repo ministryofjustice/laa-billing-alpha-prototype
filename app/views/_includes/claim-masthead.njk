@@ -1,20 +1,17 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <!-- call JSON file -->
-        {% set claimList = data.sampleCaseListData %}
-
-            <span class="govuk-caption-l">{{ claimList[0].legalAidType }}</span>
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ claimList[0].claimRef }}</h1>
-            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ claimList[0].dateReceived }}</p>
-            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Claim type:</strong> {{ claimList[0].claimMatterType }}</p>
+            <span class="govuk-caption-l">{{ item.legalAidType }}</span>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ item.claimRef }}</h1>
+            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived }}</p>
+            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Claim type:</strong> {{ item.claimMatterType }}</p>
             <p class="govuk-body"><strong>Status: </strong><strong class="govuk-tag govuk-tag--green">
                 Granted
             </strong></p>
             {# no of claims: {{ claimList.length }}
             no of tags: {{ claimList[0].claimTags.length }} #}
             <p class="govuk-body govuk-!-margin-bottom-5">
-            {% for item in claimList[0].claimTags %}
+            {% for item in item.claimTags %}
             {% include "/_includes/tag-checker.njk" %}
             {% endfor %}
             </p>

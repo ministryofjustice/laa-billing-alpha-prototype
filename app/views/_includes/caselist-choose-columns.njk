@@ -1,0 +1,65 @@
+<div class="govuk-grid-row">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Optional columns to display
+            </h1>
+          </legend>
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="checkbox-1" name="checkbox" type="checkbox" value="checkbox-1">
+                <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+                    Optional column 1
+                </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="checkbox-2" name="checkbox" type="checkbox" value="checkbox-2">
+                <label class="govuk-label govuk-checkboxes__label" for="checkbox-2">
+                    Optional column 2
+                </label>
+                </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="checkbox-3" name="checkbox" type="checkbox" value="checkbox-3">
+                <label class="govuk-label govuk-checkboxes__label" for="checkbox-3">
+                    Optional column 3
+                </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="checkbox-4" name="checkbox" type="checkbox" value="checkbox-4">
+                <label class="govuk-label govuk-checkboxes__label" for="checkbox-4">
+                    Optional column 4
+                </label>
+                </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-5" name="checkbox" type="checkbox" value="checkbox-5">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-5">
+                        Optional column 5
+                    </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-6" name="checkbox" type="checkbox" value="checkbox-6">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-6">
+                        Optional column 6
+                    </label>
+                </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {{ govukButton({
+            text: "Apply"
+          }) }}
+    </div>
+</div>

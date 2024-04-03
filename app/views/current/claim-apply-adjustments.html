@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/_includes/phase-banner.html"%}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- tabs: claim summary, apply adjustments, related claims, claims history, messages -->
+{% set activeSubNav = [false, true, false, false, false] %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    {% include "/_includes/claim-masthead.njk" %}
+
+    {% include "/_includes/claim-sub-navigation.njk" %}
+    <h2 class="govuk-heading-m">Apply adjustments</h2>
+
+  </div>
+</div>
+
+
+{% endblock %}

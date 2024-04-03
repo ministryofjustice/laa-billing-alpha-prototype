@@ -9,6 +9,8 @@ some maybe dupes of gov colours
 -------------------------------
 */
 
+$colour-search-box-blue: #e0eef8;
+
 /*
 --------------------------------------------------------------------
 TOP FILTERS
@@ -18,12 +20,34 @@ If we use filters at the top of page vs. MOJ Filter a list component
 
 .inline-inputs {
     display: flex;
+    gap: 20px;
 
     &__fields {
-        padding-right: 80px;
+      gap: 20px;
     }
 }
 
+.form-cancel {
+  line-height:2.1;
+  margin-left:.625em;
+  font-size:19px
+}
+
+#filters {
+  display: none; /* Hide the element initially */
+}
+
+#columns {
+  display: none; /* Hide the element initially */
+}
+
+.saved-searches {
+  padding-right: 30px;
+
+    &__button {
+      margin-left: 10px;
+    }
+}
 
 /* TOP FILTERS ENDS */
 
@@ -47,3 +71,16 @@ If we use filters at the top of page vs. MOJ Filter a list component
       }
     } 
   
+
+/*
+--------------------------------------------------------------------
+SEARCH PAGE
+--------------------------------------------------------------------
+*/    
+
+.search {
+
+  background-color: $colour-search-box-blue;
+  padding: 30px;
+
+}

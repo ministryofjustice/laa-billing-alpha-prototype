@@ -4,6 +4,7 @@
   Page name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!-- tabs: my claims, all claims, search -->
 {% set activeTab = [true, false, false] %}
 
 <!-- call JSON file -->
@@ -14,7 +15,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">My Claims</h1>
-    
+    <!-- INCLUDE FILTERS -->
+
+
+        <!-- TABLE IS HERE -->
+        {% include "/_includes/my-claims-table.njk"%} 
     </div>
 </div>
   

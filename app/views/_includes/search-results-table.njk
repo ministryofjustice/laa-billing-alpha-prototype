@@ -1,0 +1,54 @@
+<!-- set the claimSearch value to the session data value and make lower case to avoid case sensitivity -->
+{% set claimSearch = data['claim-search'] | lower %}
+{% if claimSearch %}
+  <div class="moj-scrollable-pane govuk-!-margin-top-6">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">  
+            <!-- <th scope="col" class="govuk-table__header">Claim reference</th> -->
+            <th scope="col" class="govuk-table__header">Client name</th>  
+            <th scope="col" class="govuk-table__header">Firm name</th>  
+            <th scope="col" class="govuk-table__header">Claim type</th>  
+            <th scope="col" class="govuk-table__header">Date received</th>  
+            <th scope="col" class="govuk-table__header">Claim total</th>
+            <th scope="col" class="govuk-table__header">Claim status</th>
+            <!-- <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th> -->
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">  
+          {% for item in claimList %}
+            {% if claimSearch in item.firmName | lower or claimSearch in item.clientName | lower or claimSearch in item.claimMatterType | lower %} <!-- make data in JSON lower case to avoid case sensitivity -->
+              <tr class="govuk-table__row">  
+                <!-- <td class="govuk-table__cell">{{ item.claimRef }}</td> -->
+                <td class="govuk-table__cell"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a></td> 
+                <td class="govuk-table__cell">{{ item.firmName }}</td>  
+                <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
+                <td class="govuk-table__cell">{{ item.dateReceived }}</td>  
+                <td class="govuk-table__cell">{{ item.claimTotal }}</td>  
+                <td class="govuk-table__cell">{% include "/_includes/status-checker.njk" %}</td>  
+                <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
+              </tr>
+            {% endif %}
+          {% endfor %}
+          </tbody>
+      </table>
+  </div>
+{% else %}
+<div class="moj-scrollable-pane govuk-!-margin-top-6">
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <!-- <th scope="col" class="govuk-table__header">Claim reference</th> -->
+        <th scope="col" class="govuk-table__header">Client name</th>  
+        <th scope="col" class="govuk-table__header">Firm name</th>  
+        <th scope="col" class="govuk-table__header">Claim type</th>  
+        <th scope="col" class="govuk-table__header">Date received</th>  
+        <th scope="col" class="govuk-table__header">Claim total</th>
+        <th scope="col" class="govuk-table__header">Claim status</th>
+        <th scope="col" class="govuk-table__header"></th>
+        <!-- <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th> -->
+      </tr>
+    </thead>
+  </table>
+  <p class="govuk-body">Showing 0 of 0 results</p> 
+  {% endif %}

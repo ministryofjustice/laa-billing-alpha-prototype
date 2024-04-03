@@ -8,41 +8,48 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-router.get('/my-claims', function(request, res) {
+// ---------------
+// CONSOLE LOGGING
+// ---------------
+
+// Logging session data viewable in console log
   
-    var claimNo = request.session.data.claimNo;
-    var theClaim = null;
-  
-    // find the application
-    for (const clm of request.session.data.sampleCaseListData) {
-        if (clm.claimRef === request.session.data.claimNo)
-        theClaim = clm;
-      }
+router.use((request, response, next) => {    
+  const log = {  
+    method: request.method,  
+    url: request.originalUrl,  
+    data: request.session.data  
+  }  
+  console.log(JSON.stringify(log, null, 2))  
+ 
+next()  
+}) 
+
+// See where coming from and currently on
+router.use('/', (request, response, next) => {  
+  response.locals.currentURL = request.originalUrl; 
+  response.locals.prevURL = request.get('Referrer');
+
+console.log('current screen: ' + response.locals.currentURL);
+console.log('previous screen: ' + response.locals.prevURL );
+
+  next();  
 });
 
+// Simple search route
+router.post('/searchforclaim', function(request, response) {
 
-// URL test submit
-router.get('/url-routing', function(request, response) {
+  var claimSearch = request.session.data['claim-search']
 
-  var theClaim = null;
-
-  var claimNo = request.session.data.claimNo;
-
-  for (const clm of request.session.data.sampleCaseListData) {
-    if (clm.claimRef === request.session.data.claimNo)
-    theClaim = clm;
-  }
-
-  response.render("playground/result")
+  response.redirect("current/claim-search")
 
 })
 
-// URL test submit
-router.get('/url-simple', function(request, response) {
+// Simple search route
+router.post('/changeuser', function(request, response) {
 
-  var claimNo = request.session.data.claimNo;
+  var loggedInUser = request.session.data['logged-in-user']
 
-    theClaim = claimNo;
-    response.render("playground/result") + "?" + theClaim
+  response.redirect("index")
 
 })

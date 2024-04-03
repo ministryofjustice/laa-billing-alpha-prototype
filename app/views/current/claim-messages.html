@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/_includes/phase-banner.html"%}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- tabs: claim summary, apply adjustments, related claims, claims history, messages -->
+{% set activeSubNav = [false, false, false, false, true] %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    {% include "/_includes/claim-masthead.njk" %}
+    {% include "/_includes/claim-sub-navigation.njk" %}
+
+    <div id="messages" class="moj-messages-container">
+
+        <div class="moj-message-list">
+      
+          <time class="moj-message-list__date" datetime="16 March 2019">16 March 2019</time>
+      
+          <div class="moj-message-item moj-message-item--sent">
+            <div class="moj-message-item__text moj-message-item__text--sent">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div class="moj-message-item__meta">
+              <span class="moj-message-item__meta--sender">Person A</span> at <time class="moj-message-item__meta--timestamp" datetime="10:50am">10:50am</time>
+            </div>
+          </div>
+      
+          <time class="moj-message-list__date" datetime="17 March 2019">17 March 2019</time>
+      
+          <div class="moj-message-item moj-message-item--received">
+            <div class="moj-message-item__text moj-message-item__text--received">Nullam vestibulum lorem vulputate velit euismod luctus.</div>
+            <div class="moj-message-item__meta">
+              <span class="moj-message-item__meta--sender">Person B</span> at <time class="moj-message-item__meta--timestamp" datetime="10:51am">10:51am</time>
+            </div>
+          </div>
+      
+          <time class="moj-message-list__date" datetime="19 March 2019">19 March 2019</time>
+      
+          <div class="moj-message-item moj-message-item--sent">
+            <div class="moj-message-item__text moj-message-item__text--sent">Fusce et vulputate justo. Integer suscipit felis non urna lobortis, vel finibus sem tristique.</div>
+            <div class="moj-message-item__meta">
+              <span class="moj-message-item__meta--sender">Person A</span> at <time class="moj-message-item__meta--timestamp" datetime="10:53am">10:53am</time>
+            </div>
+          </div>
+          <div class="moj-message-item moj-message-item--sent">
+            <div class="moj-message-item__text moj-message-item__text--sent">Mauris tincidunt feugiat orci et convallis. Nam efficitur gravida justo non lobortis. Aliquam velit ante, lobortis eu venenatis sit amet, semper sit amet justo.</div>
+            <div class="moj-message-item__meta">
+              <span class="moj-message-item__meta--sender">Person A</span> at <time class="moj-message-item__meta--timestamp" datetime="10:55am">10:55am</time>
+            </div>
+          </div>
+      
+          <time class="moj-message-list__date" datetime="21 March 2019">21 March 2019</time>
+      
+          <div class="moj-message-item moj-message-item--received">
+            <div class="moj-message-item__text moj-message-item__text--received">Proin dapibus, nisl id ultricies ultricies, erat magna pulvinar risus, sit amet commodo nunc purus eu nulla. Aliquam erat volutpat. Vestibulum in ante interdum, elementum arcu vel, viverra nibh. Etiam ultrices urna at suscipit sollicitudin. Nulla non lectus magna. Curabitur vel vestibulum lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+            <div class="moj-message-item__meta">
+              <span class="moj-message-item__meta--sender">Person B</span> at <time class="moj-message-item__meta--timestamp" datetime="11:56am">11:56am</time>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+
+  </div>
+</div>
+
+{% endblock %}
