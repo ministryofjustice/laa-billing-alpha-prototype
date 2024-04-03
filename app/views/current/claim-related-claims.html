@@ -15,11 +15,23 @@
 <!-- tabs: claim summary, apply adjustments, related claims, claims history, messages -->
 {% set activeSubNav = [false, false, true, false, false] %}
 
+<!-- call JSON file -->
+{% set claimList = data.sampleCaseListData %}
+
+{% set claimRef = data['claim-ref'] | default('abcdefg1') %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+                <!-- FIND RECORD AND WRITE CARDS -->
+    {% set foundClaim = false %}
+    {% for item in claimList %}
+      {% if item.claimRef == claimRef %}
+      {% set foundClaim = true %}
     {% include "/_includes/claim-masthead.njk" %}
+    {% endif %}
+    {% endfor %}
 
     {% include "/_includes/claim-sub-navigation.njk" %}
     <h2 class="govuk-heading-m">Related claims</h2>
