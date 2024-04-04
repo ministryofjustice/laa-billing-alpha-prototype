@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+  My claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 <!-- tabs: my claims, all claims, search -->
@@ -16,7 +16,13 @@
     <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">My Claims</h1>
     <!-- INCLUDE FILTERS -->
-
+    {% set filterHtml %}
+    {% include "/_includes/caselist-filters-top.njk"%}  
+    {% endset %}
+    {{ govukDetails({
+      summaryText: "Filter claims",
+      html: filterHtml
+    }) }}
 
         <!-- TABLE IS HERE -->
         {% include "/_includes/my-claims-table.njk"%} 

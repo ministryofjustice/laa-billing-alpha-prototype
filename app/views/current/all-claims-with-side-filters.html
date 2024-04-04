@@ -67,36 +67,7 @@
           </div>
         </div>
         <!-- TABLE IS HERE -->
-        <div class="moj-scrollable-pane">
-            <table class="govuk-table">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">  
-                  <th scope="col" class="govuk-table__header">Claim reference</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date received</th>  
-                  <th scope="col" class="govuk-table__header">Claim total</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Firm name</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Client name</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">Claim type</th>  
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Claim status</th>  
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">  
-                {% for item in claimList %}
-                <tr class="govuk-table__row">  
-                  <td class="govuk-table__cell">{{ item.claimRef }}</td>  
-                  <td class="govuk-table__cell">{{ item.legalAidType }}</td>  
-                  <td class="govuk-table__cell">{{ item.dateReceived }}</td>  
-                  <td class="govuk-table__cell">{{ item.claimTotal }}</td>  
-                  <td class="govuk-table__cell">{{ item.firmName }}</td>  
-                  <td class="govuk-table__cell">{{ item.clientName }}</td>  
-                  <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
-                  <td class="govuk-table__cell">{% include "/_includes/status-checker.njk" %}</td>  
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+        {% include "/_includes/all-claims-table.njk"%} 
     </div>
 </div>
 

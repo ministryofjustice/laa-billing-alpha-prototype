@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+  Claim summary – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@
 {% set claimRef = data['claim-ref'] | default('abcdefg1') %}
 
 {% block content %}
-<p>Claim ref for debug: [{{ claimRef }}]</p>
+<!-- <p>Claim ref for debug: [{{ claimRef }}]</p> -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
           <!-- FIND RECORD AND WRITE CARDS -->

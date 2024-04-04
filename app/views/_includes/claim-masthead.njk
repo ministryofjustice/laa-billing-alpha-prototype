@@ -1,9 +1,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
+            <!-- CRIME MASTHEAD -->
             <span class="govuk-caption-l">{{ item.legalAidType }}</span>
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ item.claimRef }}</h1>
-            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived }}</p>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Case reference: {{ item.claimRef }}</h1>
+            <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived | govukDate }}</p>
             <p class="govuk-body govuk-!-margin-bottom-1"><strong>Claim type:</strong> {{ item.claimMatterType }}</p>
             <p class="govuk-body"><strong>Status: </strong><strong class="govuk-tag govuk-tag--green">
                 Granted
