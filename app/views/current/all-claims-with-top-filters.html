@@ -8,7 +8,7 @@
 {% set activeTab = [false, true, false] %}
 
 <!-- call JSON file -->
-{% set claimList = data.sampleCaseListData %}
+{% set claimList = data.sampleDataCrime %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -46,7 +46,7 @@
       </div>
 
     <!-- TABLE IS HERE -->
-      {% include "/_includes/all-claims-table.njk"%} 
+      {% include "/_includes/case-lists/crime/all-claims-table-crime.njk"%} 
   </div>
 </div>
 

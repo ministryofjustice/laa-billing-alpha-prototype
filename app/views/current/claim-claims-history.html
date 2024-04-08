@@ -16,25 +16,45 @@
 {% set activeSubNav = [false, false, false, true, false] %}
 
 {<!-- call JSON file -->
-{% set claimList = data.sampleCaseListData %}
+{% set claimList = data.sampleDataCrime %}
 
 {% set claimRef = data['claim-ref'] | default('abcdefg1') %}
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-                <!-- FIND RECORD AND WRITE CARDS -->
-    {% set foundClaim = false %}
-    {% for item in claimList %}
-      {% if item.claimRef == claimRef %}
-      {% set foundClaim = true %}
-    {% include "/_includes/claim-masthead.njk" %}
-    {% endif %}
-    {% endfor %}
-
-    {% include "/_includes/claim-sub-navigation.njk" %}
-    <h2 class="govuk-heading-m">Claims history</h2>
+  <div class="govuk-grid-column-full">
+    {% if loggedInUser == 'Crime caseworker'%}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCrime %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% set foundClaim = false %}
+      {% for item in claimList %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "/_includes/claim-masthead.njk" %}
+            {% include "/_includes/claim-sub-navigation.njk" %}
+            <h2 class="govuk-heading-m">Claims history</h2>
+            <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <!-- call JSON files -->
+      {% set claimListCivil = data.sampleDataCivil %}
+      {% set claimRef = 'tuvwxyz1' %}
+      <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
+      {% set foundClaim = false %}
+      {% for item in claimListCivil %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "/_includes/claim-masthead.njk" %}
+            {% include "/_includes/claim-sub-navigation.njk" %}
+            <h2 class="govuk-heading-m">Claims history</h2>
+            <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
+        {% endif %}
+      {% endfor %}
+  {% endif %}
 
   </div>
 </div>

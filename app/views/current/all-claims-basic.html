@@ -8,7 +8,7 @@
 {% set activeTab = [false, true, false] %}
 
 <!-- call JSON file -->
-{% set claimList = data.sampleCaseListData %}
+{% set claimList = data.sampleDataCrime %}
 
 {% block content %}
 
@@ -24,8 +24,18 @@
       html: filterHtml
     }) }}
 
-        <!-- TABLE IS HERE -->
-        {% include "/_includes/all-claims-table.njk"%} 
+      <!-- TABLE IS HERE -->
+    {% if loggedInUser == 'Crime caseworker'%}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCrime %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% include "/_includes/case-lists/crime/all-claims-table-crime.njk"%}
+    {% else %}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCivil %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% include "/_includes/case-lists/crime/all-claims-table-crime.njk"%}
+   {% endif %}
     </div>
 </div>
   
