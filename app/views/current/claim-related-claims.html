@@ -17,8 +17,6 @@
 
 <!-- call JSON file -->
 {% set claimList = data.sampleDataCrime %}
-
-{% set claimRef = data['claim-ref'] | default('abcdefg1') %}
 {% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
 
 {% block content %}
@@ -26,6 +24,8 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       {% if loggedInUser == 'Crime caseworker'%}
+        <!-- set caseRef var or default if page visited directly -->
+        {% set claimRef = data['claim-ref'] | default('abcdefg1') %}
         <!-- call JSON files -->
         {% set claimList = data.sampleDataCrime %}  
         <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
@@ -37,12 +37,23 @@
               {% include "/_includes/claim-sub-navigation.njk" %}
               <h2 class="govuk-heading-m">Related claims</h2>
               <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+                  <!-- INCLUDE FILTERS -->
+              {% set filterHtml %}
+              {% include "/_includes/related-caselist-filters.njk"%}  
+              {% endset %}
+              {{ govukDetails({
+                summaryText: "Filter claims",
+                html: filterHtml
+              }) }}
+              {% include "/_includes/case-lists/crime/related-claims-table-crime.njk" %}
+              
           {% endif %}
         {% endfor %}
       {% else %}
+        <!-- set caseRef var or default if page visited directly -->
+        {% set claimRef = data['claim-ref'] | default('tuvwxyz1') %}
         <!-- call JSON files -->
         {% set claimListCivil = data.sampleDataCivil %}
-        {% set claimRef = 'tuvwxyz1' %}
         <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
         {% set foundClaim = false %}
         {% for item in claimListCivil %}

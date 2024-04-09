@@ -10,6 +10,8 @@
 <!-- call JSON file -->
 {% set claimList = data.sampleDataCrime %}
 
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -34,7 +36,7 @@
       <!-- call JSON files -->
       {% set claimList = data.sampleDataCivil %}  
       <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
-      {% include "/_includes/case-lists/crime/all-claims-table-crime.njk"%}
+      {% include "/_includes/case-lists/civil/all-claims-table-civil.njk"%}
    {% endif %}
     </div>
 </div>

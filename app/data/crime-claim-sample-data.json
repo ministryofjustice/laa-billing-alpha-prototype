@@ -24,12 +24,20 @@
         ],
         "linkedApplications": [
             {
-                "refNo": "12345",
-                "type": "Type X"
+                "relatedRefNo": "12345",
+                "relatedType": "Type A",
+                "relatedDateReceived": "20230821",
+                "relatedFirmName": "Related Crime Firm Ltd",
+                "relatedClientName": "Pippin Goodchild",
+                "relatedClaimStatus": "Granted"
             },
             {
-                "refNo": "23456",
-                "type": "Type Y"
+                "relatedRefNo": "54321",
+                "relatedType": "Type B",
+                "relatedDateReceived": "20230821",
+                "relatedFirmName": "A.N.Other Related Firm Ltd",
+                "relatedClientName": "Alexis Puddlefoot",
+                "relatedClaimStatus": "Part granted"
             }
         ],
         "claims": [
@@ -89,7 +97,32 @@
         "claimTags": [
             { "tagType": "Counsel unpaid" }
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "01234",
+                "relatedType": "Type C",
+                "relatedDateReceived": "20230921",
+                "relatedFirmName": "A New Related Crime Firm Ltd",
+                "relatedClientName": "Allison Whitfoot",
+                "relatedClaimStatus": "Rejected"
+            },
+            {
+                "relatedRefNo": "43210",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20231115",
+                "relatedFirmName": "A.N.Other Related Firm Ltd",
+                "relatedClientName": "Theutberga Featherbottom",
+                "relatedClaimStatus": "Part granted"
+            },
+            {
+                "relatedRefNo": "43210",
+                "relatedType": "Type D",
+                "relatedDateReceived": "20240102",
+                "relatedFirmName": "Related Legal Ltd",
+                "relatedClientName": "Maxima Gamwich",
+                "relatedClaimStatus": "Granted"
+            }
+        ],
         "claims": []
     },
     {
@@ -113,7 +146,24 @@
         "claimTags": [
             { "tagType": "Previous payments" }
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "55555",
+                "relatedType": "Type B",
+                "relatedDateReceived": "20230909",
+                "relatedFirmName": "Crime Firm Ltd",
+                "relatedClientName": "Esmee Banks",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "77777",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "Related Firm PLC",
+                "relatedClientName": "Notger Gammidge",
+                "relatedClaimStatus": "Rejected"
+            }
+        ],
         "claims": []
     },
     {
@@ -160,7 +210,24 @@
         "amendedRepOrderLink": "",
         "claimTags": [
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "21121",
+                "relatedType": "Type C",
+                "relatedDateReceived": "20230909",
+                "relatedFirmName": "My New Firm Ltd",
+                "relatedClientName": "Halinard Lothran",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "77777",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "Related Firm PLC",
+                "relatedClientName": "Pimpernel Clayhanger",
+                "relatedClaimStatus": "Part granted"
+            }
+        ],
         "claims": []
     },
     {
@@ -234,7 +301,48 @@
         "claimTags": [
             { "tagType": "Previous payments" }
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "00123",
+                "relatedType": "Type C",
+                "relatedDateReceived": "20230909",
+                "relatedFirmName": "My New Firm Ltd",
+                "relatedClientName": "Master Chief",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "00234",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "Related Firm PLC",
+                "relatedClientName": "Floribert Hornwood",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "00345",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "A.N.Other Related Firm Ltd",
+                "relatedClientName": "Matfrid North-took",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "00456",
+                "relatedType": "Type D",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "Hobbit Legal Ltd",
+                "relatedClientName": "Adallind Button",
+                "relatedClaimStatus": "Granted"
+            },
+            {
+                "relatedRefNo": "00567",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20240312",
+                "relatedFirmName": "Barney's Legal Eagles Ltd",
+                "relatedClientName": "Gundrada Rumble",
+                "relatedClaimStatus": "Part granted"
+            }
+        ],
         "claims": []
     },
     {

@@ -1,0 +1,73 @@
+<div class="moj-scrollable-pane govuk-!-margin-top-6">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <!-- <th scope="col" class="govuk-table__header">Claim reference</th> -->
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Client</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Firm</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Claim type</th>  
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date submitted / received</th>  
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Total</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+          <!-- <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
+        {% for item in claimList %}
+        <tr class="govuk-table__row">  
+          <!-- <td class="govuk-table__cell">{{ item.claimRef }}</td> -->
+          <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a></td> 
+          <td class="govuk-table__cell">{{ item.firmName }}</td>  
+          <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">£{{ item.claimTotal }}</td>  
+          <td class="govuk-table__cell" data-sort-value="{{ item.claimStatus }}">{% include "/_includes/status-checker.njk" %}</td>   
+          <td class="govuk-table__cell">{{ govukButton({
+            text: "Assign",
+            classes: "govuk-button--secondary"
+          }) }}</td>  
+          <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full">
+
+  {{ mojPagination({
+    items: [{
+      text: '1',
+      href: '/page=1',
+      selected: true
+    }, {
+      text: '2',
+      href: '#'
+    }, {
+      text: '3',
+      href: '#'
+    }, {
+      type: 'dots'
+    }, {
+      text: '5',
+      href: '#'
+    }],
+    results: {
+      count: 55,
+      from: 1,
+      to: 10,
+      text: 'claims'
+    },
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+    next: {
+      text: 'Next',
+      href: ''
+    }
+  }) }}
+
+  </div>
+</div>

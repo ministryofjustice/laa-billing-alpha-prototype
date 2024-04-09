@@ -1,3 +1,11 @@
+<!-- set tab labels if value -->
+{# <p>related count: {{ item.linkedApplications.length }}</p> #}
+{% if item.linkedApplications.length > 0 %}
+{% set relateTabText = ['Related claims', ' (', item.linkedApplications.length, ')' ] | join %}
+{% else %}
+{% set relateTabText = 'Related claims' %}
+{% endif %}
+
 {{ mojSubNavigation({
     label: 'Sub navigation',
     items: [{
@@ -9,7 +17,7 @@
       href: 'claim-apply-adjustments',
       active: + activeSubNav[1]
     }, {
-      text: 'Related claims',
+      text: relateTabText,
       href: 'claim-related-claims',
       active: + activeSubNav[2]
     }, {

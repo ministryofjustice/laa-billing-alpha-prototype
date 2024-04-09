@@ -16,7 +16,7 @@
         {% for item in claimList %}
         <tr class="govuk-table__row">  
           <!-- <td class="govuk-table__cell">{{ item.claimRef }}</td> -->
-          <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a><br><div class="govuk-!-font-size-16">{{ item.claimRef }}</div></td> 
+          <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a></td> 
           <td class="govuk-table__cell">{{ item.firmName }}</td>  
           <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
