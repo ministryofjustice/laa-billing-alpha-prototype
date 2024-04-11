@@ -10,6 +10,8 @@ some maybe dupes of gov colours
 */
 
 $colour-search-box-blue: #e0eef8;
+$colour-dashboard-box-grey: #B1B4B6;
+$colour-dashboard-box-shade-grey: #6F777B;
 
 /*
 --------------------------------------------------------------------
@@ -83,4 +85,38 @@ SEARCH PAGE
   background-color: $colour-search-box-blue;
   padding: 30px;
 
+}
+
+/*
+--------------------------------------------------------------------
+CASE LIST DASHBOARD CONCEPT
+--------------------------------------------------------------------
+*/   
+
+.quick-dashboard-card {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  flex: 1;
+  border: 1px solid $colour-dashboard-box-grey;
+  border-bottom: 3px solid $colour-dashboard-box-shade-grey;
+	text-align: center;
+
+  &__link {
+    font-size: 4.333em;
+    margin-bottom: 0px;
+  }
+
+  &__container {
+    display: flex;
+    width: 100;
+  }
+
+  @media (max-width: 40.0525em) {
+
+    &__container {
+      display: grid;
+      width: 100;
+    }
+  }
 }

@@ -5,7 +5,7 @@
       <table class="govuk-table" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">  
-            <!-- <th scope="col" class="govuk-table__header">Claim reference</th> -->
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Ref no</th> 
             <th scope="col" class="govuk-table__header" aria-sort="ascending">Client</th>  
             <th scope="col" class="govuk-table__header" aria-sort="none">Firm</th>  
             <th scope="col" class="govuk-table__header" aria-sort="none">Claim type</th>  
@@ -19,8 +19,8 @@
           {% for item in claimList %}
             {% if claimSearch in item.firmName | lower or claimSearch in item.clientName | lower or claimSearch in item.claimMatterType | lower %} <!-- make data in JSON lower case to avoid case sensitivity -->
               <tr class="govuk-table__row">  
-                <!-- <td class="govuk-table__cell">{{ item.claimRef }}</td> -->
-                <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.clientName }}</a></td> 
+                <td class="govuk-table__cell" data-sort-value="{{ item.claimRef }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.claimRef }}</a></td> 
+                <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}">{{ item.clientName }}</td>  
                 <td class="govuk-table__cell">{{ item.firmName }}</td>  
                 <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
                 <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>   

@@ -1,6 +1,6 @@
 [
     {
-        "claimRef": "tuvwxyz1",
+        "claimRef": "1000010CV",
         "legalAidType": "Civil",
         "claimTotal": "786.89",
         "dateReceived": "20230808",
@@ -41,7 +41,7 @@
         ]
     },
     {
-        "claimRef": "tuvwxyz2",
+        "claimRef": "1000011CV",
         "legalAidType": "Civil",
         "claimTotal": "904.45",
         "dateReceived": "20230907",
@@ -64,7 +64,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz3",
+        "claimRef": "1000012CV",
         "legalAidType": "Civil",
         "claimTotal": "1834.40",
         "dateReceived": "20231019",
@@ -87,7 +87,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz4",
+        "claimRef": "1000013CV",
         "legalAidType": "Civil",
         "claimTotal": "4525.00",
         "dateReceived": "20240212",
@@ -110,7 +110,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz5",
+        "claimRef": "1000014CV",
         "legalAidType": "Civil",
         "claimTotal": "678.56",
         "dateReceived": "20240301",
@@ -131,7 +131,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz6",
+        "claimRef": "1000015CV",
         "legalAidType": "Civil",
         "claimTotal": "794.12",
         "dateReceived": "20240308",
@@ -153,7 +153,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz7",
+        "claimRef": "1000016CV",
         "legalAidType": "Civil",
         "claimTotal": "2015.03",
         "dateReceived": "20240312",
@@ -176,7 +176,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz8",
+        "claimRef": "1000017CV",
         "legalAidType": "Civil",
         "claimTotal": "2339.25",
         "dateReceived": "20240314",
@@ -197,7 +197,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz9",
+        "claimRef": "1000018CV",
         "legalAidType": "Civil",
         "claimTotal": "193.95",
         "dateReceived": "20240315",
@@ -218,7 +218,7 @@
         "claims": []
     },
     {
-        "claimRef": "tuvwxyz10",
+        "claimRef": "1000019CV",
         "legalAidType": "Civil",
         "claimTotal": "1573.51",
         "dateReceived": "20240315",

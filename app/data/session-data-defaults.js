@@ -23,5 +23,11 @@ module.exports = {
   ],
 
   // Default user
-  "loggedInUser": "Crime caseworker"
+  "loggedInUser": "Crime caseworker",
+
+    // Default crime case
+    "defaultCrimeCaseNo": "1000001CR",
+
+      // Default civil case
+  "defaultCivilCaseNo": "1000010CV"
 }

@@ -23,7 +23,7 @@
     <div class="govuk-grid-column-full">
       {% if loggedInUser == 'Crime caseworker'%}
           <!-- set caseRef var or default if page visited directly -->
-          {% set claimRef = data['claim-ref'] | default('abcdefg1') %}
+          {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}
           <!-- call JSON files -->
           {% set claimList = data.sampleDataCrime %}  
           <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
@@ -46,7 +46,7 @@
           {% endfor %}
       {% else %}
           <!-- set caseRef var or default if page visited directly -->
-          {% set claimRef = data['claim-ref'] | default('tuvwxyz1') %}
+          {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
           <!-- call JSON files -->
           {% set claimListCivil = data.sampleDataCivil %}
           <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->

@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+          <!-- call JSON files -->
+          {# {% set claimList = data.sampleDataCrime %}  #}
+          {# {% set claimList = ['apple', 'banana', 'orange', 'banana', 'orange', 'orange'] %} #}
+
+
+          {% set claimList = data.sampleDataCrime %}
+
+          {% set groups = claimList | groupby("claimStatus") %}
+          
+          {% for claimStatus, refs in groups %}
+            <h2>Group: {{ claimStatus  }}</h2>
+              {% for item in refs %}
+                <p>Claim ref: {{ item.claimRef }}</p>
+                
+              {% endfor %}
+          {% endfor %}
+          <p>Item count: {{ itemCount }}</p>
+
+  </div>
+</div>
+
+{% endblock %}
