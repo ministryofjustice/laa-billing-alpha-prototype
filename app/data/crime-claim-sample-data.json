@@ -40,6 +40,33 @@
                 "relatedClaimStatus": "Part granted"
             }
         ],
+        "claimHistory": [
+            {
+                "historyDate": "20240209",
+                "historyWho": "Gerry Dixon",
+                "historyUpdate": "Granted"
+            },
+            {
+                "historyDate": "20240207",
+                "historyWho": "Gerry Dixon",
+                "historyUpdate": "Provider provided further evidence"
+            },
+            {
+                "historyDate": "20240205",
+                "historyWho": "Gerry Dixon",
+                "historyUpdate": "More information requested"
+            },
+            {
+                "historyDate": "20240203",
+                "historyWho": "Gerry Dixon",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240203",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": [
             {
                 "refNo": "12345",
@@ -74,6 +101,23 @@
             { "tagType": "Counsel unpaid" }
         ],
         "linkedApplications": [],
+        "claimHistory": [
+            {
+                "historyDate": "20240209",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "Granted"
+            },
+            {
+                "historyDate": "20240208",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240208",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -123,6 +167,33 @@
                 "relatedClaimStatus": "Granted"
             }
         ],
+        "claimHistory": [
+            {
+                "historyDate": "20240215",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "Part granted"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "Provider provided further evidence"
+            },
+            {
+                "historyDate": "20240210",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "More information requested"
+            },
+            {
+                "historyDate": "20240209",
+                "historyWho": "Maxine Smith",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240209",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -164,6 +235,23 @@
                 "relatedClaimStatus": "Rejected"
             }
         ],
+        "claimHistory": [
+            {
+                "historyDate": "20240215",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Rejected"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -188,6 +276,23 @@
             { "tagType": "Redetermination/Appeal" }
         ],
         "linkedApplications": [],
+        "claimHistory": [
+            {
+                "historyDate": "20240304",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Part granted"
+            },
+            {
+                "historyDate": "20240302",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240301",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -228,6 +333,7 @@
                 "relatedClaimStatus": "Part granted"
             }
         ],
+        "claimHistory": [],
         "claims": []
     },
     {
@@ -254,6 +360,7 @@
             { "tagType": "Counsel paid" }
         ],
         "linkedApplications": [],
+        "claimHistory": [],
         "claims": []
     },
     {
@@ -278,6 +385,33 @@
             { "tagType": "Counsel unpaid" }
         ],
         "linkedApplications": [],
+        "claimHistory": [
+            {
+                "historyDate": "20240304",
+                "historyWho": "Fred Bloggs",
+                "historyUpdate": "Further information requested"
+            },
+            {
+                "historyDate": "20240302",
+                "historyWho": "Fred Bloggs",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240302",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Claim unassigned"
+            },
+            {
+                "historyDate": "20240302",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240314",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -343,6 +477,13 @@
                 "relatedClaimStatus": "Part granted"
             }
         ],
+        "claimHistory": [
+            {
+                "historyDate": "20240315",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -367,6 +508,13 @@
             { "tagType": "Previous payments" }
         ],
         "linkedApplications": [],
+        "claimHistory": [
+            {
+                "historyDate": "20240315",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     }
 ]

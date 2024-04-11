@@ -99,11 +99,29 @@
       {% endfor %}
   {% endif %}
 
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full">
+  <!-- ALLOW ADDING MESSAGES FOR BOTH CRIME AND CIVIL FOR NOW -->  
+  {{ govukTextarea({
+    name: "moreDetail",
+    id: "more-detail",
+    label: {
+      text: "Enter a message",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Please type your message here."
+    }
+  }) }}
+
+  {{ govukButton({
+    text: "Send"
+  }) }}
+
   </div>
 </div>
-
-
-
 
 
 

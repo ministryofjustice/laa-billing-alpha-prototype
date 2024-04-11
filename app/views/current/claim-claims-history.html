@@ -37,6 +37,7 @@
             {% include "/_includes/claim-sub-navigation.njk" %}
             <h2 class="govuk-heading-m">Claims history</h2>
             <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+            {% include "/_includes/case-lists/crime/history-table-crime.njk" %}
         {% endif %}
       {% endfor %}
     {% else %}
