@@ -27,17 +27,22 @@
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
+                    {% set totalClaim = 0 %}
+                    {% set totalClaimVat = 0 %}
                     {% for item in item.claimsTotalRows %}
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">{{ item.claimType }}</th>
                         <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeTotal | currency }}</td>
+                        {% set totalClaim = totalClaim + ( item.claimTypeTotal * 1 ) %}
                         <td class="govuk-table__cell govuk-table__cell--numeric">{{ (item.claimTypeTotal * 1.2) | currency }}</td>
+                        {% set totalClaimVat = totalClaimVat + ( item.claimTypeTotal * 1.2 ) %}
                       </tr>
                     {% endfor %}
-
-
-
-
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Total</th>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">{{ totalClaim | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">{{ totalClaimVat | currency }}</td>
+                    </tr>
                     </tbody>
                   </table>
             </div> 
