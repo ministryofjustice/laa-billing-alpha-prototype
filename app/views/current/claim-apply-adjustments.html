@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Apply adjustments – {{ serviceName }} – GOV.UK Prototype Kit
+  Assessment – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,7 +12,7 @@
 }) }}
 {% endblock %}
 
-<!-- tabs: claim summary, apply adjustments, related claims, claims history, messages -->
+<!-- tabs: claim summary, assessment, related claims, claims history, messages -->
 {% set activeSubNav = [false, true, false, false, false] %}
 {% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
 
@@ -33,7 +33,7 @@
           {% set foundClaim = true %}
               {% include "/_includes/claim-masthead.njk" %}
               {% include "/_includes/claim-sub-navigation.njk" %}
-              <h2 class="govuk-heading-m">Apply adjustments</h2>
+              <h2 class="govuk-heading-m">Assessment</h2>
               <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
            {% endif %}
         {% endfor %}
@@ -49,7 +49,7 @@
         {% set foundClaim = true %}
             {% include "/_includes/claim-masthead.njk" %}
             {% include "/_includes/claim-sub-navigation.njk" %}
-            <h2 class="govuk-heading-m">Apply adjustments</h2>
+            <h2 class="govuk-heading-m">Assessment</h2>
             <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
         {% endif %}
       {% endfor %}

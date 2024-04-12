@@ -12,7 +12,7 @@
 }) }}
 {% endblock %}
 
-<!-- tabs: claim summary, apply adjustments, related claims, claims history, messages -->
+<!-- tabs: claim summary, assessment, related claims, claims history, messages -->
 {% set activeSubNav = [true, false, false, false, false] %}
 {% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
 
@@ -38,10 +38,12 @@
                 {% include "/_includes/claim-summary-cards/both/provider-details.njk" %}
                 {% include "/_includes/claim-summary-cards/both/client-details.njk" %}
                   <!-- Crime cards -->  
+                  {% include "/_includes/claim-summary-cards/crime/offence-details.njk" %}
                   {% include "/_includes/claim-summary-cards/crime/rep-order-details.njk" %}
                   {% include "/_includes/claim-summary-cards/crime/case-details.njk" %}
                   <h2 class="govuk-heading-m">Claim details</h2>
-                  {% include "/_includes/claim-summary-cards/crime/claim-details.njk" %}
+                  {% include "/_includes/claim-summary-cards/crime/evidence-details.njk" %}
+                  {% include "/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %}
             {% endif %}
           {% endfor %}
       {% else %}
@@ -64,7 +66,7 @@
                   {% include "/_includes/claim-summary-cards/civil/proceeding-type-details.njk" %}
                   {% include "/_includes/claim-summary-cards/civil/certificate-details.njk" %}
                   <h2 class="govuk-heading-m">Claim details</h2>
-                  {% include "/_includes/claim-summary-cards/crime/claim-details.njk" %}
+                  {% include "/_includes/claim-summary-cards/civil/evidence-details.njk" %}
             {% endif %}
           {% endfor %}
       {% endif %}   

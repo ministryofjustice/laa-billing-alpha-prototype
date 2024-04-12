@@ -13,8 +13,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type A",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Granted",
         "maatNumber": "12245428",
+        "offenceName":"Aggravated arson",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "Yes",
         "amendedRepOrderLink": "linkhere",
         "claimTags": [
@@ -67,14 +71,26 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": [
+        "claimsTotalRows": [
             {
-                "refNo": "12345",
-                "type": "Type X"
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
             },
             {
-                "refNo": "23456",
-                "type": "Type Y"
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
             }
         ]
     },
@@ -92,8 +108,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type B",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Granted",
         "maatNumber": "48186293",
+        "offenceName":"Possession of firearm with intent to endanger life",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "Yes",
         "amendedRepOrderLink": "linkhere",
         "claimTags": [
@@ -118,7 +138,28 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000003CR",
@@ -134,8 +175,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type A",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Part granted",
         "maatNumber": "69174001",
+        "offenceName":"Cultivation of cannabis plant",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "No",
         "amendedRepOrderLink": "",
         "claimTags": [
@@ -194,7 +239,28 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000004CR",
@@ -210,8 +276,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type C",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Rejected",
         "maatNumber": "06390169",
+        "offenceName":"Failure to disclose knowledge or suspicion of money laundering: other nominated officers",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "Yes",
         "amendedRepOrderLink": "linkhere",
         "claimTags": [
@@ -252,7 +322,28 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000005CR",
@@ -268,8 +359,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type B",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Part granted",
         "maatNumber": "06390169",
+        "offenceName": "Burglary (non-domestic)",
+        "offenceClass": "Class E: Burglary etc.",
         "amendedRepOrder": "No",
         "amendedRepOrderLink": "",
         "claimTags": [
@@ -293,7 +388,28 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000006CR",
@@ -309,8 +425,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type E",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Rejected",
         "maatNumber": "06390169",
+        "offenceName":"Aggravated arson",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "No",
         "amendedRepOrderLink": "",
         "claimTags": [
@@ -334,7 +454,28 @@
             }
         ],
         "claimHistory": [],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000007CR",
@@ -350,8 +491,12 @@
         "courtName": "Oxford and Southern Oxfordshire Magistrates' Court",
         "claimMatterType": "Type D",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Part granted",
         "maatNumber": "06390169",
+        "offenceName":"Possessing anything with intent to destroy or damage property",
+        "offenceClass": "Class C: Lesser offences involving violence or damage and less serious drugs offences",
         "amendedRepOrder": "Yes",
         "amendedRepOrderLink": "linkhere",
         "claimTags": [
@@ -361,7 +506,28 @@
         ],
         "linkedApplications": [],
         "claimHistory": [],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000008CR",
@@ -377,8 +543,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type E",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "In progress",
         "maatNumber": "06390169",
+        "offenceName":"Aggravated burglary",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "No",
         "amendedRepOrderLink": "",
         "claimTags": [
@@ -412,7 +582,28 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     },
     {
         "claimRef": "1000009CR",
@@ -424,12 +615,16 @@
         "clientName": "Rodrick Barajas",
         "clientDob": "19961225",
         "courtName": "xxx",
-        "feeEarner": "Bob Jones",
+        "feeEarner": "Geddy Lee",
         "firmAccountNumber": "9A234B",
         "claimMatterType": "Type C",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Not assigned",
         "maatNumber": "88934763",
+        "offenceName":"Burglary (non-domestic)",
+        "offenceClass":"Class E: Burglary etc.",
         "amendedRepOrder": "No",
         "amendedRepOrderLink": "",
         "claimTags": [
@@ -484,7 +679,20 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "222.22"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "19.18"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "211.20"
+            }
+        ]
     },
     {
         "claimRef": "1000010CR",
@@ -500,8 +708,12 @@
         "feeEarner": "Bob Jones",
         "claimMatterType": "Type B",
         "legalAidBillingType": "Higher Courts",
+        "evidenceSubmitted": "Yes",
+        "evidenceLink": "linkhere",
         "claimStatus": "Not assigned",
         "maatNumber": "19371888",
+        "offenceName":"Aggravated burglary",
+        "offenceClass":"Class B: Offences involving serious violence or damage, and serious drug offences",
         "amendedRepOrder": "Yes",
         "amendedRepOrderLink": "linkhere",
         "claimTags": [
@@ -515,6 +727,27 @@
                 "historyUpdate": "Claim received"
             }
         ],
-        "claims": []
+        "claimsTotalRows": [
+            {
+                "claimType": "Work done",
+                "claimTypeTotal": "180.20"
+            },
+            {
+                "claimType": "Expenses",
+                "claimTypeTotal": "21.12"
+            },
+            {
+                "claimType": "Fees",
+                "claimTypeTotal": "51.20"
+            },
+            {
+                "claimType": "Total costs",
+                "claimTypeTotal": "248.12"
+            },
+            {
+                "claimType": "Disbursements",
+                "claimTypeTotal": "92.58"
+            }
+        ]
     }
 ]

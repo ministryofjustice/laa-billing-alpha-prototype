@@ -24,7 +24,7 @@
                 <td class="govuk-table__cell">{{ item.firmName }}</td>  
                 <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
                 <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>   
-                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">£{{ item.claimTotal }}</td>  
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency }}</td>  
                 <td class="govuk-table__cell" data-sort-value="{{ item.claimStatus }}">{% include "/_includes/status-checker.njk" %}</td>   
                 <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
               </tr>

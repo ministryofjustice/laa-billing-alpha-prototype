@@ -22,9 +22,6 @@
                 <dd class="govuk-summary-list__value">
                 {{ item.maatNumber }}
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -32,9 +29,6 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                 {{ item.repOrderDate | govukDate}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -46,9 +40,6 @@
                 {% if item.amendedRepOrder == 'Yes' %}
                 <br><a href="{{ item.amendedRepOrderLink }}" class="govuk-link">{{ item.amendedRepOrderLink }}</a>
                 {% endif %}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description of what changes here</span></a>
                 </dd>
             </div>
         </dl>
