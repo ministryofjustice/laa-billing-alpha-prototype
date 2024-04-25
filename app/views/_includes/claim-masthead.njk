@@ -5,6 +5,22 @@
             {% if loggedInUser == 'Crime caseworker' %}
             <!-- CRIME MASTHEAD -->
             <span class="govuk-caption-l">Case reference: {{ item.claimRef }}</span>
+            <!--<div style="float: right;">
+                {{ mojButtonMenu({
+                  items: [{
+                    text: "Apply assessment",
+                    href: "#"
+                  }, {
+                    text: "Reject claim",
+                    href: "#",
+                    classes: "govuk-button--secondary"
+                  }, {
+                    text: "Do something else",
+                    href: "#",
+                    classes: "govuk-button--secondary"
+                  }]
+                }) }}
+              </div>-->
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ item.legalAidBillingType }}</h1>
             <!-- <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived | govukDate }}</p> -->
             <p class="govuk-body"><strong>Status: </strong>{% include "/_includes/status-checker.njk" %}</p>

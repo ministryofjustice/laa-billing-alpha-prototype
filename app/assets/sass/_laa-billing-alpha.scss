@@ -12,6 +12,7 @@ some maybe dupes of gov colours
 $colour-search-box-blue: #e0eef8;
 $colour-dashboard-box-grey: #B1B4B6;
 $colour-dashboard-box-shade-grey: #6F777B;
+$colour-section-background-blue: #f0f4f5;
 
 /*
 --------------------------------------------------------------------
@@ -54,6 +55,12 @@ If we use filters at the top of page vs. MOJ Filter a list component
 /* TOP FILTERS ENDS */
 
 
+/*
+--------------------------------------------------------------------
+MOJ ACTION BAR (USED ON SIDE AND TOP FILTERS
+--------------------------------------------------------------------
+*/  
+
 .moj-action-bar {
     font-size: 0; // Removes white space
   }
@@ -74,6 +81,8 @@ If we use filters at the top of page vs. MOJ Filter a list component
     } 
   
 
+/* MOJ ACTION BAR ENDS */    
+
 /*
 --------------------------------------------------------------------
 SEARCH PAGE
@@ -86,6 +95,8 @@ SEARCH PAGE
   padding: 30px;
 
 }
+
+/* SEARCH PAGE ENDS */
 
 /*
 --------------------------------------------------------------------
@@ -120,3 +131,25 @@ CASE LIST DASHBOARD CONCEPT
     }
   }
 }
+
+/* CASE LIST DASHBOARD ENDS */
+
+/*
+-------------------------------------------------------
+PROTOTYPE ENVIRONMENT STYLING
+Some basic styling to be used around the prototype only
+-------------------------------------------------------
+*/
+
+.heading-w-status {
+  padding-left: 15px;
+}
+
+code {
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 70%;
+}
+
+/* PROTOTYPE ENVIRONMENT STYLING */

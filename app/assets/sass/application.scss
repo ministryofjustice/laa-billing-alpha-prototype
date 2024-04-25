@@ -5,11 +5,19 @@
 
 // Add extra styles here
 
+// Set the MoJ image path for use with svgs
+$moj-images-path: 'https://design-patterns.service.justice.gov.uk/assets/images/';   
+
 // IMPORT SOME LAA BILLING SPECIFIC STYLES
 
-@import 'laa-billing-alpha-overrides.scss';
-@import 'laa-billing-alpha.scss';
+@import '_laa-billing-alpha-overrides.scss';
+@import '_laa-billing-alpha.scss';
+// OVERRIDE GOV WIDTHS
+@import '_width-overrides.scss';
 
 // For MoJ filters component
 @import '_filter.scss';
 @import '_action-bar.scss';
+
+// For MoJ button menu
+@import '_button-menu.scss';

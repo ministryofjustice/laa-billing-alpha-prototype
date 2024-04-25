@@ -15,7 +15,8 @@
         "certificateDateIssued": "20230920",
         "certificateDateDischarged": "20230822",
         "certificateScope": "Example scope",
-        "claimStatus": "Granted",
+        "claimStatus": "Granted",     
+        "assignedCaseworker": "Gerry Dixon",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
@@ -56,7 +57,8 @@
         "certificateDateIssued": "20231005",
         "certificateDateDischarged": "20231002",
         "certificateScope": "Example scope",
-        "claimStatus": "Granted",
+        "claimStatus": "Granted",     
+        "assignedCaseworker": "",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
@@ -102,7 +104,8 @@
         "certificateDateIssued": "20231107",
         "certificateDateDischarged": "20231017",
         "certificateScope": "Example scope",
-        "claimStatus": "Rejected",
+        "claimStatus": "Rejected",     
+        "assignedCaseworker": "Gerry Dixon",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
@@ -125,7 +128,8 @@
         "certificateDateIssued": "20231121",
         "certificateDateDischarged": "20231026",
         "certificateScope": "Example scope",
-        "claimStatus": "Part granted",
+        "claimStatus": "Part granted",     
+        "assignedCaseworker": "",
         "claimTags": [],
         "linkedApplications": [],
         "claims": []
@@ -146,7 +150,8 @@
         "certificateDateIssued": "20240214",
         "certificateDateDischarged": "20231108",
         "certificateScope": "Example scope",
-        "claimStatus": "Rejected",
+        "claimStatus": "Rejected",     
+        "assignedCaseworker": "",
         "claimTags": [
         ],
         "linkedApplications": [],
@@ -168,7 +173,8 @@
         "certificateDateIssued": "20240223",
         "certificateDateDischarged": "20231201",
         "certificateScope": "Example scope",
-        "claimStatus": "Part granted",
+        "claimStatus": "Further information requested",     
+        "assignedCaseworker": "",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
@@ -191,7 +197,8 @@
         "certificateDateIssued": "20240305",
         "certificateDateDischarged": "20231229",
         "certificateScope": "Example scope",
-        "claimStatus": "In progress",
+        "claimStatus": "In progress",     
+        "assignedCaseworker": "",
         "claimTags": [],
         "linkedApplications": [],
         "claims": []
@@ -212,7 +219,8 @@
         "certificateDateIssued": "20240308",
         "certificateDateDischarged": "20240115",
         "certificateScope": "Example scope",
-        "claimStatus": "Not assigned",
+        "claimStatus": "Not started",     
+        "assignedCaseworker": "Gerry Dixon",
         "claimTags": [],
         "linkedApplications": [],
         "claims": []
@@ -233,7 +241,8 @@
         "certificateDateIssued": "20240412",
         "certificateDateDischarged": "20240315",
         "certificateScope": "Example scope",
-        "claimStatus": "Not assigned",
+        "claimStatus": "Not assigned",     
+        "assignedCaseworker": "",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],

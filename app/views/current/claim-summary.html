@@ -66,13 +66,26 @@
                   {% include "/_includes/claim-summary-cards/civil/proceeding-type-details.njk" %}
                   {% include "/_includes/claim-summary-cards/civil/certificate-details.njk" %}
                   <h2 class="govuk-heading-m">Claim details</h2>
-                  {% include "/_includes/claim-summary-cards/civil/evidence-details.njk" %}
+                  <!-- ADD THESE IN ONCE I KNOW WHAT IS CLAIMED FOR CIVIL (AND ADD DATA TO JSON) -->
+                  {# {% include "/_includes/claim-summary-cards/crime/evidence-details.njk" %} #}
+                  {# {% include "/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %} #}
+                  <p class="govuk-body">Add claims details in here once I have a better understanding of civil claim examples</p>
             {% endif %}
           {% endfor %}
       {% endif %}   
 
   </div>
 </div>
+
+<script type="module">
+  new MOJFrontend.ButtonMenu({
+container: document.querySelector(".moj-button-menu"),
+mq: "(min-width: 200em)",
+buttonText: "Actions",
+menuClasses: "moj-button-menu__wrapper--right",
+});
+
+</script>
 
 {% endblock %}
 

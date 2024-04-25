@@ -1,4 +1,3 @@
-<div class="moj-scrollable-pane govuk-!-margin-top-6">
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">  
@@ -14,20 +13,22 @@
       </thead>
       <tbody class="govuk-table__body">  
         {% for item in claimList %}
-        <tr class="govuk-table__row">  
-          <td class="govuk-table__cell" data-sort-value="{{ item.claimRef }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.claimRef }}</a></td> 
-          <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}">{{ item.clientName }}</td>  
-          <td class="govuk-table__cell">{{ item.firmName }}</td>  
-          <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency}}</td>  
-          <td class="govuk-table__cell" data-sort-value="{{ item.claimStatus }}">{% include "/_includes/status-checker.njk" %}</td>  
-          <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
-        </tr>
+          {% if item.assignedCaseworker == 'Gerry Dixon' %}
+            <tr class="govuk-table__row">  
+              <td class="govuk-table__cell" data-sort-value="{{ item.claimRef }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.claimRef }}</a></td> 
+              <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}">{{ item.clientName }}</td>  
+              <td class="govuk-table__cell">{{ item.firmName }}</td>  
+              <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency}}</td>  
+              <td class="govuk-table__cell" data-sort-value="{{ item.claimStatus }}">{% include "/_includes/status-checker.njk" %}</td>  
+              <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
+            </tr>
+          {% endif %}
         {% endfor %}
         </tbody>
     </table>
-</div>
+
 <div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-full">
 

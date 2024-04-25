@@ -19,45 +19,112 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Current work</h2>
-    <h3 class="govuk-heading-s">Core screens</h3>
+    <h2 class="govuk-heading-l">Current work (v1)<span class="heading-w-status"><strong class="govuk-tag govuk-tag--yellow">IN DESIGN</strong></span></h2>
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link" href="current/my-claims-basic">My claims</a>
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h4>
+        <p class="govuk-body">Logged in as a crime caseworker with claims assigned</p>
+        {{ govukButton({
+          text: "Start crime caseworker journey",
+          href: "current/my-claims-basic?logged-in-user=Crime caseworker"
+        }) }}
       </li>
       <li>
-        <a class="govuk-link" href="current/all-claims-basic">All claims</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/claim-search">Search</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/claim-summary">View of a claim</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/claim-related-claims">Related claims</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/claim-claims-history">Claims history</a>
-      </li>
-
-      <li>
-        <a class="govuk-link" href="current/claim-messages">Messages</a>
-      </li>
-
-    </ul>
-    <h3 class="govuk-heading-s">Additional concepts</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="current/all-claims-with-side-filters">All claims with side filters</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/all-claims-with-top-filters">All claims with top filters and column selector</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="current/my-claims-with-dashboard">My claims with dashboard</a>
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h4>
+        <p class="govuk-body">Logged in as a civil caseworker with claims assigned</p>
+        {{ govukButton({
+          text: "Start civil caseworker journey",
+          href: "current/my-claims-basic?logged-in-user=Civil caseworker",
+          classes: "govuk-!-margin-bottom-4"
+        }) }}
       </li>
     </ul>
+
+  
+    <!-- ADDITIONAL PAGE DESIGNS SECTION -->
+    {% set otherHtml %}
+      <h3 class="govuk-heading-m">Core screens</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="current/my-claims-basic">My claims</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/all-claims-basic">All claims</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/claim-search">Search</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/claim-summary">View of a claim</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/claim-related-claims">Related claims</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/claim-claims-history">Claims history</a>
+        </li>
+
+        <li>
+          <a class="govuk-link" href="current/claim-messages">Messages</a>
+        </li>
+
+      </ul>
+      <h3 class="govuk-heading-m">Additional concepts</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="current/all-claims-with-side-filters">All claims with side filters</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/my-claims-with-top-filters">My claims with top filters and column selector</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/my-claims-with-dashboard">My claims with dashboard</a>
+        </li>
+      </ul>
+    {% endset %}
+
+    {{ govukDetails({
+      summaryText: "Core screens and concepts",
+      html: otherHtml,
+      classes: ""
+    }) }}
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related links
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://miro.com/app/board/uXjVNsSnF-o=/?share_link_id=200658712449" target="_blank">
+              Prototype miro board (opens in new window)
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/spreadsheets/d/1dODsPWmJXcwjUHmnUjPKMZJOagjAfuBCll58fW7ZkDY/edit?usp=drive_link" target="_blank">
+              Billing types Google doc (opens in new window)
+            </a>
+          </li>  
+        </ul>
+        <h3 class="govuk-heading-s" id="subsection-title">
+          Templates and components
+        </h3>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="/templates">Templates</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/components">Components</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="variables">Variables and references</a>
+          </li>
+      </nav>
+    </aside>
   </div>
 
 

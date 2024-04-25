@@ -21,6 +21,8 @@
 
 {% block content %}
 
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% if loggedInUser == 'Crime caseworker'%}
@@ -36,6 +38,7 @@
             {% include "/_includes/claim-masthead.njk" %}
             {% include "/_includes/claim-sub-navigation.njk" %}
             <h2 class="govuk-heading-m">Messages</h2>
+            
             <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
 
             <div id="messages" class="moj-messages-container">
@@ -122,13 +125,6 @@
 
   </div>
 </div>
-
-
-
-
-
-      
-
 
 
 {% endblock %}

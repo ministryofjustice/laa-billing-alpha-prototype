@@ -1,4 +1,3 @@
-<div class="moj-scrollable-pane govuk-!-margin-top-6">
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">  
@@ -23,16 +22,13 @@
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency }}</td>  
           <td class="govuk-table__cell" data-sort-value="{{ item.claimStatus }}">{% include "/_includes/status-checker.njk" %}</td>   
-          <td class="govuk-table__cell">{{ govukButton({
-            text: "Assign",
-            classes: "govuk-button--secondary"
-          }) }}</td>  
+          <td class="govuk-table__cell"><a href="#">Assign</a></td>
           <!-- <td class="govuk-table__cell">{{ item.legalAidType }}</td> -->
         </tr>
         {% endfor %}
         </tbody>
     </table>
-</div>
+
 <div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-full">
 

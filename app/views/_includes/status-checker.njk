@@ -19,4 +19,12 @@
     <strong class="govuk-tag govuk-tag--grey">
         Not assigned
     </strong>
+{% elseif item.claimStatus == 'Further information requested' or item.relatedClaimStatus == 'Further information requested'%}
+    <strong class="govuk-tag govuk-tag--yellow">
+            Further information requested
+    </strong>
+{% elseif item.claimStatus == 'Not started' or item.relatedClaimStatus == 'Not started'%}
+    <strong class="govuk-tag govuk-tag--grey">
+            Not started
+    </strong>
 {% endif %}

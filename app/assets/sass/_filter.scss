@@ -58,7 +58,7 @@
       }
   
       &::after {
-        background-image: url(../images/icon-toggle-plus-minus.svg);
+        background-image: url(#{$moj-images-path}icon-toggle-plus-minus.svg);
         background-position: 0 0;
         content: "";
         display: block;
@@ -117,7 +117,7 @@
     }
   
     &::before {
-      background-image: url(../images/icon-close-cross-black.svg);
+      background-image: url(#{$moj-images-path}icon-close-cross-black.svg);
       content: "";
       display: inline-block;
       height: 14px;
@@ -209,7 +209,7 @@
     }
   
     &:after {
-      background-image: url(../images/icon-tag-remove-cross.svg);
+      background-image: url(#{$moj-images-path}icon-tag-remove-cross.svg);
       content: "";
       display: inline-block;
       font-weight: bold;
@@ -220,7 +220,7 @@
     }
   
     &:hover:after {
-      background-image: url(../images/icon-tag-remove-cross-white.svg);
+      background-image: url(#{$moj-images-path}icon-tag-remove-cross-white.svg);
     }
   
   }

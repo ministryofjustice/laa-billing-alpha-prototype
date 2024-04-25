@@ -1,0 +1,70 @@
+// Changes overall gov container to be 1220px instead of 960px
+
+.govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+    max-width: 1220px;
+    margin: 0 15px;
+}
+
+@media (min-width: 40.0625em) {
+.govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+    margin: 0 30px;
+    }
+}
+@media (min-width: 1020px) {
+    .govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+        margin: 0 30px;
+        }
+    }
+@media (min-width: 1280px) {
+    .govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+        margin: 0 auto;
+        }
+    }
+
+// Can also be used to set container to wider width than standard
+
+.moj-width-container {
+    /*max-width: 1170px; */
+    max-width: 1220px;
+    margin-right: 15px;
+    margin-left: 15px;
+    }
+    
+    @media (min-width: 40.0625em) {
+    .moj-width-container {
+        margin: 0 30px;
+    }
+    }
+    
+    @media (min-width: 1230px) {
+    .moj-width-container {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    }
+
+// All the styling required to have full width background colour in container. E.g. for full-width masthead
+// Note that page needs the containerClass set: {% set containerClasses = "moj-special-width-container" %} on pages
+
+.moj-special-width-container {
+    max-width: initial !important;
+  }
+  
+  .moj-special-width-container {
+    margin: 0 !important;
+  }
+
+
+.section-shading {
+    padding: 30px 0;
+    background-color: $colour-section-background-blue;
+    }
+
+.homepage-content {
+padding: 30px 0;
+background: #f0f4f5;
+}
+
+.homepage-content {
+margin-bottom: -50px;
+}

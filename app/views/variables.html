@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Variables – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Variables and references</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">Just a guide to help me keep track of commonly used variables and data constants within this prototype.</p>
+
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">Prototype variables list</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">What?</th>
+          <th scope="col" class="govuk-table__header">Variable name(s)</th>
+          <th scope="col" class="govuk-table__header">Default</th>
+          <th scope="col" class="govuk-table__header">Accepted values</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Logged in user</td>
+          <td class="govuk-table__cell"><code class="code">loggedInUser</code> / <code class="code">data['logged-in-user']</code></td>
+          <td class="govuk-table__cell">Crime caseworker</td>
+          <td class="govuk-table__cell">Crime caseworker, Civil caseworker</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Default crime claim reference</td>
+          <td class="govuk-table__cell"><code class="code">defaultCrimeCaseNo</code></td>
+          <td class="govuk-table__cell">1000001CR</td>
+          <td class="govuk-table__cell">1000001CR - 1000010CR</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Default civil claim reference</td>
+          <td class="govuk-table__cell"><code class="code">defaultCivilCaseNo</code></td>
+          <td class="govuk-table__cell">1000010CV</td>
+          <td class="govuk-table__cell">1000010CV - 1000019CV</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Claim reference</td>
+          <td class="govuk-table__cell"><code class="code">claimRef</code> / <code class="code">data['claim-ref']</code></td>
+          <td class="govuk-table__cell">As above</td>
+          <td class="govuk-table__cell">As above</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Top navigation array</td>
+          <td class="govuk-table__cell"><code class="code">activeTab</code></td>
+          <td class="govuk-table__cell">None (3 items expected)</td>
+          <td class="govuk-table__cell">[True, false, false]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sub navigation array</td>
+          <td class="govuk-table__cell"><code class="code">activeSubNav</code></td>
+          <td class="govuk-table__cell">None (5 items expected)</td>
+          <td class="govuk-table__cell">[false, false, false, true, false]</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">JSON and references</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">What?</th>
+          <th scope="col" class="govuk-table__header">Filename</th>
+          <th scope="col" class="govuk-table__header">Example reference</th>
+          <th scope="col" class="govuk-table__header">Used for</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sample crime data</td>
+          <td class="govuk-table__cell">crime-claim-sample-data.json</td>
+          <td class="govuk-table__cell"><code class="code">set varName = data.sampleDataCrime</code></td>
+          <td class="govuk-table__cell">caselists, view of claim, related claims, claim history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sample civil data</td>
+          <td class="govuk-table__cell">civil-claim-sample-data.json</td>
+          <td class="govuk-table__cell"><code class="code">set varName = data.sampleDataCivil</code></td>
+          <td class="govuk-table__cell">caselists, view of claim, related claims, claim history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Claim statuses</td>
+          <td class="govuk-table__cell">session-data-defaults.json</td>
+          <td class="govuk-table__cell"><code class="code">for status in data['statuses']</code></td>
+          <td class="govuk-table__cell">caselists, view of claim, related claims, claim history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sample caseworkers</td>
+          <td class="govuk-table__cell">session-data-defaults.json</td>
+          <td class="govuk-table__cell"><code class="code">for status in data['caseworkers']</code></td>
+          <td class="govuk-table__cell">caselists, view of claim, related claims, claim history</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}
+

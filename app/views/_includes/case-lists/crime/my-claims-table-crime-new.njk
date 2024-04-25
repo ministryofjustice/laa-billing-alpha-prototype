@@ -1,3 +1,4 @@
+{% set columnSelected = data['columnchoice'] %}
 <div class="moj-scrollable-pane govuk-!-margin-top-6">
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
@@ -6,7 +7,10 @@
           <th scope="col" class="govuk-table__header" aria-sort="ascending">Client</th>  
           <th scope="col" class="govuk-table__header" aria-sort="none">Firm</th>  
           <th scope="col" class="govuk-table__header" aria-sort="none">Claim type</th>  
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date submitted / received</th>  
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date submitted / received</th>
+          {% if columnSelected == 'evidence' %}  
+            <th scope="col" class="govuk-table__header" aria-sort="none">Evidence</th>
+          {% endif %}
           <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Total</th>
         </tr>
       </thead>
@@ -15,10 +19,13 @@
         <tr class="govuk-table__row">  
           <td class="govuk-table__cell" data-sort-value="{{ item.claimRef }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.claimRef }}</a></td> 
           <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}">{{ item.clientName }}</td>  
-          <td class="govuk-table__cell">{{ item.firmName }}</td>  
+          <td class="govuk-table__cell">{{ item.firmName }}</td>
           <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency }}</td>  
+          {% if columnSelected == 'evidence' %}  
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.evidenceSubmitted }}</td>
+          {% endif %}
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency }}</td>
         </tr>
         {% endfor %}
         </tbody>
