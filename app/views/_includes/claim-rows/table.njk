@@ -1,0 +1,76 @@
+{% set claimsList = data.sampleClaims %}
+{% set groupedDateList = claimsList | groupby('claimDate') | dictsort %}
+
+<!-- show some filters -->
+<form action="claim-adjustment-via-table" method="post">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="dateToShow">
+    Date (would not be a dropdown in reality)
+  </label>
+  <select class="govuk-select" id="date-to-show" name="date-to-show">
+  {% for uniqueDates, allDates in groupedDateList %}
+  <option value="{{ uniqueDates }}">{{ uniqueDates }}</option>
+  {% endfor %}
+  </select>
+</div>  
+
+{{ govukCheckboxes({
+  name: "types-of-claims-filter",
+  classes: "govuk-checkboxes--small moj-inline-checkbox",
+  fieldset: {
+    legend: {
+      text: "Types of claims",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+
+  },
+  items: [
+    {
+      value: "work-item",
+      text: "Work item"
+    },
+    {
+      value: "letters-and-calls",
+      text: "Letters and calls"
+    },
+    {
+      value: "disbursements",
+      text: "Disbursements"
+    },
+    {
+      value: "expenses",
+      text: "Expenses"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Filter"
+}) }}
+</form>
+
+<p class="govuk-body">Filters: {{ data['date-to-show']}}</p>
+<p class="govuk-body">Total items: {{ claimsList.length }}</p>
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="none">Date</th> 
+      <th scope="col" class="govuk-table__header" aria-sort="none">Type of claim</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Claimed</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in claimsList %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ item.claimDate | govukDate }}</td>  
+        <td class="govuk-table__cell">{{ item.claimType  }}</td>
+        <td class="govuk-table__cell">{{ item.time_claimed }} {% if item.time_claimed %} / {% endif %}{{ item.value | currency }} </td>
+        <td class="govuk-table__cell">Not assessed</td>
+        <td class="govuk-table__cell claim-row"><a href="#">Approve</a><a href="#">Part approve</a><a href="#">Reject</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>

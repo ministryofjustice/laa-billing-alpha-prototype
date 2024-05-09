@@ -3,3 +3,13 @@
 // Do not use this code in a production environment
 
 
+/* ==========================================================================
+   # MOJ MULTI-SELECT OVERRIDE TO CENTER IN ROw
+   ========================================================================== */
+   .moj-multi-select__checkbox {
+    display: inline-flex;
+    padding: 0px;
+    margin-top: -10px;
+    vertical-align: top;
+  }
+

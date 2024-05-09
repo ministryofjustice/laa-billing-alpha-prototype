@@ -16,13 +16,13 @@
 
       <div class="moj-action-bar">
         <div class="moj-action-bar__filter">
-          <button onclick="toggleElement('filters')" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button onclick="toggleElement2('filters')" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Show/hide filters
           </button>
         </div>
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
-            <button onclick="toggleElement('columns')" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <button onclick="toggleElement2('columns')" class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Choose columns
           </button>
           </div>
@@ -51,12 +51,12 @@
 </div>
 
 <script>
-  function toggleElement(elementId) {
+  function toggleElement2(elementId) {
     var element = document.getElementById(elementId);
-    if (element.style.display === "none") {
-      element.style.display = "block"; // Show the element
+    if (element.style.display === "block") {
+      element.style.display = "none"; // Show the element
     } else {
-      element.style.display = "none"; // Hide the element
+      element.style.display = "block"; // Hide the element
     }
   }
   </script>

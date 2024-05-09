@@ -1,13 +1,13 @@
 <!-- Check status and display colour coded tag based on status -->
 {% if item.tagType == 'Previous payments'%}
-    <span class="moj-badge moj-badge--purple">Previous payments</span>
+    <span class="moj-badge moj-badge--purple moj-badge--large">Previous payments</span>
 {% elseif item.tagType == 'Redetermination/Appeal'%}
-    <span class="moj-badge moj-badge--green">Redetermination / Appeal</span>
+    <span class="moj-badge moj-badge--green moj-badge--large">Redetermination / Appeal</span>
 {% elseif item.tagType == 'Counsel paid' %}
-    <span class="moj-badge moj-badge--blue">Counsel paid</span>    
+    <span class="moj-badge moj-badge--blue moj-badge--large">Counsel paid</span>    
 {% elseif item.tagType == 'Counsel unpaid' %}
-    <span class="moj-badge moj-badge--blue">Counsel unpaid</span>    
+    <span class="moj-badge moj-badge--blue moj-badge--large">Counsel unpaid</span>    
 {% elseif item.tagType == 'Certificate discharged'%}
-    <span class="moj-badge moj-badge--black">Certificate discharged</span>
+    <span class="moj-badge moj-badge--black moj-badge--large">Certificate discharged</span>
 {% endif %}
 

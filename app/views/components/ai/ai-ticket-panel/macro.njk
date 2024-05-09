@@ -1,0 +1,6 @@
+{# Pass values into macro (params): heading, body, linktext, href #}
+{# body can be HTML, use | safe when passing #} 
+{% macro appAiTicketPanel(params) %}
+    {%- include "./template.njk" %}
+{% endmacro %}
+

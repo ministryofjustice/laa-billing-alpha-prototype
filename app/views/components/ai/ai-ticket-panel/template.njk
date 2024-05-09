@@ -1,0 +1,5 @@
+<div class="ai-ticket-panel">
+    {% if params.title %}<h2 class="govuk-heading-m">{{ params.title }}</h2>{% endif %}
+    <p class="govuk-body govuk-!-margin-0 govuk-!-padding-0">{{ params.body }}</p>
+    {% if params.href %}<p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="{{ params.href }}">{{ params.linktext }}</a></p>{% endif %}
+</div>

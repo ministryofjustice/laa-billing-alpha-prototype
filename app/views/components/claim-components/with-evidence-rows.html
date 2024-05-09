@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- tabs: basic rows, fixed fees, with evidence, with AI -->
+{% set activeSubNav = [false, false, true, false] %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Claim components</h1>
+    <p class="govuk-body">Various different types of claim adustment rows when the user is performing a claim assessment.</p>
+
+    {% include "/_includes/claim-adjustment-components-sub-navigation.njk" %}
+
+    <h2 class="govuk-heading-m">With evidence rows</h2>
+
+  </div>
+</div>
+
+{% endblock %}

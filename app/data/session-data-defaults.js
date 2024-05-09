@@ -1,11 +1,13 @@
 const sampleDataCrime = require('./crime-claim-sample-data.json');
 const sampleDataCivil = require('./civil-claim-sample-data.json');
+const sampleClaims = require('./sample-claims.json');
 
 module.exports = {
 
   // Insert values here
   sampleDataCrime,
   sampleDataCivil,
+  sampleClaims,
   statuses: [
     { value: "select", text: "Please select" },
     { value: "granted", text: "Granted" },

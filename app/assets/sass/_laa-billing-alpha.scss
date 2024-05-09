@@ -13,6 +13,28 @@ $colour-search-box-blue: #e0eef8;
 $colour-dashboard-box-grey: #B1B4B6;
 $colour-dashboard-box-shade-grey: #6F777B;
 $colour-section-background-blue: #f0f4f5;
+$colour-ai-panel-background: #CCE2D8;
+$colour-ai-panel-border: #005A30;
+
+/*
+---------------------------------------------------
+PROTOYPE WIDE STYLING
+Apply styles to elements that appear prototype wide
+---------------------------------------------------
+*/
+
+/* Make checkboxes inline */
+
+.moj-inline-checkbox {
+  display: flex;
+  align-items: flex-start;
+  row-gap: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+/* PROTOYPE WIDE STYLING ENDS */
+
 
 /*
 --------------------------------------------------------------------
@@ -32,7 +54,7 @@ If we use filters at the top of page vs. MOJ Filter a list component
 
 .form-cancel {
   line-height:2.1;
-  margin-left:.625em;
+  margin-left:10px;
   font-size:19px
 }
 
@@ -152,4 +174,67 @@ code {
   font-size: 70%;
 }
 
-/* PROTOTYPE ENVIRONMENT STYLING */
+/* PROTOTYPE ENVIRONMENT STYLING ENDS */
+
+/*
+--------------------------------------------------------
+CLAIM ASSESSMENT
+Styling for all the claim assessment/adjustment elements
+--------------------------------------------------------
+*/
+
+/* For claim row component concepts */
+
+.claim-row {
+
+  a { /* Need to add smaller viewport styling */
+    padding-right: 20px;
+  }
+
+  &__type {
+    width: 60%;
+  }
+
+  &__claimed {
+    width: 10%;
+  }
+
+  &__actions {
+    width: 30%;
+  }
+
+  // Hacky way to remove border from table in details component
+  &__no-border {
+    border: none !important;
+    padding: 0px;
+    margin: 0px;
+  }
+
+}
+
+/* For claim row timeline concept */
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+}
+
+/* Override the gov table alignment styles (which are top) to have claim row in middle */
+.caseline-table__header,
+.caseline-table__cell {
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid $colour-dashboard-box-grey;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* For claim row AI ticket panel concept */
+
+.ai-ticket-panel {
+  background-color: $colour-ai-panel-background;
+  border-left: 5px solid $colour-ai-panel-border;
+  padding: 20px 20px 20px 20px;
+}
+
+
+/* CLAIM ASSESSMENT STYLING ENDS */

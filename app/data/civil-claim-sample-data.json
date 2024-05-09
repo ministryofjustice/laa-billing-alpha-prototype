@@ -198,7 +198,7 @@
         "certificateDateDischarged": "20231229",
         "certificateScope": "Example scope",
         "claimStatus": "In progress",     
-        "assignedCaseworker": "",
+        "assignedCaseworker": "Gerry Dixon",
         "claimTags": [],
         "linkedApplications": [],
         "claims": []

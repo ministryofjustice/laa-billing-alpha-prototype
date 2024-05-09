@@ -59,6 +59,6 @@ router.post('/addcolumn', function(request, response) {
 
   var checkbox = request.session.data['columnchoice']
 
-  response.redirect("current/my-claims-with-top-filters")
+  response.redirect("concept-playground/my-claims-with-top-filters")
 
 })

@@ -1,0 +1,150 @@
+[
+    {
+      "claimDate": "2024-04-14",
+      "claimType": "work item",
+      "details": "Hourly rates item",
+      "time_claimed": "02:30",
+      "value": 150
+    },
+    {
+      "claimDate": "2024-04-14",
+      "claimType": "letters and calls",
+      "details": "Letters",
+      "time_claimed": null,
+      "value": 75
+    },
+    {
+      "claimDate": "2024-04-14",
+      "claimType": "expenses",
+      "details": "Travel to court",
+      "time_claimed": null,
+      "value": 50
+    },
+    {
+      "claimDate": "2024-04-14",
+      "claimType": "disbursements",
+      "details": "Legal fees",
+      "time_claimed": null,
+      "value": 500
+    },
+    {
+      "claimDate": "2024-04-16",
+      "claimType": "work item",
+      "details": "Hourly rates item",
+      "time_claimed": "03:00",
+      "value": 180
+    },
+    {
+      "claimDate": "2024-04-16",
+      "claimType": "letters and calls",
+      "details": "Calls",
+      "time_claimed": null,
+      "value": 30
+    },
+    {
+      "claimDate": "2024-04-16",
+      "claimType": "work item",
+      "details": "Meeting with team",
+      "time_claimed": "01:30",
+      "value": 90
+    },
+    {
+      "claimDate": "2024-04-16",
+      "claimType": "work item",
+      "details": "Legal research",
+      "time_claimed": "02:00",
+      "value": 120
+    },
+    {
+      "claimDate": "2024-04-16",
+      "claimType": "expenses",
+      "details": "Travel to court",
+      "time_claimed": null,
+      "value": 200
+    },
+    {
+      "claimDate": "2024-04-27",
+      "claimType": "disbursements",
+      "details": "Child psychologist",
+      "time_claimed": null,
+      "value": 300
+    },
+    {
+      "claimDate": "2024-04-27",
+      "claimType": "letters and calls",
+      "details": "Calls",
+      "time_claimed": null,
+      "value": 135
+    },
+    {
+      "claimDate": "2024-04-27",
+      "claimType": "work item",
+      "details": "Legal drafting",
+      "time_claimed": "02:45",
+      "value": 165
+    },
+    {
+      "claimDate": "2024-04-28",
+      "claimType": "work item",
+      "details": "Hourly rates item",
+      "time_claimed": "01:45",
+      "value": 105
+    },
+    {
+      "claimDate": "2024-04-28",
+      "claimType": "expenses",
+      "details": "Hotel",
+      "time_claimed": null,
+      "value": 100
+    },
+    {
+      "claimDate": "2024-04-28",
+      "claimType": "disbursements",
+      "details": "Expert witness fees",
+      "time_claimed": "03:45",
+      "value": 700
+    },
+    {
+      "claimDate": "2024-03-12",
+      "claimType": "work item",
+      "details": "Legal consultation",
+      "time_claimed": "01:30",
+      "value": 90
+    },
+    {
+      "claimDate": "2024-03-12",
+      "claimType": "letters and calls",
+      "details": "Letters",
+      "time_claimed": null,
+      "value": 60
+    },
+    {
+      "claimDate": "2024-03-11",
+      "claimType": "work item",
+      "details": "Preparation for trial",
+      "time_claimed": "03:30",
+      "value": 210
+    },
+    {
+      "claimDate": "2024-03-09",
+      "claimType": "expenses",
+      "details": "Car park",
+      "time_claimed": null,
+      "value": 800
+    },
+    {
+      "claimDate": "2024-03-05",
+      "claimType": "disbursements",
+      "details": "Expert witness travel",
+      "time_claimed": null,
+      "value": 400
+    },
+    {
+      "claimDate": "2024-03-05",
+      "claimType": "work item",
+      "details": "Legal analysis",
+      "time_claimed": "02:15",
+      "value": 135
+    }
+  ]
+  

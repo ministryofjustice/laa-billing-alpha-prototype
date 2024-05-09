@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'All items',
+        href: '#1',
+        active: true
+      }, {
+        text: 'Work items',
+        href: '#2'
+      }, {
+        text: 'Disbursements',
+        href: '#3'
+      }, {
+        text: 'Letters and calls',
+        href: '#4'
+      }, {
+        text: 'Expenses',
+        href: '#5'
+      }]
+    }) }} 
+    {% include "/_includes/claim-rows/all-tab.njk"%} 
+  </div>
+</div>
+
+{% endblock %}
