@@ -1,0 +1,71 @@
+{% set columnSelected = data['columnchoice'] %}
+<div class="moj-scrollable-pane govuk-!-margin-top-6">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Ref no</th> 
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Client</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Firm</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Claim type</th>  
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date submitted / received</th>
+          {% if columnSelected == 'evidence' %}  
+            <th scope="col" class="govuk-table__header" aria-sort="none">Evidence</th>
+          {% endif %}
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
+        {% for item in claimList %}
+        <tr class="govuk-table__row">  
+          <td class="govuk-table__cell" data-sort-value="{{ item.claimRef }}"><a href="claim-summary?claim-ref={{ item.claimRef }}" class="govuk-link">{{ item.claimRef }}</a></td> 
+          <td class="govuk-table__cell" data-sort-value="{{ item.clientName }}">{{ item.clientName }}</td>  
+          <td class="govuk-table__cell">{{ item.firmName }}</td>
+          <td class="govuk-table__cell">{{ item.claimMatterType }}</td>  
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.dateReceived }}">{{ item.dateReceived | govukDate }}</td>  
+          {% if columnSelected == 'evidence' %}  
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.evidenceSubmitted }}</td>
+          {% endif %}
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.claimTotal }}">{{ item.claimTotal | currency }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full">
+
+  {{ mojPagination({
+    items: [{
+      text: '1',
+      href: '/page=1',
+      selected: true
+    }, {
+      text: '2',
+      href: '#'
+    }, {
+      text: '3',
+      href: '#'
+    }, {
+      type: 'dots'
+    }, {
+      text: '5',
+      href: '#'
+    }],
+    results: {
+      count: 55,
+      from: 1,
+      to: 10,
+      text: 'claims'
+    },
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+    next: {
+      text: 'Next',
+      href: ''
+    }
+  }) }}
+
+  </div>
+</div>

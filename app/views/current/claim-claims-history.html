@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/_includes/phase-banner.html"%}
+{% include "/_includes/phase-banner.njk"%}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -33,11 +33,11 @@
       {% for item in claimList %}
         {% if item.claimRef == claimRef %}
         {% set foundClaim = true %}
-            {% include "/_includes/claim-masthead.njk" %}
-            {% include "/_includes/claim-sub-navigation.njk" %}
+            {% include "current/_includes/claim-masthead.njk" %}
+            {% include "current/_includes/claim-sub-navigation.njk" %}
             <h2 class="govuk-heading-m">Claims history</h2>
             <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
-            {% include "/_includes/case-lists/crime/history-table-crime.njk" %}
+            {% include "current/_includes/case-lists/crime/history-table-crime.njk" %}
         {% endif %}
       {% endfor %}
     {% else %}
@@ -50,8 +50,8 @@
       {% for item in claimListCivil %}
         {% if item.claimRef == claimRef %}
         {% set foundClaim = true %}
-            {% include "/_includes/claim-masthead.njk" %}
-            {% include "/_includes/claim-sub-navigation.njk" %}
+            {% include "current/_includes/claim-masthead.njk" %}
+            {% include "current/_includes/claim-sub-navigation.njk" %}
             <h2 class="govuk-heading-m">Claims history</h2>
             <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
         {% endif %}

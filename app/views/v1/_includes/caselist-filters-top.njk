@@ -1,0 +1,115 @@
+<form class="form" action="#" method="post">
+  <div class="moj-filter__options search govuk-!-padding-bottom-0">
+
+    {{ govukInput({
+      label: {
+        text: "Keywords",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      hint: {
+        text: "Reference number, provider account number, client name or firm"
+      },
+      id: "event-name",
+      name: "eventName",
+      classes: "govuk-!-width-two-thirds"
+    }) }}
+
+    <!-- DATE RECEIVED FIELDSET -->
+    {% call govukFieldset({
+      classes: "inline-inputs",
+      legend: {
+        text: "Received date",
+        classes: "govuk-fieldset__legend--m",
+        isPageHeading: true
+      }
+    }) %}
+
+    {{ govukDateInput({
+      id: "date-from",
+      namePrefix: "date-from",
+      fieldset: {
+        legend: {
+          text: "Date from",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      }
+    }) }}  
+
+    {{ govukDateInput({
+      id: "date-to",
+      namePrefix: "date-to",
+      fieldset: {
+        legend: {
+          text: "Date to",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      }
+    }) }}  
+    {% endcall %}
+
+
+    <!-- CLAIM TOTAL FIELDSET -->
+    {% call govukFieldset({
+      classes: "inline-inputs",
+      legend: {
+        text: "Claim total",
+        classes: "govuk-fieldset__legend--m",
+        isPageHeading: true
+      }
+    }) %}
+
+    {{ govukInput({
+      label: {
+        text: "Minimum value",
+        classes: "govuk-!-font-weight-bold"
+      },
+      classes: "govuk-input--width-10",
+      id: "total-from",
+      name: "total-from"
+    }) }}
+
+
+    {{ govukInput({
+      label: {
+        text: "Maximum value",
+        classes: "govuk-!-font-weight-bold"
+      },
+      classes: "govuk-input--width-10",
+      id: "total-to",
+      name: "total-to"
+    }) }}
+    {% endcall %}
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-weight-bold" for="Status">
+        Status
+      </label>
+      <select class="govuk-select" id="status" name="status">
+      {% for status in data['statuses'] %}
+      <option value="{{ status.value }}">{{ status.text }}</option>
+      {% endfor %}
+      </select>
+    </div>
+    <div class="govuk-form-group govuk-!-margin-bottom-6">
+      <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+        Caseworker
+      </label>
+      <select class="govuk-select" id="caseworker" name="caseworker">
+          {% for caseworker in data['caseworkers'] %}
+          <option value="{{ caseworker.value }}">{{ caseworker.text }}</option>
+          {% endfor %}
+          </select>
+      </select>
+    </div>
+    
+    {{ govukButton({
+      text: "Apply filters"
+    }) }}
+    <a href="#" class="govuk-link form-cancel">Clear</a>
+    
+  </div>  
+  </form>

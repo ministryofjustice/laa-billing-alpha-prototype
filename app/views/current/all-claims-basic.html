@@ -19,7 +19,7 @@
     <h1 class="govuk-heading-l">All Claims</h1>
     <!-- INCLUDE FILTERS -->
     {% set filterHtml %}
-    {% include "/_includes/caselist-filters-top.njk"%}  
+    {% include "current/_includes/caselist-filters-top.njk"%}  
     {% endset %}
     {{ govukDetails({
       summaryText: "Filter claims",
@@ -31,12 +31,12 @@
       <!-- call JSON files -->
       {% set claimList = data.sampleDataCrime %}  
       <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
-      {% include "/_includes/case-lists/crime/all-claims-table-crime.njk"%}
+      {% include "current/_includes/case-lists/crime/all-claims-table-crime.njk"%}
     {% else %}
       <!-- call JSON files -->
       {% set claimList = data.sampleDataCivil %}  
       <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
-      {% include "/_includes/case-lists/civil/all-claims-table-civil.njk"%}
+      {% include "current/_includes/case-lists/civil/all-claims-table-civil.njk"%}
    {% endif %}
     </div>
 </div>

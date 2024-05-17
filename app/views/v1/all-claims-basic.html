@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  All claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- tabs: my claims, all claims, search -->
+{% set activeTab = [false, true, false] %}
+
+<!-- call JSON file -->
+{% set claimList = data.sampleDataCrime %}
+
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">All Claims</h1>
+    <!-- INCLUDE FILTERS -->
+    {% set filterHtml %}
+    {% include "/v1/_includes/caselist-filters-top.njk"%}  
+    {% endset %}
+    {{ govukDetails({
+      summaryText: "Filter claims",
+      html: filterHtml
+    }) }}
+
+      <!-- TABLE IS HERE -->
+    {% if loggedInUser == 'Crime caseworker'%}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCrime %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% include "v1/_includes/case-lists/crime/all-claims-table-crime.njk"%}
+    {% else %}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCivil %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% include "v1/_includes/case-lists/civil/all-claims-table-civil.njk"%}
+   {% endif %}
+    </div>
+</div>
+  
+
+{% endblock %}

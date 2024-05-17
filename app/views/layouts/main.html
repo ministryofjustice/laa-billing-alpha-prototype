@@ -10,7 +10,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 <header class="govuk-header" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
-      <a href="../index" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
         <svg
           focusable="false"
           role="img"
@@ -27,7 +27,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </div>
 
     <div class="govuk-header__content">
-      <a href="../index" class="govuk-header__link govuk-header__service-name">
+      <a href="/" class="govuk-header__link govuk-header__service-name">
         {{ serviceName }}
       </a>
       <nav aria-label="Menu" class="govuk-header__navigation">
@@ -47,7 +47,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 
 {% block beforeContent %}
-  {% include "/_includes/phase-banner.html"%}
+  {% include "/_includes/phase-banner.njk"%}
 
   {% set activeTab = data['activeTab'] %}
 

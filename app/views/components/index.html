@@ -15,15 +15,20 @@
     <h2 class="govuk-heading-m">Claim components</h2>
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link" href="/components/claim-components/basic-rows">Claim components</a>
+        <a class="govuk-link" href="/concept-playground/claim-components/basic-rows">Claim components</a>
       </li>
     </ul>
-    <h2 class="govuk-heading-m">AI components</h2>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="/components/ai/ai-components">AI components</a>
-      </li>
-    </ul>
+    <h2 class="govuk-heading-m">General components</h2>
+      <!-- Example with HTML for body -->
+      {% set panelHtml%}
+      AI checked. <a class="govuk-link" href="#">Review this row</a>
+      {% endset %}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Ticket panel no title, link in body</h2>
+      {{ appAiTicketPanel({
+        body: panelHtml | safe
+        })
+      }}
     
   </div>
 </div>

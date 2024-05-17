@@ -1,0 +1,99 @@
+{% set myRowHtml %}
+        <table class="govuk-table">
+            <thead class="govuk-table__head ">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header claim-row__no-border">Details</th>
+                  <th scope="col" class="govuk-table__header claim-row__no-border">Adjust</th>
+                </tr>
+              </thead>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header claim-row__no-border govuk-!-font-weight-regular">London to Worcester</th>
+                <td class="govuk-table__cell claim-row__no-border">
+                    {{ govukInput({
+                    id: "cost",
+                    name: "cost",
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-5",
+                    spellcheck: false
+                  }) }}
+                  {{ govukTextarea({
+                    name: "addNote",
+                    id: "add-note",
+                    label: {
+                      text: "Add a note (optional)"
+                    },
+                    classes: ""
+                  }) }}
+                  {{ govukButton({
+                    text: "Adjust"
+                  }) }}
+                </td>
+              </tr>
+        </table>
+{% endset %}
+
+
+<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header caseline-table__header" scope="col" id="select-all"></th>
+        <th class="govuk-table__header caseline-table__header claim-row__type" scope="col">Type of claim</th>
+        <th class="govuk-table__header caseline-table__header claim-row__claimed" scope="col">Claimed</th>
+        <th class="govuk-table__header caseline-table__header claim-row__actions" scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="row1">
+              <label class="govuk-label govuk-checkboxes__label" for="row1">
+                <span class="govuk-visually-hidden">Select (row 1)</span>
+              </label>
+            </div>
+
+        </td>
+        <td class="govuk-table__cell caseline-table__cell">{{ govukDetails({
+            summaryText: "Train/Transport",
+            html: myRowHtml,
+            classes: "govuk-!-margin-bottom-0 govuk-!-padding-bottom-0"
+          }) }}</td>
+        <td class="govuk-table__cell">£50</td>
+        <td class="govuk-table__cell claim-row"><a href="#">Approve</a><a href="#">Part approve</a><a href="#">Reject</a></td>
+
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">
+
+          {% set panelHtml%}
+          AI checked. <a class="govuk-link" href="#">Review this row</a>
+          {% endset %}    
+
+          {{ appAiTicketPanel({
+            body: panelHtml | safe
+            })
+          }}
+        </td>
+      </tr>
+      <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row3">
+            <label class="govuk-label govuk-checkboxes__label" for="row3">
+              <span class="govuk-visually-hidden">Select (row 3)</span>
+            </label>
+          </div>
+
+      </td>
+      <td class="govuk-table__cell caseline-table__cell">{{ govukDetails({
+          summaryText: "Hotel",
+          html: myRowHtml,
+          classes: "govuk-!-margin-bottom-0 govuk-!-padding-bottom-0"
+        }) }}</td>
+      <td class="govuk-table__cell">£150</td>
+      <td class="govuk-table__cell claim-row"><a href="#">Approve</a><a href="#">Part approve</a><a href="#">Reject</a></td>
+    </tr>
+
+    </tbody>
+</table>

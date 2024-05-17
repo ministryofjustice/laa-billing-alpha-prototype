@@ -1,13 +1,13 @@
 const sampleDataCrime = require('./crime-claim-sample-data.json');
 const sampleDataCivil = require('./civil-claim-sample-data.json');
-const sampleClaims = require('./sample-claims.json');
+const sampleClaimsCrime = require('./sample-claims-crime.json');
 
 module.exports = {
 
   // Insert values here
   sampleDataCrime,
   sampleDataCivil,
-  sampleClaims,
+  sampleClaimsCrime,
   statuses: [
     { value: "select", text: "Please select" },
     { value: "granted", text: "Granted" },
@@ -27,9 +27,9 @@ module.exports = {
   // Default user
   "loggedInUser": "Crime caseworker",
 
-    // Default crime case
-    "defaultCrimeCaseNo": "1000001CR",
+  // Default crime case
+  "defaultCrimeCaseNo": "1000001CR",
 
-      // Default civil case
+    // Default civil case
   "defaultCivilCaseNo": "1000010CV"
-}
+  }

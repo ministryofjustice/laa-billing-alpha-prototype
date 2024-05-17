@@ -1,0 +1,72 @@
+{% set claimsList = data.sampleClaimsCrime %}
+{% set sortBy = data['sortBy'] | default('oldest') %}
+{% set whatGroupBy = data['whatGroupBy'] | default('claimDate') %}
+{% set mySort = 'true' %}
+
+<p class="govuk-body govuk-!-font-weight-bold">Sort by: <span class="govuk-body">{{ sortBy }}</span>&nbsp;&nbsp;&nbsp;&nbsp;Group by: <span class="govuk-body">{{ whatGroupBy }}</span>&nbsp;&nbsp;&nbsp;&nbsp;No of claim items: <span class="govuk-body">{{ claimsList.length }}</span>
+
+
+
+
+<div class="moj-timeline">
+    {% if sortBy == 'newest' %}
+        {% for claimDate, claimType in claimsList | groupby(whatGroupBy) | dictsort | reverse %}
+        <!-- Timeline item -->
+        <div class="moj-timeline__item">
+            <!-- Timeline event header -->
+            <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">{{ claimDate }}</h2>
+            </div>
+            {% for item in claimType %}
+            <!-- Timeline event description -->
+            <div class="moj-timeline__description">
+                <p>Claim type: {{ item.claimType }} Claim details: {{ item.details }} Claim time claimed: {{ item.time_claimed }} Claim value claimed: {{ item.value }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    {% elseif sortBy == 'oldest' %}
+        {% for claimDate, claimType in claimsList | groupby(whatGroupBy) | dictsort %}
+        <!-- Timeline item -->
+        <div class="moj-timeline__item">
+            <!-- Timeline event header -->
+            <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">{{ claimDate }}</h2>
+            </div>
+            {% for item in claimType %}
+            <!-- Timeline event description -->
+            <div class="moj-timeline__description">
+                <p>Claim type: {{ item.claimType }} Claim details: {{ item.details }} Claim time claimed: {{ item.time_claimed }} Claim value claimed: {{ item.value }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{#<!-- for messabout combining sort and group without if logic -->
+<div class="moj-timeline">
+        {% for claimDate, claimType in claimsList | groupby(whatGroupBy) | dictsort | reverse(false) %}
+        <!-- Timeline item -->
+        <div class="moj-timeline__item">
+            <!-- Timeline event header -->
+            <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">{{ claimDate }}</h2>
+            </div>
+            {% for item in claimType %}
+            <!-- Timeline event description -->
+            <div class="moj-timeline__description">
+                <div class="timeline-row">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="row1">
+                            <label class="govuk-label govuk-checkboxes__label" for="row1">
+                            <span class="govuk-visually-hidden">Select (row 1)</span>
+                            </label>
+                    </div>
+                    Claim type: {{ item.claimType }} Claim details: {{ item.details }} Claim time claimed: {{ item.time_claimed }} Claim value claimed: {{ item.value }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>  
+        {% endfor %}  
+</div>#}

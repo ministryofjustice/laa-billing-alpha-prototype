@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Claims history – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/_includes/phase-banner.njk"%}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- tabs: claim summary, assessment, related claims, claims history, messages -->
+{% set activeSubNav = [false, false, false, true, false] %}
+
+{<!-- call JSON file -->
+{% set claimList = data.sampleDataCrime %}
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% if loggedInUser == 'Crime caseworker'%}
+      <!-- set caseRef var or default if page visited directly -->
+      {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCrime %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% set foundClaim = false %}
+      {% for item in claimList %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "v1/_includes/claim-masthead.njk" %}
+            {% include "v1/_includes/claim-sub-navigation.njk" %}
+            <h2 class="govuk-heading-m">Claims history</h2>
+            <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+            {% include "v1/_includes/case-lists/crime/history-table-crime.njk" %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <!-- set caseRef var or default if page visited directly -->
+      {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
+      <!-- call JSON files -->
+      {% set claimListCivil = data.sampleDataCivil %}
+      <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
+      {% set foundClaim = false %}
+      {% for item in claimListCivil %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "v1/_includes/claim-masthead.njk" %}
+            {% include "v1/_includes/claim-sub-navigation.njk" %}
+            <h2 class="govuk-heading-m">Claims history</h2>
+            <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+
+  </div>
+</div>
+
+
+{% endblock %}

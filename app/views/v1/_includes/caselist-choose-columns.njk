@@ -1,0 +1,70 @@
+
+<p>columns: {{ data['columnchoice'] }}</p>
+<form action="/addcolumn" method="post">
+    <div class="govuk-grid-row">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Optional columns to display
+                </h1>
+            </legend>
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-1" name="columnchoice" type="checkbox" value="court">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+                        Court name
+                    </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-2" name="columnchoice" type="checkbox" value="evidence" {% if data['columnchoice'] == 'evidence'%}checked{% endif %}>
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-2">
+                        Evidence submitted (works for testing)
+                    </label>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-3" name="columnchoice" type="checkbox" value="firm-account">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-3">
+                        Firm account number
+                    </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkbox-4" name="columnchoice" type="checkbox" value="maat">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox-4">
+                        MAAT number
+                    </label>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="checkbox-5" name="columnchoice" type="checkbox" value="offence-name">
+                        <label class="govuk-label govuk-checkboxes__label" for="checkbox-5">
+                            Offence name
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="checkbox-6" name="columnchoice" type="checkbox" value="rep-order">
+                        <label class="govuk-label govuk-checkboxes__label" for="checkbox-6">
+                            Rep order date
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            {{ govukButton({
+                text: "Apply"
+            }) }}
+            <a href="my-claims-with-top-filters?columnchoice=" class="govuk-link form-cancel">Clear</a>
+        </div>
+    </div>
+</form>

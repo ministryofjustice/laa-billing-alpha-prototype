@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/_includes/phase-banner.html"%}
+{% include "/_includes/phase-banner.njk"%}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -31,19 +31,19 @@
           {% for item in claimList %}
             {% if item.claimRef == claimRef %}
             {% set foundClaim = true %}
-                {% include "/_includes/claim-masthead.njk" %}
-                {% include "/_includes/claim-sub-navigation.njk" %}
+                {% include "current/_includes/claim-masthead.njk" %}
+                {% include "current/_includes/claim-sub-navigation.njk" %}
                 <h2 class="govuk-heading-m">Claim summary</h2>
                 <!-- Shared cards -->
-                {% include "/_includes/claim-summary-cards/both/provider-details.njk" %}
-                {% include "/_includes/claim-summary-cards/both/client-details.njk" %}
+                {% include "current/_includes/claim-summary-cards/both/provider-details.njk" %}
+                {% include "current/_includes/claim-summary-cards/both/client-details.njk" %}
                   <!-- Crime cards -->  
-                  {% include "/_includes/claim-summary-cards/crime/offence-details.njk" %}
-                  {% include "/_includes/claim-summary-cards/crime/rep-order-details.njk" %}
-                  {% include "/_includes/claim-summary-cards/crime/case-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/crime/offence-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/crime/rep-order-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/crime/case-details.njk" %}
                   <h2 class="govuk-heading-m">Claim details</h2>
-                  {% include "/_includes/claim-summary-cards/crime/evidence-details.njk" %}
-                  {% include "/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %}
+                  {% include "current/_includes/claim-summary-cards/crime/evidence-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %}
             {% endif %}
           {% endfor %}
       {% else %}
@@ -56,19 +56,19 @@
           {% for item in claimListCivil %}
             {% if item.claimRef == claimRef %}
             {% set foundClaim = true %}
-                {% include "/_includes/claim-masthead.njk" %}
-                {% include "/_includes/claim-sub-navigation.njk" %}
+                {% include "current/_includes/claim-masthead.njk" %}
+                {% include "current/_includes/claim-sub-navigation.njk" %}
                 <h2 class="govuk-heading-m">Claim summary</h2>
                 <!-- Shared cards -->
-                {% include "/_includes/claim-summary-cards/both/provider-details.njk" %}
-                {% include "/_includes/claim-summary-cards/both/client-details.njk" %}
+                {% include "current/_includes/claim-summary-cards/both/provider-details.njk" %}
+                {% include "current/_includes/claim-summary-cards/both/client-details.njk" %}
                   <!-- Civil cards -->  
-                  {% include "/_includes/claim-summary-cards/civil/proceeding-type-details.njk" %}
-                  {% include "/_includes/claim-summary-cards/civil/certificate-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/civil/proceeding-type-details.njk" %}
+                  {% include "current/_includes/claim-summary-cards/civil/certificate-details.njk" %}
                   <h2 class="govuk-heading-m">Claim details</h2>
                   <!-- ADD THESE IN ONCE I KNOW WHAT IS CLAIMED FOR CIVIL (AND ADD DATA TO JSON) -->
-                  {# {% include "/_includes/claim-summary-cards/crime/evidence-details.njk" %} #}
-                  {# {% include "/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %} #}
+                  {# {% include "current/_includes/claim-summary-cards/crime/evidence-details.njk" %} #}
+                  {# {% include "current/_includes/claim-summary-cards/crime/claim-costs-summary.njk" %} #}
                   <p class="govuk-body">Add claims details in here once I have a better understanding of civil claim examples</p>
             {% endif %}
           {% endfor %}

@@ -3,7 +3,7 @@
 {% set pageName="Home" %}
 
 {% block beforeContent %}
-  {% include "/_includes/phase-banner.html"%}  
+  {% include "/_includes/phase-banner.njk"%}  
 {% endblock %}
 
 {% block content %}
@@ -19,10 +19,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Current work (v1)<span class="heading-w-status"><strong class="govuk-tag govuk-tag--yellow">IN DESIGN</strong></span></h2>
+    <h2 class="govuk-heading-l">Current work (v2)<span class="heading-w-status"><strong class="govuk-tag govuk-tag--yellow">IN DESIGN</strong></span></h2>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Q1 Sprint 2 (14 May 2024) - </p>
     <ul class="govuk-list">
       <li>
-        <h4 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h4>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h3>
         <p class="govuk-body">Logged in as a crime caseworker with claims assigned</p>
         {{ govukButton({
           text: "Start crime caseworker journey",
@@ -30,7 +31,7 @@
         }) }}
       </li>
       <li>
-        <h4 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h4>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h3>
         <p class="govuk-body">Logged in as a civil caseworker with claims assigned</p>
         {{ govukButton({
           text: "Start civil caseworker journey",
@@ -39,10 +40,9 @@
         }) }}
       </li>
     </ul>
-
-  
-    <!-- ADDITIONAL PAGE DESIGNS SECTION -->
-    {% set otherHtml %}
+    
+    <!-- CORE SCREENS SECTION -->
+    {% set coreScreensHtml %}
       <h3 class="govuk-heading-m">Core screens</h3>
       <ul class="govuk-list">
         <li>
@@ -67,33 +67,58 @@
         <li>
           <a class="govuk-link" href="current/claim-messages">Messages</a>
         </li>
+      </ul>       
+      {% endset %}
 
-      </ul>
+      {{ govukDetails({
+        summaryText: "Core screens",
+        html: coreScreensHtml,
+        classes: "govuk-!-margin-bottom-1"
+      }) }}
+
+      {% set additionalConceptsHtml %}
       <h3 class="govuk-heading-m">Additional concepts</h3>
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="concept-playground/all-claims-with-side-filters">All claims with side filters</a>
+          <a class="govuk-link" href="current/concept-playground/all-claims-with-side-filters">All claims with side filters</a>
         </li>
         <li>
-          <a class="govuk-link" href="concept-playground/my-claims-with-top-filters">My claims with top filters and column selector</a>
+          <a class="govuk-link" href="current/concept-playground/my-claims-with-top-filters">My claims with top filters and column selector</a>
         </li>
         <li>
-          <a class="govuk-link" href="concept-playground/my-claims-with-dashboard">My claims with dashboard</a>
+          <a class="govuk-link" href="current/concept-playground/my-claims-with-dashboard">My claims with dashboard</a>
         </li>
         <li>
-          <a class="govuk-link" href="concept-playground/claim-adjustment-via-timeline">Claims adjustments via timeline example</a>
+          <a class="govuk-link" href="current/concept-playground/claim-adjustment-via-timeline">Claims adjustments via timeline example</a>
         </li>
         <li>
-          <a class="govuk-link" href="concept-playground/claim-adjustment-via-table">Claims adjustments via table example</a>
+          <a class="govuk-link" href="current/concept-playground/claim-adjustment-via-table">Claims adjustments via table example</a>
         </li>
       </ul>
     {% endset %}
 
     {{ govukDetails({
-      summaryText: "Core screens and concepts",
-      html: otherHtml,
+      summaryText: "Additional concepts",
+      html: additionalConceptsHtml,
       classes: ""
     }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h2 class="govuk-heading-l">Previous versions</h2>
+
+        {% set v1TitleHtml %}
+        <h2 class="govuk-!-font-size-24 govuk-link">v1<span class="heading-w-status"><strong class="govuk-tag govuk-tag--green">COMPLETED</strong></span></h2>
+        {% endset %}
+
+        {% set v1Html %}
+          {% include "/v1/v1-file-list.njk" %}
+        {% endset %}
+
+        {{ govukDetails({
+          summaryText: v1TitleHtml | safe,
+          html: v1Html,
+          classes: "govuk-heading-s"
+        }) }}
 
   </div>
 
@@ -124,11 +149,12 @@
             <a class="govuk-link" href="/templates">Templates</a>
           </li>
           <li>
-            <a class="govuk-link" href="/components">Components</a>
+            <a class="govuk-link" href="#">Components</a>
           </li>
           <li>
             <a class="govuk-link" href="variables">Variables and references</a>
           </li>
+        </ul>        
       </nav>
     </aside>
   </div>

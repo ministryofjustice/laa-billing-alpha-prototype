@@ -1,0 +1,22 @@
+<form class="form" action="#" method="post">
+    <div class="moj-filter__options search govuk-!-padding-bottom-0">  
+
+      <div class="govuk-form-group govuk-!-margin-bottom-6">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+          Caseworker
+        </label>
+        <select class="govuk-select" id="caseworker" name="caseworker">
+            {% for caseworker in data['caseworkers'] %}
+            <option value="{{ caseworker.value }}">{{ caseworker.text }}</option>
+            {% endfor %}
+            </select>
+        </select>
+      </div>
+      
+      {{ govukButton({
+        text: "Apply filters"
+      }) }}
+      <a href="#" class="govuk-link form-cancel">Clear</a>
+      
+    </div>  
+    </form>

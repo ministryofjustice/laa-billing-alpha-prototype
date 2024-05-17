@@ -1,0 +1,56 @@
+<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Q4 Sprint 5 (2 April 2024) - Q1 Sprint 1 (14 May 2024)</p>
+<ul class="govuk-list">
+    <li>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h3>
+      <p class="govuk-body">Logged in as a crime caseworker with claims assigned</p>
+      {{ govukButton({
+        text: "Start crime caseworker journey",
+        href: "v1/my-claims-basic?logged-in-user=Crime caseworker",
+        classes: "govuk-button--secondary"
+      }) }}
+    </li>
+    <li>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h3>
+      <p class="govuk-body">Logged in as a civil caseworker with claims assigned</p>
+      {{ govukButton({
+        text: "Start civil caseworker journey",
+        href: "v1/my-claims-basic?logged-in-user=Civil caseworker",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+      }) }}
+    </li>
+  </ul>
+  
+  <!-- CORE SCREENS SECTION -->
+  {% set coreScreensHtml %}
+    <h3 class="govuk-heading-m">Core screens</h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="v1/my-claims-basic">My claims</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v1/all-claims-basic">All claims</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v1/claim-search">Search</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v1/claim-summary">View of a claim</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v1/claim-related-claims">Related claims</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v1/claim-claims-history">Claims history</a>
+      </li>
+
+      <li>
+        <a class="govuk-link" href="v1/claim-messages">Messages</a>
+      </li>
+    </ul>       
+    {% endset %}
+
+    {{ govukDetails({
+      summaryText: "Core screens",
+      html: coreScreensHtml,
+      classes: ""
+    }) }}

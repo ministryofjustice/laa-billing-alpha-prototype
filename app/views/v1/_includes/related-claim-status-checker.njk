@@ -1,0 +1,22 @@
+<!-- Check status and display colour coded tag based on status -->
+{% if item.claimStatus == 'Granted'%}
+    <strong class="govuk-tag govuk-tag--green">
+        Granted
+    </strong>
+{% elseif item.claimStatus == 'Part granted'%}
+    <strong class="govuk-tag govuk-tag--blue">
+        Part granted
+    </strong>
+{% elseif item.claimStatus == 'Rejected'%}
+    <strong class="govuk-tag govuk-tag--red">
+        Rejected
+    </strong>
+{% elseif item.claimStatus == 'In progress'%}
+    <strong class="govuk-tag govuk-tag--light-blue">
+        In progress
+    </strong>
+{% elseif item.claimStatus == 'Not assigned'%}
+    <strong class="govuk-tag govuk-tag--grey">
+        Not assigned
+    </strong>
+{% endif %}
