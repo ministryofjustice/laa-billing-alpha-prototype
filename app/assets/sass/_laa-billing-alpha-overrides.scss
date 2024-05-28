@@ -2,6 +2,7 @@
 // Any styling to override set GOV and MOJ Design Systems
 // Do not use this code in a production environment
 
+$colour-tag-blue-background: #e8f1f8;
 
 /* ==========================================================================
    # MOJ MULTI-SELECT OVERRIDE TO CENTER IN ROw
@@ -13,3 +14,12 @@
     vertical-align: top;
   }
 
+  .govuk-summary-card__title {
+    font-size: 1.50rem;
+  }
+
+.govuk-summary-card__primarytitle-wrapper {
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+  background-color: $colour-tag-blue-background;
+}

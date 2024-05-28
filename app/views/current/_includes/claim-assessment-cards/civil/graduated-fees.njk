@@ -1,0 +1,36 @@
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Graduated fees
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+            {{ govukButton({
+                text: "Make assessment",
+                classes: "govuk-!-margin-bottom-0",
+                href: "claim-assessment/civil-certificated/graduated-assessment"
+              }) }}
+        </li>
+      </ul>       
+    </div>
+
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <table class="govuk-table claim-table">
+                  <tbody class="govuk-table__body">
+                  {% for item in item.graduatedFees %}
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">{{ item.graduatedFeeDetails }}</th>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Cost: {{ item.graduatedFeeNet | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Vat: {{ item.graduatedFeeVat | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Total: {{ item.graduatedFeeTotal | currency }}</td>
+                      <td class="govuk-table__cell">Not assessed</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+          </div> 
+      </dl>
+  </div>
+</div>    

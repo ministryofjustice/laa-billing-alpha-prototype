@@ -1,0 +1,29 @@
+<!-- Check sending page to set relevant tab href - fudge to get it working for now -->
+{% if sendingPage == 'graduated' %}
+  {% set claimPageUrl = 'graduated-assessment' %}
+  {% set evidencePageUrl = 'graduated-assessment-evidence' %}
+{% elseif sendingPage == 'expenses' %}
+  {% set claimPageUrl = 'expenses-assessment' %}
+  {% set evidencePageUrl = 'expenses-assessment-evidence' %}
+{% endif %}
+      
+      {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Claim details',
+        href: claimPageUrl,
+        active: + activeSubNav[0] | default('true')
+      }, {
+        text: 'Supporting evidence',
+        href: evidencePageUrl,
+        active: + activeSubNav[1]
+      }, {
+        text: 'Adjustment history',
+        href: '#',
+        active: + activeSubNav[2]
+      }, {
+        text: 'Notes and messages',
+        href: '#',
+        active: + activeSubNav[3]
+      }]
+    }) }}

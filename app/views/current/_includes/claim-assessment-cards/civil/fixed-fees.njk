@@ -1,0 +1,37 @@
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Fixed fees
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+            {{ govukButton({
+                text: "Make assessment",
+                classes: "govuk-!-margin-bottom-0"
+              }) }}
+        </li>
+      </ul>       
+    </div>
+
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <table class="govuk-table claim-table">
+                  <tbody class="govuk-table__body">
+                  {% for item in item.fixedFees %}
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">{{ item.fixedFeeDate | govukDate }}</th>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.fixedFeeDetails }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Cost: {{ item.fixedFeeNet | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Vat: {{ item.fixedFeeVat | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Total: {{ item.fixedFeeTotal | currency }}</td>
+                      <td class="govuk-table__cell">Not assessed</td>
+                      <!--<td class="govuk-table__cell"><a href="#">Make assessment</a></td>-->
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+          </div> 
+      </dl>
+  </div>
+</div>    

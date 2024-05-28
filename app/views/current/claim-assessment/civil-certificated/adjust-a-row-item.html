@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>
+    <h1 class="govuk-heading-l">Adjust claim item</h1>
+    <table class="govuk-table" style="width:60%">
+        <caption class="govuk-table__caption govuk-table__caption--m">Provider submission</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date</th>
+            <td class="govuk-table__cell">{{ data['claimDate']}}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Fee earner initials</th>
+            <td class="govuk-table__cell">GL</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Description</th>
+            <td class="govuk-table__cell">{{ data['claimDesc']}}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Cost</th>
+            <td class="govuk-table__cell">{{ data['claimCost']}}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">VAT</th>
+            <td class="govuk-table__cell">{{ data['claimVat']}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="govuk-heading-m">Adjustments</h1>
+        <h2 class="govuk-heading-s">Change costs claimed</h1>
+        {{ govukInput({
+            id: "cost",
+            name: "cost",
+            label: {
+              text: "Cost",
+              classes: "",
+              isPageHeading: false
+            },
+            hint: {
+                text: "For example, new cost before VAT is added"
+            },
+            prefix: {
+              text: "£"
+            },
+            classes: "govuk-input--width-5",
+            spellcheck: false
+          }) }}
+          {{ govukInput({
+            id: "vat",
+            name: "vat",
+            label: {
+              text: "VAT",
+              classes: "",
+              isPageHeading: false
+            },
+            hint: {
+                text: "For example, if VAT is not correctly claimed"
+            },
+            prefix: {
+              text: "£"
+            },
+            classes: "govuk-input--width-5",
+            spellcheck: false
+          }) }}
+          {{ govukButton({
+            text: "Calculate my changes",
+            classes: "govuk-button--secondary"
+          }) }}
+          <h2 class="govuk-heading-m">Claim cost</h2>
+          <table class="govuk-table" style="width:60%">
+              <caption class="govuk-table__caption govuk-table__caption--m">Provider submission</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Before adjustment</th>
+                  <th scope="col" class="govuk-table__header">After adjustment</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">£90.00</td>
+                  <td class="govuk-table__cell">£00.00</td>
+                </tr>
+              </tbody>
+            </table>
+            {{ govukTextarea({
+                name: "changereason",
+                id: "change-reason",
+                rows: "8",
+                label: {
+                  text: "Explain your changes"
+                }
+              }) }}
+              {{ govukButton({
+                text: "Apply adjustment"
+              }) }}
+              <a href="#" class="govuk-link form-cancel">Cancel and return</a>
+  </div>
+</div>
+
+{% endblock %}

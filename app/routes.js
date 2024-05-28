@@ -62,3 +62,13 @@ router.post('/addcolumn', function(request, response) {
   response.redirect("current/concept-playground/my-claims-with-top-filters")
 
 })
+
+
+// Simple search route
+router.post('/v2civilgroupby', function(request, response) {
+
+  var whatGroupBy = request.session.data['whatGroupBy']
+
+  response.redirect("current/claim-apply-adjustments")
+
+})

@@ -1,0 +1,61 @@
+<!-- CLAIM DETAILS CARD -->
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper govuk-summary-card__primarytitle-wrapper">
+        <h2 class="govuk-summary-card__title">
+            Claim summary
+        </h2>      
+    </div>
+    <!-- Check if any claim rows exist -->
+    {% if item.claimsTotalRows.length > 0 %}
+    <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <table class="govuk-table claim-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Claim type</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">VAT</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+                        <th scope="col" class="govuk-table__header">Assess status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                    <!-- This is overly complicated. Come back and simplify -->
+                    {% set totalNet = 0 %}
+                    {% set totalVat = 0 %}
+                    {% set totalClaim = 0 %}
+                    {% for item in item.claimsTotalRows %}
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">{{ item.claimType }}</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeNet | currency }}</td>
+                        {% set totalNet = totalNet + ( item.claimTypeNet * 1 ) %}
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeVat | currency }}</td>
+                        {% set totalVat = totalVat + ( item.claimTypeVat * 1 ) %}
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeTotal | currency }}</td>
+                        {% set totalClaim = totalClaim + (item.claimTypeNet + item.claimTypeVat) %}
+                        {% if item.claimType == 'Graduated fees' %}
+                          <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/graduated-assessment">Make assessment</a></td>
+                        {% elseif item.claimType == 'Expenses (travel and subsistence)' %}
+                          <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/expenses-assessment">Make assessment</a></td>
+                        {% else %}
+                          <td class="govuk-table__cell"><a href="#">Make assessment</a></td>
+                        {% endif %}
+                      </tr>
+                    {% endfor %}
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Total</th>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">{{ totalNet | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">{{ totalVat | currency }}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">{{ totalClaim | currency }}</td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+            </div> 
+        </dl>
+    </div>
+</div> 
+{% else %}
+<p class="govuk-body>">There are no claims which would never actually happen</p>
+{% endif %}

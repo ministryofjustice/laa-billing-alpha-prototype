@@ -13,11 +13,13 @@ $colour-search-box-blue: #e0eef8;
 $colour-dashboard-box-grey: #B1B4B6;
 $colour-dashboard-box-shade-grey: #6F777B;
 $colour-section-background-blue: #f0f4f5;
+$colour-section-background-grey: #f3f2f1;
 $colour-ai-panel-background: #CCE2D8;
 $colour-ai-panel-border: #005A30;
+$colour-tag-blue-background: #bbd4ea;
 
 /*
----------------------------------------------------
+--------------------------------------------------- 
 PROTOYPE WIDE STYLING
 Apply styles to elements that appear prototype wide
 ---------------------------------------------------
@@ -191,6 +193,10 @@ Styling for all the claim assessment/adjustment elements
     padding-right: 20px;
   }
 
+  &__tags { /* Need to add smaller viewport styling */
+    padding-left: 10px;
+  }
+
   &__type {
     width: 60%;
   }
@@ -208,6 +214,69 @@ Styling for all the claim assessment/adjustment elements
     border: none !important;
     padding: 0px;
     margin: 0px;
+  }
+
+}
+
+/* v2 claim designs */
+
+/* Hide things on a page */
+.hidden {
+  display: none;
+}
+
+.claims-list {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  flex: 1;
+  border: 1px solid $colour-dashboard-box-grey;
+}
+
+.claims-list-filters-container {
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  column-gap: 20px;    
+}
+
+.flex-container {
+    padding: 10px 0px 10px 0px;
+    margin: 0 auto;
+    width: 100%; 
+    height: 60%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+} 
+
+/* Just overrides the align top in a tabel cell */
+.align-fix {
+  vertical-align: middle;
+}
+
+.claim-table {
+
+  table-layout: fixed;
+  width: 100%;
+
+  &__item {
+    width: 40%;
+  }
+
+  &__cost {
+    width: 15%;
+  }
+
+  &__vat {
+    width: 15%;
+  }
+
+  &__actions {
+    width: 30%;
+    text-align: right;
   }
 
 }

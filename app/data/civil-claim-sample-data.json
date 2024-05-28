@@ -15,19 +15,54 @@
         "certificateDateIssued": "20230920",
         "certificateDateDischarged": "20230822",
         "certificateScope": "Example scope",
-        "claimStatus": "Granted",     
+        "claimStatus": "Not started",     
         "assignedCaseworker": "Gerry Dixon",
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
         "linkedApplications": [
             {
-                "refNo": "12345",
-                "type": "Type X"
+                "relatedRefNo": "12345",
+                "relatedType": "Type A",
+                "relatedDateReceived": "20230821",
+                "relatedFirmName": "Related Crime Firm Ltd",
+                "relatedClientName": "Pippin Goodchild",
+                "relatedClaimStatus": "Granted"
             },
             {
-                "refNo": "23456",
-                "type": "Type Y"
+                "relatedRefNo": "54321",
+                "relatedType": "Type B",
+                "relatedDateReceived": "20230821",
+                "relatedFirmName": "A.N.Other Related Firm Ltd",
+                "relatedClientName": "Alexis Puddlefoot",
+                "relatedClaimStatus": "Part granted"
+            }
+        ],
+        "claimHistory": [
+            {
+                "historyDate": "20240215",
+                "historyWho": "Joe Elliott",
+                "historyUpdate": "Part granted"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "Joe Elliott",
+                "historyUpdate": "Provider provided further evidence"
+            },
+            {
+                "historyDate": "20240210",
+                "historyWho": "Joe Elliott",
+                "historyUpdate": "More information requested"
+            },
+            {
+                "historyDate": "20240209",
+                "historyWho": "Joe Elliott",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240209",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
             }
         ],
         "claims": [
@@ -85,7 +120,32 @@
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "01234",
+                "relatedType": "Type C",
+                "relatedDateReceived": "20230921",
+                "relatedFirmName": "A New Related Crime Firm Ltd",
+                "relatedClientName": "Allison Whitfoot",
+                "relatedClaimStatus": "Rejected"
+            },
+            {
+                "relatedRefNo": "43210",
+                "relatedType": "Type E",
+                "relatedDateReceived": "20231115",
+                "relatedFirmName": "A.N.Other Related Firm Ltd",
+                "relatedClientName": "Theutberga Featherbottom",
+                "relatedClaimStatus": "Part granted"
+            },
+            {
+                "relatedRefNo": "43210",
+                "relatedType": "Type D",
+                "relatedDateReceived": "20240102",
+                "relatedFirmName": "Related Legal Ltd",
+                "relatedClientName": "Maxima Gamwich",
+                "relatedClaimStatus": "Granted"
+            }
+        ],
         "claims": []
     },
     {
@@ -109,7 +169,41 @@
         "claimTags": [
             { "tagType": "Certificate discharged" }
         ],
-        "linkedApplications": [],
+        "linkedApplications": [
+            {
+                "relatedRefNo": "01234",
+                "relatedType": "Type C",
+                "relatedDateReceived": "20230921",
+                "relatedFirmName": "A New Related Crime Firm Ltd",
+                "relatedClientName": "Allison Whitfoot",
+                "relatedClaimStatus": "Rejected"
+            },
+            {
+                "relatedRefNo": "43210",
+                "relatedType": "Type D",
+                "relatedDateReceived": "20240102",
+                "relatedFirmName": "Related Legal Ltd",
+                "relatedClientName": "Maxima Gamwich",
+                "relatedClaimStatus": "Granted"
+            }
+        ],
+        "claimHistory": [
+            {
+                "historyDate": "20240215",
+                "historyWho": "Rowley Birkin",
+                "historyUpdate": "Rejected"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "Rowley Birkin",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240212",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {
@@ -201,6 +295,23 @@
         "assignedCaseworker": "Gerry Dixon",
         "claimTags": [],
         "linkedApplications": [],
+        "claimHistory": [
+            {
+                "historyDate": "20240304",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Part granted"
+            },
+            {
+                "historyDate": "20240302",
+                "historyWho": "Tom Sawyer",
+                "historyUpdate": "Claim assigned"
+            },
+            {
+                "historyDate": "20240301",
+                "historyWho": "None",
+                "historyUpdate": "Claim received"
+            }
+        ],
         "claims": []
     },
     {

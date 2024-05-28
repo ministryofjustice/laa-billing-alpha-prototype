@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Current work (v2)<span class="heading-w-status"><strong class="govuk-tag govuk-tag--yellow">IN DESIGN</strong></span></h2>
+    <h2 class="govuk-heading-l">Current work (v2)<span class="heading-w-status"><strong class="govuk-tag govuk-tag--blue">IN TESTING</strong></span></h2>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Q1 Sprint 2 (14 May 2024) - </p>
     <ul class="govuk-list">
       <li>
@@ -39,6 +39,13 @@
           classes: "govuk-!-margin-bottom-4"
         }) }}
       </li>
+      <li>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Additional screens for research sessions</h3>
+        <a class="govuk-link" href="current/concept-playground/assessment-page-with-statuses">Assessment in progress example</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="current/concept-playground/summary-and-assessment-combined">Claim summary and assessment combined concept</a>
+      </li>
     </ul>
     
     <!-- CORE SCREENS SECTION -->
@@ -46,26 +53,28 @@
       <h3 class="govuk-heading-m">Core screens</h3>
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="current/my-claims-basic">My claims</a>
+          <a class="govuk-link" href="current/my-claims-basic">My claims (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/all-claims-basic">All claims</a>
+          <a class="govuk-link" href="current/all-claims-basic">All claims (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-search">Search</a>
+          <a class="govuk-link" href="current/claim-search">Search (Crime only)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-summary">View of a claim</a>
+          <a class="govuk-link" href="current/claim-summary">Claim summary tab (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-related-claims">Related claims</a>
+          <a class="govuk-link" href="current/claim-apply-adjustments?logged-in-user=Civil caseworker">Assessment tab (Civil only)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-claims-history">Claims history</a>
+          <a class="govuk-link" href="current/claim-related-claims">Related claims (Crime or Civil)</a>
         </li>
-
         <li>
-          <a class="govuk-link" href="current/claim-messages">Messages</a>
+          <a class="govuk-link" href="current/claim-claims-history">Claims history (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="current/claim-messages">Messages (Crime only)</a>
         </li>
       </ul>       
       {% endset %}
@@ -94,6 +103,7 @@
         <li>
           <a class="govuk-link" href="current/concept-playground/claim-adjustment-via-table">Claims adjustments via table example</a>
         </li>
+
       </ul>
     {% endset %}
 
@@ -153,6 +163,9 @@
           </li>
           <li>
             <a class="govuk-link" href="variables">Variables and references</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/playground/playground-list">Playground (local only)</a>
           </li>
         </ul>        
       </nav>

@@ -1,0 +1,44 @@
+  <tr id="hidden-row" class="govuk-table__row hidden">
+    <th scope="row" class="govuk-table__header"></th>
+      <td class="govuk-table__cell align-fix">
+      {{ govukInput({
+      id: "cost",
+      name: "cost",
+      label: {
+        text: "Cost",
+        classes: "",
+        isPageHeading: false
+      },
+      prefix: {
+        text: "£"
+      },
+      classes: "govuk-input--width-5",
+      spellcheck: false
+    }) }}
+    </td>
+    <td class="govuk-table__cell align-fix">
+      {{ govukInput({
+      id: "cost",
+      name: "cost",
+      label: {
+        text: "VAT",
+        classes: "",
+        isPageHeading: false
+      },
+      prefix: {
+        text: "£"
+      },
+      classes: "govuk-input--width-5",
+      spellcheck: false
+    }) }}
+    </td>
+    <td class="govuk-table__cell align-fix">
+      {{ govukButton({
+        text: "Apply adjustment",
+        classes: "govuk-!-margin-bottom-0"
+      }) }}
+    </td>
+    <td class="govuk-table__cell align-fix">
+      <a href="#">Approve</a> / <a href="#">Part-approve</a> / <a href="#">Reject</a> / <a href="#">Add comment</a>
+    </td>
+  </tr>

@@ -1,0 +1,280 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right moj-width-container">
+	<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="section-shading">
+      <div class="moj-width-container">
+      {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
+      <!-- call JSON files -->
+      {% set claimListCivil = data.sampleDataCivil %}
+      <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
+      {% set foundClaim = false %}
+      {% for item in claimListCivil %}
+        {% if item.claimRef == claimRef %}
+          {% set foundClaim = true %}
+          {% include "current/_includes/claim-masthead.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+</div>
+<div class="moj-width-container govuk-!-margin-top-5">
+  {{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Claim assessment',
+      href: '#',      
+      active: 'true'
+    }, {
+      text: 'Related claims',
+      href: '#'
+    }, {
+      text: 'Claims history',
+      href: '#'
+    }, {
+      text: 'Messages',
+      href: '#'
+    }]
+  }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Claim Summary</h2>
+
+    {% set providerHtml %}
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Firm / Chambers name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Civil & Legal Ltd
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Fee earner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Bob Jones
+          </dd>
+      </div>
+    </dl>
+    {% endset %}
+
+    {% set clientHtml %}
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Teckla Berenk
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+              	17 September 1961
+              </dd>
+          </div>
+          </dl>
+    </div>
+    {% endset %}
+
+    {% set proceedingHtml %}
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Proceeding / Matter type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Family work
+          </dd>
+      </div>          
+  </dl>
+    {% endset %}
+
+    {% set certificateHtml %}
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Date issued
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20 September 2023
+          </dd>
+      </div>        
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Date discharged
+          </dt>
+          <dd class="govuk-summary-list__value">
+              22 August 2023
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Scope of certificate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Example scope
+          </dd>
+      </div>   
+  </dl>
+    {% endset %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Provider details"
+          },
+          content: {
+            html: providerHtml
+          }
+        },
+        {
+          heading: {
+            text: "Client details"
+          },
+          content: {
+            html: clientHtml
+          }
+        },
+        {
+          heading: {
+            text: "Proceeding / Matter type details"
+          },
+          content: {
+            html: proceedingHtml
+          }
+        },
+        {
+          heading: {
+            text: "Certificate details"
+          },
+          content: {
+            html: certificateHtml
+          }
+        }
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Claim details</h2>
+    <!-- SET CLAIM REF FOR TESTING -->
+    {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
+    {% set claimRef = data.defaultCivilCaseNo %}
+    {% set claimRecord = data.sampleClaimsCivil %}  
+    <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+    {% set foundClaim = false %}
+
+    {% for item in claimRecord %}
+        {% if item.claimRef == claimRef %}
+          {% set foundClaim = true %}
+          <!-- CLAIM SUMMARY -->
+          {% include "../_includes/claim-assessment-cards/civil/claim-costs-summary.njk" %}
+          <!-- CLAIM GRADUATED FEES -->
+          {% include "../_includes/claim-assessment-cards/civil/graduated-fees.njk" %}
+          {% include "../_includes/claim-assessment-cards/civil/fixed-fees.njk" %}
+          <div class="claims-list-filters-container">
+            <div>
+            <!-- MANIPULATING RESULTS SECTION -->
+
+            <form action="/v2civilgroupby" method="post">
+            {#}  
+              {{ govukCheckboxes({
+                name: "types-of-claims-filter",
+                classes: "govuk-checkboxes--small moj-inline-checkbox",
+                fieldset: {
+                  legend: {                  
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s govuk-!-margin"
+                  }
+              
+                },
+                items: [
+                  {
+                    value: "Approved",
+                    text: "approved"
+                  },
+                  {
+                    value: "part-approved",
+                    text: "Part approved"
+                  },
+                  {
+                    value: "rejected",
+                    text: "Rejected"
+                  },
+                  {
+                    value: "not assessed",
+                    text: "Not assessed"
+                  }
+                ]
+              }) }}
+              #}
+            </div>
+            <div>
+            {{ govukSelect({
+              id: "whatGroupBy",
+              name: "whatGroupBy",            
+              label: {
+                text: "Group by"
+              },
+              items: [
+                {
+                  value: "claimDate",
+                  text: "Date",
+                  selected: checked("whatGroupBy", "claimDate")
+                },
+                {
+                  value: "claimType",
+                  text: "Type",
+                  selected: checked("whatGroupBy", "claimType")
+                }
+              ],
+              formGroup: {
+                classes: "govuk-!-margin-bottom-0"
+              }
+            }) }}
+            </div>
+            <div>
+              
+              {{ govukButton({
+                text: "Apply",
+                classes: "govuk-!-margin-bottom-0"
+              }) }}
+              </form>
+            </div>
+
+          </div>
+          <!-- CLAIM ROWS ALL OTHER -->
+          {% if data['whatGroupBy'] == 'claimDate' %}
+            {% include "../_includes/claim-rows/v2-grouped-by-date.njk" %}
+          {% else %}
+            {% include "../_includes/claim-rows/v2-grouped-by-type.njk" %}
+          {% endif%}
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endblock %}

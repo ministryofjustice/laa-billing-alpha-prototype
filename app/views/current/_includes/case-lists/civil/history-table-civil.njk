@@ -1,0 +1,22 @@
+{% if item.claimHistory.length > 0 %}
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Date submitted / received</th> 
+        <th scope="col" class="govuk-table__header">Caseworker</th>
+        <th scope="col" class="govuk-table__header">Update</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+    {% for item in item.claimHistory %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ item.historyDate | govukDate }}</td>  
+        <td class="govuk-table__cell">{{ item.historyWho }}</td>
+        <td class="govuk-table__cell">{{ item.historyUpdate }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+<p class="govuk-body>">There is no history (this would never happen) as minimum is the claim received row.</p>
+{% endif %}

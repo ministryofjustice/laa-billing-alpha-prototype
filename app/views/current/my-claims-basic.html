@@ -22,6 +22,10 @@
       summaryText: "Filter claims",
       html: filterHtml
     }) }}
+    {{ govukButton({
+      text: "Assign new claim",
+      href: "#"
+    }) }}
 
         <!-- TABLE IS HERE -->
         {% if loggedInUser == 'Crime caseworker'%}

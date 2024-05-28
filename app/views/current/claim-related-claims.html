@@ -1,16 +1,15 @@
 {% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
 
 {% block pageTitle %}
   Related claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/_includes/phase-banner.njk"%}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+<nav class="clear-right moj-width-container">
+	<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
 
 <!-- tabs: claim summary, assessment, related claims, claims history, messages -->
 {% set activeSubNav = [false, false, true, false, false] %}
@@ -34,19 +33,21 @@
           {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
               {% include "current/_includes/claim-masthead.njk" %}
-              {% include "current/_includes/claim-sub-navigation.njk" %}
-              <h2 class="govuk-heading-m">Related claims</h2>
-              <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
-                  <!-- INCLUDE FILTERS -->
-              {% set filterHtml %}
-              {% include "current/_includes/related-caselist-filters.njk"%}  
-              {% endset %}
-              {{ govukDetails({
-                summaryText: "Filter claims",
-                html: filterHtml
-              }) }}
-              {% include "current/_includes/case-lists/crime/related-claims-table-crime.njk" %}
-              
+              <div class="moj-width-container govuk-!-margin-top-5">
+                {% include "/_includes/action-menu-button.njk" %}
+                {% include "current/_includes/claim-sub-navigation.njk" %}
+                <h2 class="govuk-heading-m">Related claims</h2>
+                <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+                <!-- INCLUDE FILTERS -->
+                {% set filterHtml %}
+                {% include "current/_includes/related-caselist-filters.njk"%}  
+                {% endset %}
+                {{ govukDetails({
+                  summaryText: "Filter claims",
+                  html: filterHtml
+                }) }}
+                {% include "current/_includes/case-lists/crime/related-claims-table-crime.njk" %}
+              </div>
           {% endif %}
         {% endfor %}
       {% else %}
@@ -60,9 +61,21 @@
           {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
               {% include "current/_includes/claim-masthead.njk" %}
-              {% include "current/_includes/claim-sub-navigation.njk" %}
-              <h2 class="govuk-heading-m">Related claims</h2>
-              <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
+              <div class="moj-width-container govuk-!-margin-top-5">
+                {% include "/_includes/action-menu-button.njk" %}
+                {% include "current/_includes/claim-sub-navigation.njk" %}
+                <h2 class="govuk-heading-m">Related claims</h2>
+                <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
+                <!-- INCLUDE FILTERS -->
+                {% set filterHtml %}
+                {% include "current/_includes/related-caselist-filters.njk"%}  
+                {% endset %}
+                {{ govukDetails({
+                  summaryText: "Filter claims",
+                  html: filterHtml
+                }) }}
+                {% include "current/_includes/case-lists/civil/related-claims-table-civil.njk" %}
+              </div>
           {% endif %}
         {% endfor %}
     {% endif %}
@@ -70,5 +83,14 @@
   </div>
 </div>
 
+<script type="module">
+  new MOJFrontend.ButtonMenu({
+container: document.querySelector(".moj-button-menu"),
+mq: "(min-width: 200em)",
+buttonText: "Actions",
+menuClasses: "moj-button-menu__wrapper--right",
+});
+
+</script>
 
 {% endblock %}
