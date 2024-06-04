@@ -24,8 +24,8 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
 
         <!-- SET CLAIM REF FOR TESTING -->
     {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-    {% set claimRef = data.defaultCivilCaseNo %}
-    {% set claimRecord = data.sampleClaimsCivil %}  
+    {% set claimRef = '1000004CR' %}
+    {% set claimRecord = data.sampleClaimsCrime %}  
 
     <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>
     <h1 class="govuk-heading-l">Graduated fees</h1>
@@ -35,7 +35,7 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
     {% for item in claimRecord %}
         {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-          <p class="govuk-body govuk-!-font-size-24">£14,400.00</p>
+          <p class="govuk-body govuk-!-font-size-24">£6,360.03</p>
 
             {% set graduatedSummaryHtml %}
               <table class="govuk-table claim-table" style="width:80%">
@@ -56,8 +56,8 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
                   {% endfor %}
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Caseworker allowed</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£12,000.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£14,400.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£6,360.03</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£7,632.04</td>
                   </tr>
                   </tbody>
                 </table>

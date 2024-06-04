@@ -35,9 +35,9 @@ Sort by: {{ sortBy }}#}
                   <th scope="row" class="govuk-table__header">{{ item.claimType  }}</th>
                   <td class="govuk-table__cell">Cost: {{ item.itemNet | currency }}</td>
                   <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
-                  <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/adjust-a-row-item?claimDate={{ claimGroup | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+                  <td class="govuk-table__cell"><a href="/current/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ claimGroup | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
                 </tr>
-                {% include "../../claim-assessment/_includes/expense-adjustment-row.njk" %}
+                {% include "/current/claim-assessment/_includes/expense-adjustment-row.njk" %}
               {% endfor %}
             </tbody>
           </table>
@@ -52,9 +52,9 @@ Sort by: {{ sortBy }}#}
                 <th scope="row" class="govuk-table__header">{{ item.claimType  }}</th>
                 <td class="govuk-table__cell">Cost: {{ item.itemNet | currency }}</td>
                 <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
-                <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/adjust-a-row-item?claimDate={{ claimGroup | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+                <td class="govuk-table__cell"><a href="/current/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ claimGroup | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
               </tr>
-              {% include "../../claim-assessment/_includes/expense-adjustment-row.njk" %}
+              {% include "/current/claim-assessment/_includes/expense-adjustment-row.njk" %}
             {% endfor %}
           </tbody>          
         </table>

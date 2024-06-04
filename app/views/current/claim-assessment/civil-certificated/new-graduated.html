@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- SET ALL THE VARIOUS VARIABLES -->
+
+    <!-- tabs: claim details, supporting evidence, adjustment history, notes and messages -->
+    {% set activeSubNav = [true, false, false, false] %}
+    <!-- set the sending page so links under sub nav are relevant for the billing type: e.g. graduated, expenses etc. -->
+    {% set sendingPage = 'graduated' %}
+    <!-- Set default claim ref for now ** NEED TO CHANGE THIS IF PASSING VARYING REF NOS **-->
+    {% set claimRef = data.defaultCivilCaseNo %}
+    <!-- Declare the JSON data to use -->
+    {% set claimRecord = data.sampleClaimsCivil %}  
+    <!-- Set the claimtype to return on this page -->
+    {% set claimCategory = 'Graduated fees'%}
+    <!-- Set foundClaim var to false to begin with. Used to stop returning records from JSON once loop finds it, e.g. REFNO -->
+    {% set foundClaim = false %}
+    <!-- Set foundType var to false to begin with. Used to stop returning records from JSON once loop finds the claim type (e.g. Expenses)-->
+    {% set foundType = false %}
+    <!-- Set sort order -->
+    {% set graduatedSortBy = data['graduatedSortBy'] %}
+    <!-- Set the sort value in for loop to be true = reverse or false = regular -->
+    {% if graduatedSortBy == 'newest' %}{% set orderBy = true %}{% else %}{% set orderBy = false %}{% endif %}
+
+{% block content %}
+<!-- TOP SUMMARY SECTION -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>
+    <h1 class="govuk-heading-l">Graduated fees</h1>
+    <!-- Show total - done manually for now -->
+    <p class="govuk-body govuk-!-font-size-24">£14,400.00</p>
+    <!-- Loop through records in JSON -->
+    {% for item in claimRecord %}
+    <!-- Check if refno (default in this case) is found in JSON and set foundClaim to be true to stop looping further -->
+        {% if item.claimRef == claimRef %}
+            {% set foundClaim = true %}
+            <!-- Now loop through all of the claim rows for the type -->
+            {% for item in item.claimsTotalRows %}
+                <!-- Check if the type of claim (e.g. Expenses) is found in JSON and set foundType to be true to stop looping further -->
+                {% if item.claimType == claimCategory %}
+                    {% set foundType = true %}
+                    <!-- Set the table HTML to be displayed in the details component and pass it in -->
+                    {% set expensesSummaryHtml %}
+                    <table class="govuk-table claim-table" style="width:80%">
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Description</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Provider requested</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeNet | currency }}</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeTotal | currency }}</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Caseworker allowed</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£12,000.00</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£14,400.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% endset %}
+
+                    {{ govukDetails({
+                        summaryText: "Cost summary",
+                        open: true,
+                        html: expensesSummaryHtml
+                        }) }}
+                {% endif %} <!-- End category if statement -->
+            {% endfor %} <!-- End category for loop statement -->
+        {% endif %} <!-- End refno if statement -->
+    {% endfor %} <!-- End refno for loop statement -->
+    </div>
+</div>
+
+<!-- Bookmark section -->
+<div id="adjustmentsection"></div>
+<!-- SUB NAV SECTION -->
+{% include "current/_includes/core-journey/v2-claim-adjustment-sub-navigation" %}
+
+<!-- MAIN CLAIMS SECTION -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- SUMMARY CARD MAIN-->
+        <button onclick="toggleAllElements()" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Show/Hide adjustment rows
+        </button>
+        <div id="claimsSummary" class="govuk-summary-card govuk-!-margin-bottom-2">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                    Graduated fee items (2 items)
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action">
+                        <div class="claims-list-filters-container">
+                            <div>
+                            <form action="/v2civilgraduatedsortby" method="post">
+                                {{ govukSelect({
+                                    id: "graduatedSortBy",
+                                    name: "graduatedSortBy",            
+                                    label: {
+                                    text: "Sort by"
+                                    },
+                                    items: [
+                                    {
+                                        value: "newest",
+                                        text: "Date (newest)",
+                                        selected: true if graduatedSortBy == 'newest' else false
+                                    },
+                                    {
+                                        value: "oldest",
+                                        text: "Date (oldest)",
+                                        selected: true if graduatedSortBy == 'oldest' else false
+                                    }
+                                    ],
+                                    formGroup: {
+                                    classes: "govuk-!-margin-bottom-0"
+                                    }
+                                }) }}
+                                </div>
+                                <div>
+                                {{ govukButton({
+                                    text: "Apply",
+                                    classes: "govuk-!-margin-bottom-0"
+                                }) }}
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>        
+            </div>
+
+            <!-- ACTUAL CLAIMS LIST CONTAINER -->
+            <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+
+                <!-- Set foundClaim var to false again. Used to stop returning records from JSON once loop finds it, e.g. REFNO -->
+                {% set foundClaim = false %}
+                <!-- Set foundType var to false to begin with. Used to stop returning records from JSON once loop finds the claim type (e.g. Expenses)-->
+                {% set foundType = false %}
+                    <!-- Loop through records in JSON -->
+                    {% for item in claimRecord %}
+                    <!-- Check if refno (default in this case) is found in JSON and set foundClaim to be true to stop looping further -->
+                        {% if item.claimRef == claimRef %}
+                            {% set foundClaim = true %}
+                            <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
+                                <thead class="govuk-table__head">          
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
+                                        <th scope="col" class="govuk-table__header" aria-sort="none">Claim item</th>
+                                        <th scope="col" class="govuk-table__header" aria-sort="none">Cost</th>
+                                        <th scope="col" class="govuk-table__header" aria-sort="none">VAT</th>
+                                        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                    <!-- Now loop through all of the claim rows for the type and sort by date dependant on expenseSortByOrder )-->                                    
+                                    {% for item in item.graduatedFees | sort(orderBy, true, 'graduatedFeeDate' ) %}
+                                        <!-- Check if the type of claim (e.g. Expenses) is found in JSON and set foundType to be true to stop looping further -->
+                                        {% if item.claimType == claimCategory %}
+                                            {% set foundType = true %}
+                                            <!-- Set the table HTML to be displayed in the details component and pass it in -->
+                                                    <tr class="govuk-table__row">
+                                                        <th scope="row" class="govuk-table__header">{{ item.graduatedFeeDate | govukDate }}</th>
+                                                        <td class="govuk-table__cell">{{ item.graduatedFeeDetails }}<br>Adjustment</td>
+                                                        <td class="govuk-table__cell">{{ item.graduatedFeeNet | currency }}</td>
+                                                        <td class="govuk-table__cell">{{ item.graduatedFeeVat | currency }}</td>
+                                                        <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet }}&claimVat={{ item.itemVat }}">Not assessed</a></td>
+                                                    </tr>                                                        
+                                                    <!-- Include the hidden adjustment row -->
+                                                    {% include "../_includes/expense-adjustment-row.njk" %}
+                                        {% endif %}
+                                    {% endfor %}     
+                                </tbody>
+                            </table>                       
+                        {% endif %}
+                    {% endfor %}
+
+                </dl>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- CODE FOR SHOW / HIDE BUTTON LINE ADJUSTMENT FUNCTIONALITY -->
+<script>
+    function toggleAllElements() {
+        const elements = document.querySelectorAll('#hidden-row');
+        elements.forEach(element => {
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        });
+    }
+  </script>
+
+{% endblock %}

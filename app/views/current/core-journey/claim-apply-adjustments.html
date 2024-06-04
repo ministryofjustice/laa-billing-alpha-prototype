@@ -29,7 +29,7 @@
         {% for item in claimList %}
           {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-          {% include "current/_includes/claim-masthead.njk" %}
+          {% include "current/_includes/core-journey/claim-masthead.njk" %}
               <div class="moj-width-container govuk-!-margin-top-5"> 
                 <div style="float: right;">
                   {{ mojButtonMenu({
@@ -53,17 +53,119 @@
                     }]
                   }) }}
                 </div>
-                {% include "current/_includes/claim-sub-navigation.njk" %}
+                {% include "current/_includes/core-journey/claim-sub-navigation.njk" %}
                 <h2 class="govuk-heading-m">Assessment</h2>
                 <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
                 <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-grid-column-full">
+                      <!-- SET CLAIM REF FOR TESTING -->
+                      {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
+                      {% set claimRecord = data.sampleClaimsCrime %}  
+                      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+                      {% set foundClaim = false %}
+                  
+                      {% for item in claimRecord %}
+                          {% if item.claimRef == claimRef %}
+                            {% set foundClaim = true %}
+                            <!-- CLAIM SUMMARY -->
+                            {% include "current/_includes/claim-assessment-cards/crime/claim-costs-summary.njk" %}
+                            <!-- CLAIM GRADUATED FEES -->
+                            {% include "current/_includes/claim-assessment-cards/crime/graduated-fees.njk" %}
+                            <!-- CLAIM FIXED FEES -->
+                            {% include "current/_includes/claim-assessment-cards/crime/fixed-fees.njk" %}
+                            <!-- CLAIM HOURLY RATES -->
+                            {% include "current/_includes/claim-assessment-cards/crime/hourly-rates.njk" %}
+                            <!-- Bookmark section -->
+                            <div id="adjustmentsection"></div>
+                            <div class="claims-list-filters-container">
+                              <div>
+                              <!-- MANIPULATING RESULTS SECTION -->
+
+                              <form action="/v2adjustmentgroupby" method="post">
+                              {#}  
+                                {{ govukCheckboxes({
+                                  name: "types-of-claims-filter",
+                                  classes: "govuk-checkboxes--small moj-inline-checkbox",
+                                  fieldset: {
+                                    legend: {                  
+                                      isPageHeading: false,
+                                      classes: "govuk-fieldset__legend--s govuk-!-margin"
+                                    }
+                                
+                                  },
+                                  items: [
+                                    {
+                                      value: "Approved",
+                                      text: "approved"
+                                    },
+                                    {
+                                      value: "part-approved",
+                                      text: "Part approved"
+                                    },
+                                    {
+                                      value: "rejected",
+                                      text: "Rejected"
+                                    },
+                                    {
+                                      value: "not assessed",
+                                      text: "Not assessed"
+                                    }
+                                  ]
+                                }) }}
+                                #}
+                              </div>
+                              <div>
+                              {{ govukSelect({
+                                id: "whatGroupBy",
+                                name: "whatGroupBy",            
+                                label: {
+                                  text: "Group by"
+                                },
+                                items: [
+                                  {
+                                    value: "claimDate",
+                                    text: "Date",
+                                    selected: true if whatGroupBy == 'claimDate' else false
+                                  },
+                                  {
+                                    value: "claimType",
+                                    text: "Type",
+                                    selected: true if whatGroupBy == 'claimType' else false
+                                  }
+                                ],
+                                formGroup: {
+                                  classes: "govuk-!-margin-bottom-0"
+                                }
+                              }) }}
+                              </div>
+                              <div>
+                                
+                                {{ govukButton({
+                                  text: "Apply",
+                                  classes: "govuk-!-margin-bottom-0"
+                                }) }}
+                                </form>
+                              </div>                  
+                            </div>
+                            <!-- CLAIM ROWS ALL OTHER -->
+                            {% if data['whatGroupBy'] == 'claimDate' %}
+                              {% include "current/_includes/claim-assessment-cards/crime/v2-grouped-by-date.njk" %}
+                            {% else %}
+                              {% include "current/_includes/claim-assessment-cards/crime/v2-grouped-by-type.njk" %}
+                            {% endif%}
+
+                          {% endif %}
+                      {% endfor %}
+
                   </div>
                 </div>
               </div>
            {% endif %}
         {% endfor %}
     {% else %}
+    <!------------------------------->
+    <!------------ CIVIL ------------>
+    <!------------------------------->
     
       <!-- set caseRef var or default if page visited directly -->
       {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
@@ -74,7 +176,7 @@
       {% for item in claimListCivil %}
         {% if item.claimRef == claimRef %}
         {% set foundClaim = true %}
-            {% include "current/_includes/claim-masthead.njk" %}
+            {% include "current/_includes/core-journey/claim-masthead.njk" %}
             <div class="moj-width-container govuk-!-margin-top-5">          
               <div style="float: right;">
                 {{ mojButtonMenu({
@@ -98,14 +200,11 @@
                   }]
                 }) }}
               </div>
-              {% include "current/_includes/claim-sub-navigation.njk" %}
+              {% include "current/_includes/core-journey/claim-sub-navigation.njk" %}
               <h2 class="govuk-heading-m">Assessment</h2>
                   <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
                   <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full">
-                      <!-- SET CLAIM REF FOR TESTING -->
-                      {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-
                       {% set claimRecord = data.sampleClaimsCivil %}  
                       <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
                       {% set foundClaim = false %}
@@ -119,11 +218,12 @@
                             {% include "current/_includes/claim-assessment-cards/civil/graduated-fees.njk" %}
                             {% include "current/_includes/claim-assessment-cards/civil/fixed-fees.njk" %}
                             {% include "current/_includes/claim-assessment-cards/civil/hourly-rates.njk" %}
+                            <!-- Bookmark section -->
+                            <div id="adjustmentsection"></div>
                             <div class="claims-list-filters-container">
                               <div>
                               <!-- MANIPULATING RESULTS SECTION -->
-                  
-                              <form action="/v2civilgroupby" method="post">
+                              <form action="/v2adjustmentgroupby" method="post">
                               {#}  
                                 {{ govukCheckboxes({
                                   name: "types-of-claims-filter",
@@ -192,9 +292,9 @@
                             </div>
                             <!-- CLAIM ROWS ALL OTHER -->
                             {% if data['whatGroupBy'] == 'claimDate' %}
-                              {% include "current/_includes/claim-rows/v2-grouped-by-date.njk" %}
+                              {% include "current/_includes/claim-assessment-cards/civil/v2-grouped-by-date.njk" %}
                             {% else %}
-                              {% include "current/_includes/claim-rows/v2-grouped-by-type.njk" %}
+                              {% include "current/_includes/claim-assessment-cards/civil/v2-grouped-by-type.njk" %}
                             {% endif%}
                           {% endif %}
                       {% endfor %}

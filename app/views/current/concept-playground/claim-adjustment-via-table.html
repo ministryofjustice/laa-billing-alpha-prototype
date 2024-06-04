@@ -14,7 +14,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full"> 
-    {% set claimsList = data.sampleClaimsCrime %}
+    {% set claimsList = data.sampleClaimsCrimeConcept %}
 {% set groupedDateList = claimsList | groupby('claimDate') | dictsort %}
 
 <!-- show some filters -->

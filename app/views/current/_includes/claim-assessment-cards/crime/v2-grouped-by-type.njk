@@ -34,7 +34,7 @@ Sort by: {{ sortBy }}#}
                   {% if claimGroup == 'Expenses (travel and subsistence)' %}
                     {{ govukButton({
                       text: "Make assessment",
-                      href: "claim-assessment/civil-certificated/expenses-assessment"
+                      href: "../claim-assessment/crime-lgfs/expenses-assessment"
                     }) }}
                   {% else %}
                     {{ govukButton({
@@ -50,9 +50,9 @@ Sort by: {{ sortBy }}#}
                   <td class="govuk-table__cell">{{ item.details }}</td>
                   <td class="govuk-table__cell">Cost: {{ item.itemNet | currency  }}</td>
                   <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
-                  <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+                  <td class="govuk-table__cell"><a href="/current/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
                 </tr>
-                {% include "../../claim-assessment/_includes/expense-adjustment-row.njk" %}
+                {% include "/current/claim-assessment/_includes/expense-adjustment-row.njk" %}
               {% endfor %}
             </tbody>
           </table>
@@ -66,7 +66,7 @@ Sort by: {{ sortBy }}#}
                 {% if claimGroup == 'Expenses (travel and subsistence)' %}
                   {{ govukButton({
                     text: "Make assessment",
-                    href: "claim-assessment/civil-certificated/expenses-assessment"
+                    href: "../claim-assessment/crime-lgfs/expenses-assessment"
                   }) }}
                 {% else %}
                   {{ govukButton({
@@ -83,9 +83,9 @@ Sort by: {{ sortBy }}#}
                 <td class="govuk-table__cell">{{ item.details }}</td>
                 <td class="govuk-table__cell">Cost: {{ item.itemNet | currency  }}</td>
                 <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
-                <td class="govuk-table__cell"><a href="claim-assessment/civil-certificated/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+                <td class="govuk-table__cell"><a href="/current/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
               </tr>
-              {% include "../../claim-assessment/_includes/expense-adjustment-row.njk" %}
+              {% include "/current/claim-assessment/_includes/expense-adjustment-row.njk" %}
             {% endfor %}
           </tbody>          
         </table>

@@ -32,15 +32,15 @@
         {% for item in claimList %}
           {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-              {% include "current/_includes/claim-masthead.njk" %}
+              {% include "current/_includes/core-journey/claim-masthead.njk" %}
               <div class="moj-width-container govuk-!-margin-top-5">
                 {% include "/_includes/action-menu-button.njk" %}
-                {% include "current/_includes/claim-sub-navigation.njk" %}
+                {% include "current/_includes/core-journey/claim-sub-navigation.njk" %}
                 <h2 class="govuk-heading-m">Related claims</h2>
                 <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
                 <!-- INCLUDE FILTERS -->
                 {% set filterHtml %}
-                {% include "current/_includes/related-caselist-filters.njk"%}  
+                {% include "current/_includes/core-journey/related-caselist-filters.njk"%}  
                 {% endset %}
                 {{ govukDetails({
                   summaryText: "Filter claims",
@@ -60,15 +60,15 @@
         {% for item in claimListCivil %}
           {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-              {% include "current/_includes/claim-masthead.njk" %}
+              {% include "current/_includes/core-journey/claim-masthead.njk" %}
               <div class="moj-width-container govuk-!-margin-top-5">
                 {% include "/_includes/action-menu-button.njk" %}
-                {% include "current/_includes/claim-sub-navigation.njk" %}
+                {% include "current/_includes/core-journey/claim-sub-navigation.njk" %}
                 <h2 class="govuk-heading-m">Related claims</h2>
                 <!-- SPECIFIC CIVIL BODY CONTENT GOES HERE -->
                 <!-- INCLUDE FILTERS -->
                 {% set filterHtml %}
-                {% include "current/_includes/related-caselist-filters.njk"%}  
+                {% include "current/_includes/core-journey/related-caselist-filters.njk"%}  
                 {% endset %}
                 {{ govukDetails({
                   summaryText: "Filter claims",

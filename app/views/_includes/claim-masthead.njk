@@ -23,12 +23,12 @@
               </div>-->
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ item.legalAidBillingType }}</h1>
             <!-- <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived | govukDate }}</p> -->
-            <p class="govuk-body"><strong>Status: </strong>{% include "current/_includes/status-checker.njk" %}</p>
+            <p class="govuk-body"><strong>Status: </strong>{% include "current/_includes/core-journey/status-checker.njk" %}</p>
             {# no of claims: {{ claimList.length }}
             no of tags: {{ claimList[0].claimTags.length }} #}
             <p class="govuk-body govuk-!-margin-bottom-5">
             {% for item in item.claimTags %}
-            {% include "current/_includes/tag-checker.njk" %}
+            {% include "current/_includes/core-journey/tag-checker.njk" %}
             {% endfor %}
             </p>
             {% else %}       
@@ -37,7 +37,7 @@
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">{{ item.legalAidBillingType }}</h1>
             <!-- <p class="govuk-body govuk-!-margin-bottom-1"><strong>Date received:</strong> {{ item.dateReceived | govukDate }}</p> -->
             <h2 class="govuk-heading-m govuk-!-margin-bottom-4">{{ item.billingProcessType }}</h2>
-            <p class="govuk-body"><strong>Status: </strong>{% include "current/_includes/status-checker.njk" %}</p>
+            <p class="govuk-body"><strong>Status: </strong>{% include "current/_includes/core-journey/status-checker.njk" %}</p>
             {# no of claims: {{ claimList.length }}
             no of tags: {{ claimList[0].claimTags.length }} #}
             <p class="govuk-body govuk-!-margin-bottom-5">

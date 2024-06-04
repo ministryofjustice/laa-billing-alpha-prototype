@@ -35,9 +35,9 @@
                         <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeTotal | currency }}</td>
                         {% set totalClaim = totalClaim + (item.claimTypeNet + item.claimTypeVat) %}
                         {% if item.claimType == 'Graduated fees' %}
-                          <td class="govuk-table__cell"><a href="../claim-assessment/civil-certificated/graduated-assessment">Make assessment</a></td>
+                          <td class="govuk-table__cell"><a href="../claim-assessment/crime-lgfs/graduated-assessment">Make assessment</a></td>
                         {% elseif item.claimType == 'Expenses (travel and subsistence)' %}
-                          <td class="govuk-table__cell"><a href="../claim-assessment/civil-certificated/expenses-assessment">Make assessment</a></td>
+                          <td class="govuk-table__cell"><a href="../claim-assessment/crime-lgfs/expenses-assessment">Make assessment</a></td>
                         {% else %}
                           <td class="govuk-table__cell"><a href="#">Make assessment</a></td>
                         {% endif %}

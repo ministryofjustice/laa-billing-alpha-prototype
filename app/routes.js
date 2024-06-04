@@ -41,7 +41,7 @@ router.post('/searchforclaim', function(request, response) {
 
   var claimSearch = request.session.data['claim-search']
 
-  response.redirect("current/claim-search")
+  response.redirect("current/core-journey/claim-search")
 
 })
 
@@ -65,10 +65,29 @@ router.post('/addcolumn', function(request, response) {
 
 
 // Simple search route
-router.post('/v2civilgroupby', function(request, response) {
+router.post('/v2adjustmentgroupby', function(request, response) {
 
   var whatGroupBy = request.session.data['whatGroupBy']
 
-  response.redirect("current/claim-apply-adjustments")
+  response.redirect("current/core-journey/claim-apply-adjustments#adjustmentsection")
+
+})
+
+
+// Simple search route
+router.post('/v2civilexpensessortby', function(request, response) {
+
+  var expenseSortBy = request.session.data['expenseSortBy']
+
+  response.redirect("current/claim-assessment/civil-certificated/new-expense#adjustmentsection")
+
+})
+
+// Simple search route
+router.post('/v2civilgraduatedsortby', function(request, response) {
+
+  var expenseSortBy = request.session.data['expenseSortBy']
+
+  response.redirect("current/claim-assessment/civil-certificated/new-graduated#adjustmentsection")
 
 })

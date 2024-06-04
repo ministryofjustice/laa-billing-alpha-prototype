@@ -27,8 +27,8 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
 
         <!-- SET CLAIM REF FOR TESTING -->
         {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-        {% set claimRef = data.defaultCivilCaseNo %}
-        {% set claimRecord = data.sampleClaimsCivil %}  
+        {% set claimRef = '1000004CR' %}
+        {% set claimRecord = data.sampleClaimsCrime %}  
         <!-- Set the claimtype to return on this page -->
         {% set claimCategory = 'Expenses (travel and subsistence)'%}
 
@@ -36,7 +36,7 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
         <h1 class="govuk-heading-l">Expenses (travel and subsistence)</h1>
         <!-- FIND RECORD AND RETURN ROW FOR EXPENSES SPECIFICALLY -->
         {% set foundClaim = false %}
-        <p class="govuk-body govuk-!-font-size-24">£798.00</p>
+        <p class="govuk-body govuk-!-font-size-24">£465.60</p>
         {% for item in claimRecord %}
             {% if item.claimRef == claimRef %}
               {% set foundClaim = true %}
@@ -61,8 +61,8 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
                         </tr>
                         <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__header">Caseworker allowed</th>
-                          <td class="govuk-table__cell govuk-table__cell--numeric">£665.00</td>
-                          <td class="govuk-table__cell govuk-table__cell--numeric">£798.00</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£388.00</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£465.60</td>
                         </tr>
                       </tbody>
                   </table>
@@ -102,67 +102,51 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
     <div class="govuk-summary-card__content">
       <dl class="govuk-summary-list">
             <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
-              <caption class="govuk-table__caption govuk-table__caption--m">28 April 2024 </caption>
+              <caption class="govuk-table__caption govuk-table__caption--m">10 May 2024 </caption>
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Hotel</th>
-                    <td class="govuk-table__cell">Cost: £100.00</td>
-                    <td class="govuk-table__cell">VAT: £20.00</td>
-                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=28 April 2024&claimDesc=Hotel&claimCost=£100.00&claimVat=£20.00">Not assessed</a></td>
-                  </tr>
-                  {% include "../_includes/expense-adjustment-row.njk" %}
-              </tbody>
-            </table>
-            <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
-              <caption class="govuk-table__caption govuk-table__caption--m">16 April 2024 </caption>
-              <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Travel to court</th>
+                    <th scope="row" class="govuk-table__header">Hotel accomodation</th>
                     <td class="govuk-table__cell">Cost: £200.00</td>
                     <td class="govuk-table__cell">VAT: £40.00</td>
                     <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=16 April 2024&claimDesc=Travel to court&claimCost=£200.00&claimVat=£40.00">Not assessed</a></td>
                   </tr>
                   {% include "../_includes/expense-adjustment-row.njk" %}
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Lunch</th>
-                    <td class="govuk-table__cell">Cost: £30.00</td>
-                    <td class="govuk-table__cell">VAT: £6.00</td>
-                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=16 April 2024&claimDesc=Lunch&claimCost=£30.00&claimVat=£6.00">Not assessed</a></td>
-                  </tr>
-                  {% include "../_includes/expense-adjustment-row.njk" %}
-              </tbody>
-            </table>
-            <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
-              <caption class="govuk-table__caption govuk-table__caption--m">14 April 2024 </caption>
-              <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Lunch</th>
-                    <td class="govuk-table__cell">Cost: £75.00</td>
-                    <td class="govuk-table__cell">VAT: £15.00</td>
-                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=14 April 2024&claimDesc=Lunch&claimCost=£75.00&claimVat=£15.00">Not assessed</a></td>
+                    <th scope="row" class="govuk-table__header">Cab fares</th>
+                    <td class="govuk-table__cell">Cost: £18.00</td>
+                    <td class="govuk-table__cell">VAT: £3.60</td>
+                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=16 April 2024&claimDesc=Lunch&claimCost=£18.00&claimVat=£3.60">Not assessed</a></td>
                   </tr>
                   {% include "../_includes/expense-adjustment-row.njk" %}
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Train - London to Hull</th>
-                    <td class="govuk-table__cell">Cost: £250.00</td>
-                    <td class="govuk-table__cell">VAT: £50.00</td>
-                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=14 April 2024&claimDesc=Train - London to Hull&claimCost=£250.00&claimVat=£50.00">Not assessed</a></td>
-                  </tr>
-                  {% include "../_includes/expense-adjustment-row.njk" %}
-              </tbody>
-            </table>
-            <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
-              <caption class="govuk-table__caption govuk-table__caption--m">9 March 2024 </caption>
-              <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Car park</th>
+                    <th scope="row" class="govuk-table__header">Subsistence</th>
                     <td class="govuk-table__cell">Cost: £10.00</td>
                     <td class="govuk-table__cell">VAT: £2.00</td>
-                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=9 March 2024&claimDesc=Car park&claimCost=£10.00&claimVat=£2.00">Not assessed</a></td>
+                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=16 April 2024&claimDesc=Lunch&claimCost=£10.00&claimVat=£2.00">Not assessed</a></td>
+                  </tr>
+                  {% include "../_includes/expense-adjustment-row.njk" %}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Travel time</th>
+                    <td class="govuk-table__cell">Cost: £150.00</td>
+                    <td class="govuk-table__cell">VAT: £30.00</td>
+                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=16 April 2024&claimDesc=Lunch&claimCost=£150.00&claimVat=£30.00">Not assessed</a></td>
                   </tr>
                   {% include "../_includes/expense-adjustment-row.njk" %}
               </tbody>
             </table>
+            <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">14 May 2024 </caption>
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Subsistence</th>
+                    <td class="govuk-table__cell">Cost: £10.00</td>
+                    <td class="govuk-table__cell">VAT: £2.00</td>
+                    <td class="govuk-table__cell"><a href="adjust-a-row-item?claimDate=14 April 2024&claimDesc=Lunch&claimCost=£10.00&claimVat=£2.00">Not assessed</a></td>
+                  </tr>
+                  {% include "../_includes/expense-adjustment-row.njk" %}
+              </tbody>
+            </table>
+
 
 
 

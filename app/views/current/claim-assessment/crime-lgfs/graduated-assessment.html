@@ -21,8 +21,8 @@
 
         <!-- SET CLAIM REF FOR TESTING -->
     {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-    {% set claimRef = data.defaultCivilCaseNo %}
-    {% set claimRecord = data.sampleClaimsCivil %}  
+    {% set claimRef = '1000004CR' %}
+    {% set claimRecord = data.sampleClaimsCrime %}  
 
     <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>
     <h1 class="govuk-heading-l">Graduated fees</h1>
@@ -32,7 +32,7 @@
     {% for item in claimRecord %}
         {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-          <p class="govuk-body govuk-!-font-size-24">£14,400.00</p>
+          <p class="govuk-body govuk-!-font-size-24">£6,360.03</p>
 
             {% set graduatedSummaryHtml %}
               <table class="govuk-table claim-table" style="width:80%">
@@ -53,8 +53,8 @@
                   {% endfor %}
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Caseworker allowed</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£12,000.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£14,400.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£6,360.03</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£7,632.04</td>
                   </tr>
                   </tbody>
                 </table>
@@ -81,23 +81,13 @@
       }
     }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Number of advocates meetings",
-        classes: "govuk-label--m ",
-        isPageHeading: false
-      },
-      id: "advocatemeetings",
-      name: "advocatemeetings",
-      classes: "govuk-input--width-4",
-      value: "1"
-    }) }}
+
 
     {{ govukSelect({
-      id: "levelofjudge",
-      name: "levelofjudge",
+      id: "caseoutcome",
+      name: "caseoutcome",
       label: {
-        text: "Level of Judge for Advocates Meeting(s)",
+        text: "Case outcome/type",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -107,12 +97,12 @@
           text: "Select"
         },
         {
-          value: "level1",
-          text: "Level 1"
+          value: "opt1",
+          text: "Appeal against conviction"
         },
         {
-          value: "level2",
-          text: "Level 2",
+          value: "opt2",
+          text: "Appeal against sentence",
           selected: true
         }
       ]
@@ -120,33 +110,39 @@
 
     {{ govukInput({
       label: {
-        text: "Number of conferences held",
+        text: "PPE number",
         classes: "govuk-label--m ",
         isPageHeading: false
       },
       id: "conferencesheld",
       name: "conferencesheld",
       classes: "govuk-input--width-4",
-      value: "3"
+      value: "500",
+      hint: {
+        text: "Number of pages"
+      }
     }) }}
 
     {{ govukInput({
       label: {
-        text: "Number of hearings",
+        text: "Trail length",
         classes: "govuk-label--m ",
         isPageHeading: false
       },
       id: "numberofhearings",
       name: "numberofhearings",
       classes: "govuk-input--width-4",
-      value: "2"
+      value: "5",
+      hint: {
+        text: "Number of days"
+      }
     }) }}
     
     {{ govukSelect({
-      id: "hearingtypes",
-      name: "hearingtypes",
+      id: "offencecategory",
+      name: "offencecategory",
       label: {
-        text: "Hearing type",
+        text: "Offence category",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -156,54 +152,22 @@
           text: "Select"
         },
         {
-          value: "type1",
+          value: "opt1",
           text: "Type 1"
         },
         {
-          value: "type2",
-          text: "Type 2",
+          value: "opt2",
+          text: "Armed robbery",
           selected: true
-        }
-      ]
-    }) }}
-
-    {{ govukDateInput({
-      id: "hearingdate",
-      namePrefix: "hearingdate",
-      fieldset: {
-        legend: {
-          text: "Hearing date",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        text: "For example, 27 3 2007"
-      },
-      items: [
-        {
-          classes: "govuk-input--width-2",
-          name: "day",
-          value: "20"
-        },
-        {
-          classes: "govuk-input--width-2",
-          name: "month",
-          value: "11"
-        },
-        {
-          classes: "govuk-input--width-4",
-          name: "year",
-          value: "2023"
         }
       ]
     }) }}
 
     {{ govukSelect({
-      id: "courttype",
-      name: "courttype",
+      id: "offenceclass",
+      name: "offenceclass",
       label: {
-        text: "Court Type / Level of Judge",
+        text: "Offence class",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -213,30 +177,15 @@
           text: "Select"
         },
         {
-          value: "type1",
-          text: "Type 1",
+          value: "opt1",
+          text: "B: Offences involving serious violence or damage and serious drug offences",
           selected: true
         },
         {
-          value: "type2",
+          value: "opt2",
           text: "Type 2"
         }
       ]
-    }) }}
-
-    {{ govukInput({
-      label: {
-        text: "Length of Hearing",
-        classes: "govuk-label--m ",
-        isPageHeading: false
-      },
-      id: "lengthofhearing",
-      name: "lengthofhearing",
-      classes: "govuk-input--width-4",
-      value: "5:20",
-      hint: {
-        text: "Days and hours"
-      }
     }) }}
 
     {{ govukButton({

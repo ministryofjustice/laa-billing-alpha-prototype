@@ -1,150 +1,232 @@
 [
     {
-      "claimDate": "2024-04-14",
+      "claimRef": "1000004CR",
+      "claimsTotalRows": [       
+        {
+          "claimType": "Graduated fees",
+          "claimTypeNet": 6360.03,
+          "claimTypeVat": 1272.01,
+          "claimTypeTotal": 7632.04
+        },
+        {
+          "claimType": "Fixed fees",
+          "claimTypeNet": 491.75,
+          "claimTypeVat": 98.35,
+          "claimTypeTotal": 590.10
+        },
+        {
+          "claimType": "Hourly rate / work items",
+          "claimTypeNet": 450.00,
+          "claimTypeVat": 90.00,
+          "claimTypeTotal": 540.00
+        },
+        {
+          "claimType": "Expert invoices",
+          "claimTypeNet": 3000.00,
+          "claimTypeVat": 600.00,
+          "claimTypeTotal": 3600.00
+        },
+        {
+          "claimType": "Expenses (travel and subsistence)",
+          "claimTypeNet": 388.00,
+          "claimTypeVat": 77.60,
+          "claimTypeTotal": 465.60
+        }
+      ],
+      "graduatedFees": [
+        {
+        "graduatedFeeDate": "20240501",
+        "claimType": "Graduated fees",
+        "graduatedFeeDetails": "Trial",
+        "graduatedFeeLength": 5,
+        "graduatedFeePpe": 500,
+        "graduatedFeeNet": 6360.03,
+        "graduatedFeeVat": 1272.01,
+        "graduatedFeeTotal": 7632.04        
+        }
+      ],
+      "fixedFees": [
+        {
+        "fixedFeeDate": "20240428",
+        "fixedFeeDetails": "Fixed fee item 1",
+        "fixedFeeNet": 429.75,
+        "fixedFeeVat": 85.95,
+        "fixedFeeTotal": 515.70
+        },
+        {
+          "fixedFeeDate": "20240428",
+          "fixedFeeDetails": "Fixed fee item 2",
+          "fixedFeeNet": 62.00,
+          "fixedFeeVat": 12.40,
+          "fixedFeeTotal": 74.40
+        }
+      ],
+      "hourlyRates": [
+        {
+          "claimDate": "20240311",
+          "claimType": "Hourly rates",
+          "details": "Letters and calls",
+          "time_claimed": "02:30",
+          "itemNet": 100,
+          "itemVat": 20,
+          "itemTotal": 120
+        },
+        {
+          "claimDate": "20240416",
+          "claimType": "Hourly rates",
+          "details": "Travel to court",
+          "time_claimed": "03:00",
+          "itemNet": 60,
+          "itemVat": 12,
+          "itemTotal": 72
+        },
+        {
+          "claimDate": "20240311",
+          "claimType": "Hourly rates",
+          "details": "Preparation for trial",
+          "time_claimed": "03:30",
+          "itemNet": 210,
+          "itemVat": 42,
+          "itemTotal": 252
+        },
+        {
+          "claimDate": "20240312",
+          "claimType": "Hourly rates",
+          "details": "Waiting",
+          "time_claimed": "01:00",
+          "itemNet": 80,
+          "itemVat": 16,
+          "itemTotal": 96
+        }
+      ],
+      "associatedClaims": [
+      {
+        "claimDate": "20240510",
+        "claimType": "Expenses (travel and subsistence)",
+        "details": "Hotel accomodation",
+        "time_claimed": null,
+        "itemNet": 200,
+        "itemVat": 40,
+        "itemTotal": 240
+      },
+      {
+        "claimDate": "20240510",
+        "claimType": "Expenses (travel and subsistence)",
+        "details": "Cab fares",
+        "time_claimed": null,
+        "itemNet": 18,
+        "itemVat": 3.60,
+        "itemTotal": 21.60
+      },
+      {
+        "claimDate": "20240510",
+        "claimType": "Expenses (travel and subsistence)",
+        "details": "Subsistence",
+        "time_claimed": null,
+        "itemNet": 10,
+        "itemVat": 2,
+        "itemTotal": 12
+      },
+      {
+        "claimDate": "20240510",
+        "claimType": "Expenses (travel and subsistence)",
+        "details": "Travel time",
+        "time_claimed": null,
+        "itemNet": 150,
+        "itemVat": 30,
+        "itemTotal": 180
+      },
+      {
+        "claimDate": "20240515",
+        "claimType": "Expenses (travel and subsistence)",
+        "details": "Subsistence",
+        "time_claimed": null,
+        "itemNet": 10,
+        "itemVat": 2,
+        "itemTotal": 12
+      },
+      {
+        "claimDate": "20240510",
+        "claimType": "Expert invoices",
+        "details": "DNA testing",
+        "time_claimed": null,
+        "itemNet": 1000,
+        "itemVat": 200,
+        "itemTotal": 1200
+      },
+      {
+        "claimDate": "20240515",
+        "claimType": "Expert invoices",
+        "details": "DNA testing",
+        "time_claimed": null,
+        "itemNet": 2000,
+        "itemVat": 400,
+        "itemTotal": 2400
+      }
+    ]
+  },
+  {
+    "claimRef": "1000009CR",
+    "claimsTotalRows": [
+      {
+          "claimType": "Expert invoices",
+          "claimTypeNet": "180.20",
+          "claimTypeGross": "180.20"
+      },
+      {
+          "claimType": "Expenses (travel and subsistence)",
+          "claimTypeNet": "180.20",
+          "claimTypeGross": "180.20"
+      },
+      {
+          "claimType": "Hourly rates",
+          "claimTypeNet": "180.20",
+          "claimTypeGross": "180.20"
+      },
+      {
+          "claimType": "Fixed / Graduated fees",
+          "claimTypeNet": "180.20",
+          "claimTypeGross": "180.20"
+      }
+    ],
+    "associatedClaims": [
+    {
+      "claimDate": "20240101",
       "claimType": "Hourly rates",
       "details": "letters and calls",
       "time_claimed": "02:30",
-      "value": 100
-    },
+      "itemNet": 100,
+      "itemVat": 20,
+      "itemTotal": 120
+    },  
     {
-      "claimDate": "2024-04-14",
-      "claimType": "Expenses",
-      "details": "Lunch",
-      "time_claimed": null,
-      "value": 75
-    },
-    {
-      "claimDate": "2024-04-14",
-      "claimType": "Expenses",
-      "details": "Train - London to Hull",
-      "time_claimed": null,
-      "value": 250
-    },
-    {
-      "claimDate": "2024-04-14",
-      "claimType": "Expert invoices",
-      "details": "Legal fees",
-      "time_claimed": null,
-      "value": 500
-    },
-    {
-      "claimDate": "2024-04-16",
-      "claimType": "Hourly rates",
-      "details": "Travel to court",
-      "time_claimed": "03:00",
-      "value": 60
-    },
-    {
-      "claimDate": "2024-04-16",
-      "claimType": "Expenses",
-      "details": "Lunch",
-      "time_claimed": null,
-      "value": 30
-    },
-    {
-      "claimDate": "2024-04-16",
-      "claimType": "Hourly rates",
-      "details": "Meeting with team",
-      "time_claimed": "01:30",
-      "value": 90
-    },
-    {
-      "claimDate": "2024-04-16",
-      "claimType": "Hourly rates",
-      "details": "Legal research",
-      "time_claimed": "02:00",
-      "value": 120
-    },
-    {
-      "claimDate": "2024-04-16",
-      "claimType": "Expenses",
-      "details": "Travel to court",
-      "time_claimed": null,
-      "value": 200
-    },
-    {
-      "claimDate": "2024-04-27",
-      "claimType": "Expert invoices",
-      "details": "Child psychologist",
-      "time_claimed": null,
-      "value": 1000
-    },
-    {
-      "claimDate": "2024-04-27",
-      "claimType": "Expert invoices",
-      "details": "Medical examiner",
-      "time_claimed": null,
-      "value": 800
-    },
-    {
-      "claimDate": "2024-04-27",
-      "claimType": "Hourly rates",
-      "details": "Legal drafting",
-      "time_claimed": "02:45",
-      "value": 165
-    },
-    {
-      "claimDate": "2024-04-28",
-      "claimType": "Hourly rates",
-      "details": "letters and calls",
-      "time_claimed": "01:45",
-      "value": 105
-    },
-    {
-      "claimDate": "2024-04-28",
-      "claimType": "Expenses",
-      "details": "Hotel",
-      "time_claimed": null,
-      "value": 100
-    },
-    {
-      "claimDate": "2024-04-28",
-      "claimType": "Expert invoices",
-      "details": "Expert witness fees",
-      "time_claimed": "03:45",
-      "value": 700
-    },
-    {
-      "claimDate": "2024-03-12",
-      "claimType": "Hourly rates",
-      "details": "Legal consultation",
-      "time_claimed": "01:30",
-      "value": 90
-    },
-    {
-      "claimDate": "2024-03-12",
-      "claimType": "Hourly rates",
-      "details": "Waiting",
-      "time_claimed": "01:00",
-      "value": 80
-    },
-    {
-      "claimDate": "2024-03-11",
-      "claimType": "Hourly rates",
-      "details": "Preparation for trial",
-      "time_claimed": "03:30",
-      "value": 210
-    },
-    {
-      "claimDate": "2024-03-09",
-      "claimType": "Expenses",
-      "details": "Car park",
-      "time_claimed": null,
-      "value": 10
-    },
-    {
-      "claimDate": "2024-03-05",
-      "claimType": "Expert invoices",
-      "details": "Expert witness travel",
-      "time_claimed": null,
-      "value": 400
-    },
-    {
-      "claimDate": "2001-01-01",
+      "claimDate": "20240102",
       "claimType": "Fixed fee",
       "details": "Litigator fee",
       "time_claimed": "02:15",
-      "value": 6250
+      "itemNet": 10000,
+      "itemVat": 2000,
+      "itemTotal": 12000
+    },
+    {
+      "claimDate": "20240105",
+      "claimType": "Expert invoices",
+      "details": "Expert witness travel",
+      "time_claimed": null,
+      "itemNet": 2000,
+      "itemVat": 400,
+      "itemTotal": 2400
+    },
+    {
+      "claimDate": "20240108",
+      "claimType": "Expenses (travel and subsistence)",
+      "details": "Hotel",
+      "time_claimed": null,
+      "itemNet": 200,
+      "itemVat": 40,
+      "itemTotal": 240
     }
-  ]
+    ]
+  }    
+]
   

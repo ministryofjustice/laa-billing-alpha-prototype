@@ -23,8 +23,8 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
     <div class="govuk-grid-column-two-thirds">
         <!-- SET CLAIM REF FOR TESTING -->
         {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-        {% set claimRef = data.defaultCivilCaseNo %}
-        {% set claimRecord = data.sampleClaimsCivil %}  
+        {% set claimRef = '1000004CR' %}
+        {% set claimRecord = data.sampleClaimsCrime %}  
         <!-- Set the claimtype to return on this page -->
         {% set claimCategory = 'Expenses (travel and subsistence)'%}
 
@@ -32,7 +32,7 @@ Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Pr
         <h1 class="govuk-heading-l">Expenses (travel and subsistence)</h1>
         <!-- FIND RECORD AND RETURN ROW FOR EXPENSES SPECIFICALLY -->
         {% set foundClaim = false %}
-        <p class="govuk-body govuk-!-font-size-24">£798.00</p>
+        <p class="govuk-body govuk-!-font-size-24">£465.60</p>
         {% for item in claimRecord %}
             {% if item.claimRef == claimRef %}
               {% set foundClaim = true %}

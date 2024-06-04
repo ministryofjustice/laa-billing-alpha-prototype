@@ -1,15 +1,17 @@
 const sampleDataCrime = require('./crime-claim-sample-data.json');
 const sampleDataCivil = require('./civil-claim-sample-data.json');
-const sampleClaimsCrime = require('./sample-claims-crime.json');
+const sampleClaimsCrimeConcept = require('./sample-claims-crime-v1.json');
 const sampleClaimsCivil = require('./sample-claims-civil.json');
+const sampleClaimsCrime = require('./sample-claims-crime.json');
 
 module.exports = {
 
   // Insert values here
   sampleDataCrime,
   sampleDataCivil,
-  sampleClaimsCrime,
+  sampleClaimsCrimeConcept,
   sampleClaimsCivil,
+  sampleClaimsCrime,
   statuses: [
     { value: "select", text: "Please select" },
     { value: "granted", text: "Granted" },

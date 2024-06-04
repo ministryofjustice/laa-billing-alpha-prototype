@@ -1,0 +1,298 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Page name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Claim row display example - caseworker adjusted (claim completed)</h1>
+      <!-- CLAIM DETAILS CARD -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-summary-card__primarytitle-wrapper">
+            <h2 class="govuk-summary-card__title">
+                Claim summary
+            </h2>      
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                
+                <table class="govuk-table">
+                  <col>
+                  <col>
+                  <colgroup span="3"></colgroup>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Claim type</th>
+                      <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Detail</th>
+                      <th class="govuk-table__header govuk-!-text-align-centre govuk-!-width-one-third" colspan="3" scope="colgroup">Claim amounts</th>
+                      <th class="govuk-table__header govuk-!-width-one-quarter" colspan="1" scope="colgroup">Assess summary</th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header govuk-!-width-one-quarter" scope="col"></th>
+                      <th class="govuk-table__header govuk-!-width-one-quarter" scope="col"></th>
+                      <td class="govuk-table__cell govuk-table__header--numeric" colspan="1" scope="colgroup">Cost</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric" colspan="1" scope="colgroup">VAT</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric" colspan="1" scope="colgroup">Total</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric" colspan="1" scope="colgroup"></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" rowspan="2" scope="rowgroup">Graduated fees</th>
+                      <td class="govuk-table__cell" scope="row">Claimed</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£6,360.03</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£1,272.01</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£7,632.04</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+                        Part granted
+                    </strong></td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" scope="row"><strong>Caseworker allowed</strong></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£5,920.01</strong></span></td> 
+                      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£1,184.00</strong></span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£7,104.01</strong></span></td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th class="govuk-table__header" rowspan="2" scope="rowgroup">Fixed fees</th>
+                      <td class="govuk-table__cell" scope="row">Claimed</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£491.75</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£98.35</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£590.10</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                        Granted
+                    </strong></td>
+                    </tr>
+                    <tr>
+                      <td class="govuk-table__cell" scope="row"><strong>Caseworker allowed</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£491.75</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£98.35</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£590.10</strong></td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th class="govuk-table__header" rowspan="2" scope="rowgroup">Hourly rate / work items</th>
+                      <td class="govuk-table__cell" scope="row">Claimed</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£450.00</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£90.00</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£540.00</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                        Granted
+                    </strong></td>
+                    </tr>
+                    <tr>
+                      <td class="govuk-table__cell" scope="row"><strong>Caseworker allowed</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£450.00</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£90.00</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£540.00</strong></td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th class="govuk-table__header" rowspan="2" scope="rowgroup">Expert invoices</th>
+                      <td class="govuk-table__cell" scope="row">Claimed</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£3,000.00</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£600.00</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£3,600.00</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                        Granted
+                    </strong></td>
+                    </tr>
+                    <tr>
+                      <td class="govuk-table__cell" scope="row"><strong>Caseworker allowed</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£3,000.00</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£600.00</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£3,600.00</strong></td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th class="govuk-table__header" rowspan="2" scope="rowgroup">Expenses (travel and subsistence)</th>
+                      <td class="govuk-table__cell" scope="row">Claimed</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£388.00</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£77.60</td>
+                      <td class="govuk-table__cell govuk-table__header--numeric">£465.60</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                        Granted
+                    </strong></td>
+                    </tr>
+                    <tr>
+                      <td class="govuk-table__cell" scope="row"><strong>Caseworker allowed</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£388.00</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£77.60</strong></td>
+                      <td class="govuk-table__cell govuk-table__header--numeric"><strong>£465.60</strong></td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Total</th>
+                      <td class="govuk-table__cell"></td> 
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£23,335.00</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£4,667.00</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£28,002.00</td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                  </tbody>
+                </table>                  
+              </div> 
+          </dl>
+          <p class="govuk-body">Note: Table is not accessible. Could add a summary to caption but seek better ideas first.</p>
+        </div>
+    </div>
+  </div> 
+  </div>
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-9">Claim row display example - caseworker adjusted (claim assessment in progress)</h2>
+<!-- CLAIM DETAILS CARD -->
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper govuk-summary-card__primarytitle-wrapper">
+      <h2 class="govuk-summary-card__title">
+          Claim summary
+      </h2>      
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <table class="govuk-table claim-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Claim type</th>
+                    <th scope="col" class="govuk-table__header">Detail</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">VAT</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+                    <th scope="col" class="govuk-table__header">Assess status</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Graduated fees</th>
+                    <td class="govuk-table__cell">Claimed</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£6,360.03</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,272.01</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£7,632.04</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+                      Part granted
+                  </strong><a href="#" class="govuk-link claim-row__tags">Change</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-text-align-right"></th>
+                    <td class="govuk-table__cell"><strong>Caseworker allowed</strong></td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£5,920.01</strong></span></td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£1,184.00</strong></span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span class="hods-highlight"><strong>£7,104.01</strong></span></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Fixed fees</th>
+                    <td class="govuk-table__cell">Claimed</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£491.75</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£98.35</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£590.10</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                      Granted
+                  </strong><a href="#" class="govuk-link claim-row__tags">Change</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-text-align-right"></th>
+                    <td class="govuk-table__cell"><strong>Caseworker allowed</strong></td> 
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£491.75</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£98.35</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£590.10</strong></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Hourly rate / work items</th>
+                    <td class="govuk-table__cell">Claimed</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£450.00</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£90.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£540.00</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                      Granted
+                  </strong><a href="#" class="govuk-link claim-row__tags">Change</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-text-align-right"></th>
+                    <td class="govuk-table__cell"><strong>Caseworker allowed</strong></td> 
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£450.00</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£90.00</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£540.00</strong></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Expert invoices</th>
+                    <td class="govuk-table__cell">Claimed</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£3,000.00</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£600.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£3,600.00</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">
+                      In progress
+                  </strong><a href="#" class="govuk-link claim-row__tags">Continue</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-text-align-right"></th>
+                    <td class="govuk-table__cell"><strong>Caseworker allowed</strong></td> 
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£3,000.00</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£600.00</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£3,600.00</strong></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Expenses (travel and subsistence)</th>
+                    <td class="govuk-table__cell">Claimed</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£388.00</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£77.60</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£465.60</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">
+                      In progress
+                  </strong><a href="#" class="govuk-link claim-row__tags">Continue</a></td>
+
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-text-align-right"></th>
+                    <td class="govuk-table__cell"><strong>Caseworker allowed</strong></td> 
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£388.00</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£77.60</strong></td>
+                    <td class="govuk-table__cell govuk-table__header--numeric"><strong>£465.60</strong></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Total</th>
+                  <td class="govuk-table__cell"></td> 
+                  <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£23,335.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£4,667.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">£28,002.00</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                </tbody>
+              </table>
+        </div> 
+    </dl>
+  </div>
+</div>
+</div> 
+</div>
+
+
+
+
+{% endblock %}

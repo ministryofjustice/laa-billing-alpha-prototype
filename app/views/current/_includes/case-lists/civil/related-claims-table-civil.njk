@@ -25,7 +25,7 @@
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.relatedDateReceived }}">{{ item.relatedDateReceived | govukDate }}</td>  
           <td class="govuk-table__cell">{{ item.relatedFirmName }}</td>          
           <td class="govuk-table__cell" data-sort-value="{{ item.relatedClientName }}">{{ item.relatedClientName }}</td> 
-          <td class="govuk-table__cell" data-sort-value="{{ item.relatedClaimStatus }}">{% include "current/_includes/status-checker.njk" %}</td>   
+          <td class="govuk-table__cell" data-sort-value="{{ item.relatedClaimStatus }}">{% include "current/_includes/core-journey/status-checker.njk" %}</td>   
         </tr>
         {% endfor %}
         </tbody>

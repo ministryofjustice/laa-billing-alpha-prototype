@@ -24,7 +24,7 @@
       {% for item in claimListCivil %}
         {% if item.claimRef == claimRef %}
           {% set foundClaim = true %}
-          {% include "current/_includes/claim-masthead.njk" %}
+          {% include "current/_includes/core-journey/claim-masthead.njk" %}
         {% endif %}
       {% endfor %}
     </div>
@@ -199,7 +199,7 @@
             <div>
             <!-- MANIPULATING RESULTS SECTION -->
 
-            <form action="/v2civilgroupby" method="post">
+            <form action="/v2adjustmentgroupby" method="post">
             {#}  
               {{ govukCheckboxes({
                 name: "types-of-claims-filter",
@@ -268,9 +268,9 @@
           </div>
           <!-- CLAIM ROWS ALL OTHER -->
           {% if data['whatGroupBy'] == 'claimDate' %}
-            {% include "../_includes/claim-rows/v2-grouped-by-date.njk" %}
+            {% include "../_includes/claim-assessment-cards/civil/v2-grouped-by-date.njk" %}
           {% else %}
-            {% include "../_includes/claim-rows/v2-grouped-by-type.njk" %}
+            {% include "../_includes/claim-assessment-cards/civil/v2-grouped-by-type.njk" %}
           {% endif%}
         {% endif %}
     {% endfor %}

@@ -24,24 +24,30 @@
     <ul class="govuk-list">
       <li>
         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h3>
-        <p class="govuk-body">Logged in as a crime caseworker with claims assigned</p>
+        <p class="govuk-body">Logged in as a crime caseworker with claims assigned<br>
+        (Use record: <strong>1000004CR -	Adaldrida Swiftfoot</strong>)</p>
         {{ govukButton({
           text: "Start crime caseworker journey",
-          href: "current/my-claims-basic?logged-in-user=Crime caseworker"
+          href: "current/core-journey/my-claims-basic?logged-in-user=Crime caseworker"
         }) }}
       </li>
       <li>
         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h3>
-        <p class="govuk-body">Logged in as a civil caseworker with claims assigned</p>
+        <p class="govuk-body">Logged in as a civil caseworker with claims assigned<br>
+          (Use record: <strong>1000010CV	- Teckla Berenk</strong>)</p>
+        
         {{ govukButton({
           text: "Start civil caseworker journey",
-          href: "current/my-claims-basic?logged-in-user=Civil caseworker",
+          href: "current/core-journey/my-claims-basic?logged-in-user=Civil caseworker",
           classes: "govuk-!-margin-bottom-4"
         }) }}
       </li>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Additional screens for research sessions</h3>
       <li>
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Additional screens for research sessions</h3>
         <a class="govuk-link" href="current/concept-playground/assessment-page-with-statuses">Assessment in progress example</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="current/concept-playground/assessment-page-with-caseworker-adjustments">Assessment page with adjustments example</a>
       </li>
       <li>
         <a class="govuk-link" href="current/concept-playground/summary-and-assessment-combined">Claim summary and assessment combined concept</a>
@@ -53,28 +59,28 @@
       <h3 class="govuk-heading-m">Core screens</h3>
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="current/my-claims-basic">My claims (Crime or Civil)</a>
+          <a class="govuk-link" href="current/core-journey/my-claims-basic">My claims (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/all-claims-basic">All claims (Crime or Civil)</a>
+          <a class="govuk-link" href="current/core-journey/all-claims-basic">All claims (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-search">Search (Crime only)</a>
+          <a class="govuk-link" href="current/core-journey/claim-search">Search (Crime only)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-summary">Claim summary tab (Crime or Civil)</a>
+          <a class="govuk-link" href="current/core-journey/claim-summary">Claim summary tab (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-apply-adjustments?logged-in-user=Civil caseworker">Assessment tab (Civil only)</a>
+          <a class="govuk-link" href="current/core-journey/claim-apply-adjustments?logged-in-user=Civil caseworker">Assessment tab (Civil only)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-related-claims">Related claims (Crime or Civil)</a>
+          <a class="govuk-link" href="current/core-journey/claim-related-claims">Related claims (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-claims-history">Claims history (Crime or Civil)</a>
+          <a class="govuk-link" href="current/core-journey/claim-claims-history">Claims history (Crime or Civil)</a>
         </li>
         <li>
-          <a class="govuk-link" href="current/claim-messages">Messages (Crime only)</a>
+          <a class="govuk-link" href="current/core-journey/claim-messages">Messages (Crime only)</a>
         </li>
       </ul>       
       {% endset %}
@@ -157,9 +163,6 @@
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <a class="govuk-link" href="/templates">Templates</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="#">Components</a>
           </li>
           <li>
             <a class="govuk-link" href="variables">Variables and references</a>

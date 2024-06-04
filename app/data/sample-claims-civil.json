@@ -3,22 +3,22 @@
       "claimRef": "1000010CV",
       "claimsTotalRows": [       
         {
-            "claimType": "Graduated fees",
-            "claimTypeNet": 12000.00,
-            "claimTypeVat": 2400.00,
-            "claimTypeTotal": 14400.00
+          "claimType": "Graduated fees",
+          "claimTypeNet": 12000.00,
+          "claimTypeVat": 2400.00,
+          "claimTypeTotal": 14400.00
         },
         {
-            "claimType": "Fixed fees",
-            "claimTypeNet": 6250.00,
-            "claimTypeVat": 1250.00,
-            "claimTypeTotal": 7500.00
+          "claimType": "Fixed fees",
+          "claimTypeNet": 6250.00,
+          "claimTypeVat": 1250.00,
+          "claimTypeTotal": 7500.00
         },
         {
-            "claimType": "Hourly rates",
-            "claimTypeNet": 1020.00,
-            "claimTypeVat": 204.00,
-            "claimTypeTotal": 1224.00
+          "claimType": "Hourly rate / work items",
+          "claimTypeNet": 1020.00,
+          "claimTypeVat": 204.00,
+          "claimTypeTotal": 1224.00
         },
         {
           "claimType": "Expert invoices",
@@ -35,10 +35,20 @@
       ],
       "graduatedFees": [
         {
+        "graduatedFeeDate": "20240416",
+        "claimType": "Graduated fees",
         "graduatedFeeDetails": "Fee item",
         "graduatedFeeNet": 12000,
         "graduatedFeeVat": 2400,
         "graduatedFeeTotal": 14400
+        },
+        {
+          "graduatedFeeDate": "20240417",
+          "claimType": "Graduated fees",
+          "graduatedFeeDetails": "Fee item",
+          "graduatedFeeNet": 12000,
+          "graduatedFeeVat": 2400,
+          "graduatedFeeTotal": 14400
         }
       ],
       "fixedFees": [
