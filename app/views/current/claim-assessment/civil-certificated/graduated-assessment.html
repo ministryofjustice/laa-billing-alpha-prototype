@@ -21,7 +21,7 @@
 
         <!-- SET CLAIM REF FOR TESTING -->
     {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
-    {% set claimRef = data.defaultCivilCaseNo %}
+    {% set claimRef = '1000010CV' %}
     {% set claimRecord = data.sampleClaimsCivil %}  
 
     <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>

@@ -94,9 +94,9 @@
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Sample claims</td>
-          <td class="govuk-table__cell">sample-claims.json</td>
-          <td class="govuk-table__cell"><code class="code">set claimsList = data.sampleClaims</code></td>
-          <td class="govuk-table__cell">claim adjustment concepts. Not product specific yet.</td>
+          <td class="govuk-table__cell"><del>sample-claims.json</del><br>sample-claims-crime-v1.json</td>
+          <td class="govuk-table__cell"><code class="code">set claimsList = data.sampleClaimsCrimeConcept</code></td>
+          <td class="govuk-table__cell">claim adjustment concepts.</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Claim statuses</td>
@@ -109,6 +109,18 @@
           <td class="govuk-table__cell">session-data-defaults.json</td>
           <td class="govuk-table__cell"><code class="code">for status in data['caseworkers']</code></td>
           <td class="govuk-table__cell">caselists, view of claim, related claims, claim history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sample crime claims data</td>
+          <td class="govuk-table__cell">sample-claims-crime.json</td>
+          <td class="govuk-table__cell"><code class="code">set varName = data.sampleClaimsCrime</code></td>
+          <td class="govuk-table__cell">Claims data totals, claim rows by type</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Sample civil claims data</td>
+          <td class="govuk-table__cell">sample-claims-civil.json</td>
+          <td class="govuk-table__cell"><code class="code">set varName = data.sampleClaimsCivil</code></td>
+          <td class="govuk-table__cell">Claims data totals, claim rows by type</td>
         </tr>
       </tbody>
     </table>

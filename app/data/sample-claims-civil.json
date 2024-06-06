@@ -41,14 +41,6 @@
         "graduatedFeeNet": 12000,
         "graduatedFeeVat": 2400,
         "graduatedFeeTotal": 14400
-        },
-        {
-          "graduatedFeeDate": "20240417",
-          "claimType": "Graduated fees",
-          "graduatedFeeDetails": "Fee item",
-          "graduatedFeeNet": 12000,
-          "graduatedFeeVat": 2400,
-          "graduatedFeeTotal": 14400
         }
       ],
       "fixedFees": [
