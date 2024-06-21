@@ -1,0 +1,36 @@
+<!-- Check if any related applications (claims) -->
+{# No of related claims: {{ item.linkedApplications.length }} #}
+{% if item.linkedApplications.length > 0 %}
+<div class="moj-scrollable-pane govuk-!-margin-top-6">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Ref no</th> 
+          <th scope="col" class="govuk-table__header" aria-sort="none">Claim type</th> 
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date submitted / received</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Firm</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Client</th>  
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+          <!-- <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal aid type</th> -->
+        </tr>
+      </thead>
+
+      
+      <tbody class="govuk-table__body">  
+        {% for item in item.linkedApplications %}
+        <tr class="govuk-table__row">  
+          <td class="govuk-table__cell" data-sort-value="{{ item.relatedRefNo }}"><a href="#" class="govuk-link">{{ item.relatedRefNo }}</a></td> 
+          <td class="govuk-table__cell">{{ item.relatedType }}</td> 
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ item.relatedDateReceived }}">{{ item.relatedDateReceived | govukDate }}</td>  
+          <td class="govuk-table__cell">{{ item.relatedFirmName }}</td>          
+          <td class="govuk-table__cell" data-sort-value="{{ item.relatedClientName }}">{{ item.relatedClientName }}</td> 
+          <td class="govuk-table__cell" data-sort-value="{{ item.relatedClaimStatus }}">{% include "v2/_includes/core-journey/status-checker.njk" %}</td>   
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="govuk-body>">There are no related claims</p>
+{% endif %}

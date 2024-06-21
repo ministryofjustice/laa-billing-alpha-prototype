@@ -1,0 +1,100 @@
+
+{% set sortBy = data['sortBy'] | default('oldest') %}
+{% set whatGroupBy = 'claimType' %}
+{% set mySort = 'true' %}
+
+{#Grouped by: {{ whatGroupBy }}
+Sort by: {{ sortBy }}#}
+
+<!-- SUMMARY CARD MAIN-->
+<div id="otherclaims" class="govuk-summary-card govuk-!-margin-bottom-2">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Disbursements&nbsp;({{ item.associatedClaims.length }}&nbsp;items)
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <span class="govuk-body govuk-!-font-weight-bold claim-row">Sort by</span> {% if sortBy == 'oldest'%}<a class="govuk-link" href="claim-apply-adjustments?sortBy=newest#otherclaims">Date (newest)<span class="govuk-visually-hidden"> sort by newest date</span></a>{% else %}<a class="govuk-link" href="claim-apply-adjustments?sortBy=oldest#otherclaims">Date (oldest)<span class="govuk-visually-hidden"> sort by oldest date</span></a>{% endif %}
+      </li>
+    </ul>        
+  </div>
+  <!-- ACTUAL CLAIMS LIST CONTAINER -->
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <!-- EACH DATE GROUPING -->
+      <button onclick="toggleAllElements()" class="govuk-button govuk-button--secondary">
+        Show/Hide adjustment rows
+      </button>
+      {% if sortBy == 'newest' %}
+        {% for claimGroup, claimItems in item.associatedClaims | groupby(whatGroupBy) | dictsort | reverse %}
+          <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
+            <div class="flex-container">
+              <div class="align-right"><h2 class="govuk-heading-m govuk-!-margin-bottom-0">{{ claimGroup }}</h2></div>
+                <div>
+                  {% if claimGroup == 'Expenses (travel and subsistence)' %}
+                    {{ govukButton({
+                      text: "Make assessment",
+                      href: "../claim-assessment/crime-lgfs/expenses-assessment"
+                    }) }}
+                  {% else %}
+                    {{ govukButton({
+                      text: "Make assessment"
+                    }) }}
+                  {% endif %}                
+              </div>
+            </div>
+            <tbody class="govuk-table__body">
+              {% for item in claimItems %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">{{ item.claimDate | govukDate }}</th>
+                  <td class="govuk-table__cell">{{ item.details }}</td>
+                  <td class="govuk-table__cell">Cost: {{ item.itemNet | currency  }}</td>
+                  <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
+                  <td class="govuk-table__cell"><a href="/v2/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+                </tr>
+                {% include "/v2/claim-assessment/_includes/expense-adjustment-row.njk" %}
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endfor %}
+      {% elseif sortBy == 'oldest' %}
+        {% for claimGroup, claimItems in item.associatedClaims | groupby(whatGroupBy) | dictsort %}
+        <table class="govuk-table govuk-!-margin-bottom-9 claim-table">
+          <div class="flex-container">
+            <div class="align-right"><h2 class="govuk-heading-m govuk-!-margin-bottom-0">{{ claimGroup }}</h2></div>
+              <div>
+                {% if claimGroup == 'Expenses (travel and subsistence)' %}
+                  {{ govukButton({
+                    text: "Make assessment",
+                    href: "../claim-assessment/crime-lgfs/expenses-assessment"
+                  }) }}
+                {% else %}
+                  {{ govukButton({
+                    text: "Make assessment"
+                  }) }}
+                {% endif %}                
+            </div>
+          </div>
+          <tbody class="govuk-table__body">
+
+            {% for item in claimItems %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">{{ item.claimDate | govukDate }}</th>
+                <td class="govuk-table__cell">{{ item.details }}</td>
+                <td class="govuk-table__cell">Cost: {{ item.itemNet | currency  }}</td>
+                <td class="govuk-table__cell">VAT: {{ item.itemVat | currency  }}</td>
+                <td class="govuk-table__cell"><a href="/v2/claim-assessment/crime-lgfs/adjust-a-row-item?claimDate={{ item.claimDate | govukDate }}&claimDesc={{ item.details }}&claimCost={{ item.itemNet | currency }}&claimVat={{ item.itemVat | currency }}">Not assessed</a></td>
+              </tr>
+              {% include "/v2/claim-assessment/_includes/expense-adjustment-row.njk" %}
+            {% endfor %}
+          </tbody>          
+        </table>
+      {% endfor %}
+      {% endif %}
+
+    </dl>
+  </div>
+</div>
+
+
+

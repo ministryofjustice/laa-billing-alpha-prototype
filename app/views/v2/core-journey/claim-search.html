@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-bottom-0">
       <div class="search govuk-!-padding-bottom-0">
-        <form action="/v1/searchforclaim" method="post">
+        <form action="/v2/searchforclaim" method="post">
           <h1 class="govuk-heading-l">Search</h1>
           <!-- Search box -->
           {{ govukInput({
@@ -71,7 +71,7 @@
 
           <!-- set HTML for saved searches -->
           {% set savedSearchesHtml %}
-            <a href="core-journey/claim-search?claim-search=law" class="govuk-link saved-searches">Clients with law in title</a><a href="core-journey/claim-search?claim-search=type a">Type A claims</a>
+            <a href="claim-search?claim-search=law" class="govuk-link saved-searches">Clients with law in title</a><a href="claim-search?claim-search=type a">Type A claims</a>
 
           {% endset %}
 
@@ -113,7 +113,7 @@
 
         </form>
       </div>
-      {% include "v1/_includes/case-lists/crime/search-results-table-crime.njk"%} 
+      {% include "v2/_includes/case-lists/crime/search-results-table-crime.njk"%} 
     </div>
 </div>
 

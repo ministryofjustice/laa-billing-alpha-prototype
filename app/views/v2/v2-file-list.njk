@@ -1,0 +1,97 @@
+    <ul class="govuk-list">
+      <li>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Crime</h3>
+        <p class="govuk-body">Logged in as a crime caseworker with claims assigned<br>
+        (Use record: <strong>1000004CR -	Adaldrida Swiftfoot</strong>)</p>
+        {{ govukButton({
+          text: "Start crime caseworker journey",
+          href: "v2/core-journey/my-claims-basic?logged-in-user=Crime caseworker"
+        }) }}
+      </li>
+      <li>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Civil</h3>
+        <p class="govuk-body">Logged in as a civil caseworker with claims assigned<br>
+          (Use record: <strong>1000010CV	- Teckla Berenk</strong>)</p>
+        
+        {{ govukButton({
+          text: "Start civil caseworker journey",
+          href: "v2/core-journey/my-claims-basic?logged-in-user=Civil caseworker",
+          classes: "govuk-!-margin-bottom-4"
+        }) }}
+      </li>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Additional screens for research sessions</h3>
+      <li>
+        <a class="govuk-link" href="v2/concept-playground/assessment-page-with-statuses">Assessment in progress example</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v2/concept-playground/assessment-page-with-caseworker-adjustments">Assessment page with adjustments example</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="v2/concept-playground/summary-and-assessment-combined">Claim summary and assessment combined concept</a>
+      </li>
+    </ul>
+    
+    <!-- CORE SCREENS SECTION -->
+    {% set coreScreensHtml %}
+      <h3 class="govuk-heading-m">Core screens</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="v2/core-journey/my-claims-basic">My claims (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/all-claims-basic">All claims (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-search">Search (Crime only)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-summary">Claim summary tab (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-apply-adjustments?logged-in-user=Civil caseworker">Assessment tab (Civil only)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-related-claims">Related claims (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-claims-history">Claims history (Crime or Civil)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/core-journey/claim-messages">Messages (Crime only)</a>
+        </li>
+      </ul>       
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Core screens",
+        html: coreScreensHtml,
+        classes: "govuk-!-margin-bottom-1"
+      }) }}
+
+      {% set additionalConceptsHtml %}
+      <h3 class="govuk-heading-m">Additional concepts</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="v2/concept-playground/all-claims-with-side-filters">All claims with side filters</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/concept-playground/my-claims-with-top-filters">My claims with top filters and column selector</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/concept-playground/my-claims-with-dashboard">My claims with dashboard</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/concept-playground/claim-adjustment-via-timeline">Claims adjustments via timeline example</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="v2/concept-playground/claim-adjustment-via-table">Claims adjustments via table example</a>
+        </li>
+
+      </ul>
+    {% endset %}
+
+    {{ govukDetails({
+      summaryText: "Additional concepts",
+      html: additionalConceptsHtml,
+      classes: ""
+    }) }}

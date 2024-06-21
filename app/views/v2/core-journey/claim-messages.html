@@ -1,0 +1,215 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+  Messages – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right moj-width-container">
+	<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+<!-- tabs: claim summary, assessment, related claims, claims history, messages -->
+{% set activeSubNav = [false, false, false, false, true] %}
+
+<!-- call JSON file -->
+{% set claimList = data.sampleDataCrime %}
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% if loggedInUser == 'Crime caseworker'%}
+      <!-- set caseRef var or default if page visited directly -->
+      {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}
+      <!-- call JSON files -->
+      {% set claimList = data.sampleDataCrime %}  
+      <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+      {% set foundClaim = false %}
+      {% for item in claimList %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "v2/_includes/core-journey/claim-masthead.njk" %}
+            <div class="moj-width-container govuk-!-margin-top-5">
+              {% include "/_includes/action-menu-button.njk" %}
+              {% include "v2/_includes/core-journey/claim-sub-navigation.njk" %}
+              <h2 class="govuk-heading-m">Messages</h2>
+              
+              <!-- SPECIFIC CRIME BODY CONTENT GOES HERE -->
+
+              <div id="messages" class="moj-messages-container govuk-!-margin-bottom-6">
+                <div class="moj-message-list">      
+                  <time class="moj-message-list__date" datetime="16 March 2019">20 May 2024</time>      
+                  <div class="moj-message-item moj-message-item--sent">
+                    <div class="moj-message-item__text moj-message-item__text--sent">All recieved thank you.</div>
+                    <div class="moj-message-item__meta">
+                      <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:01am">10:02am</time>
+                    </div>
+                  </div>
+              
+                  <time class="moj-message-list__date" datetime="17 March 2019">20 May 2024</time>      
+                  <div class="moj-message-item moj-message-item--received">
+                    <div class="moj-message-item__text moj-message-item__text--received">Apologies. These have now been provided. Please note: the invoice did not show VAT so I requested a new copy from the expert. I hope this does not delay anything.</div>
+                    <div class="moj-message-item__meta">
+                      <span class="moj-message-item__meta--sender">Provider name</span> at <time class="moj-message-item__meta--timestamp" datetime="09:23am">09:23am</time>
+                    </div>
+                  </div>
+              
+                  <time class="moj-message-list__date" datetime="19 March 2019">19 May 2024</time>      
+                  <div class="moj-message-item moj-message-item--sent">
+                    <div class="moj-message-item__text moj-message-item__text--sent">Additionally, your invoice for the Child psychologist on the 27 April 2024 does not include VAT. Is this correct?</div>
+                    <div class="moj-message-item__meta">
+                      <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:56am">10:56am</time>
+                    </div>
+                  </div>
+                  <div class="moj-message-item moj-message-item--sent">
+                    <div class="moj-message-item__text moj-message-item__text--sent">Dear provider. Please send evidence in support of claim item for train journey to Hull on the 14 April 2024.</div>
+                    <div class="moj-message-item__meta">
+                      <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:55am">10:55am</time>
+                    </div>
+                  </div>
+              
+                </div>               
+              </div>
+              {{ govukTextarea({
+                name: "moreDetail",
+                id: "more-detail",
+                label: {
+                  text: "Enter a message",
+                  classes: "govuk-label--l",
+                  isPageHeading: false
+                },
+                hint: {
+                  text: "Please type your message here."
+                }
+              }) }}
+          
+              {{ govukFileUpload({
+                id: "file-upload-1",
+                name: "file-upload-1",
+                isPageHeading: false,
+                label: {
+                  text: "Upload documents (optional)",
+                  classes: 'govuk-label--m'
+                },
+                hint: {
+                  text: 'Files must be a PDF, CSV, JPG, XLS, XLSX, DOC, DOCX, ODT, ODS, TXT, RTF'
+                }
+              }) }}
+          
+          
+              {{ govukButton({
+                text: "Send"
+              }) }}
+            </div>
+  </div>
+</div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <!-- set caseRef var or default if page visited directly -->
+        {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
+      <!-- call JSON files -->
+      {% set claimListCivil = data.sampleDataCivil %}
+      <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
+      {% set foundClaim = false %}
+      {% for item in claimListCivil %}
+        {% if item.claimRef == claimRef %}
+        {% set foundClaim = true %}
+            {% include "v2/_includes/core-journey/claim-masthead.njk" %}
+            <div class="moj-width-container govuk-!-margin-top-5">
+              {% include "/_includes/action-menu-button.njk" %}
+              {% include "v2/_includes/core-journey/claim-sub-navigation.njk" %}
+              <h2 class="govuk-heading-m">Messages</h2>
+
+                  <div id="messages" class="moj-messages-container govuk-!-margin-bottom-6">
+                    <div class="moj-message-list">      
+                      <time class="moj-message-list__date" datetime="16 March 2019">20 May 2024</time>      
+                      <div class="moj-message-item moj-message-item--sent">
+                        <div class="moj-message-item__text moj-message-item__text--sent">All recieved thank you.</div>
+                        <div class="moj-message-item__meta">
+                          <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:50am">10:50am</time>
+                        </div>
+                      </div>                  
+                      <time class="moj-message-list__date" datetime="17 March 2019">20 May 2024</time>      
+                      <div class="moj-message-item moj-message-item--received">
+                        <div class="moj-message-item__text moj-message-item__text--received">Apologies. These have now been provided. Please note: the invoice did not show VAT so I requested a new copy from the expert. I hope this does not delay anything.</div>
+                        <div class="moj-message-item__meta">
+                          <span class="moj-message-item__meta--sender">Provider name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:51am">10:51am</time>
+                        </div>
+                      </div>                  
+                      <time class="moj-message-list__date" datetime="19 March 2019">19 May 2024</time>      
+                      <div class="moj-message-item moj-message-item--sent">
+                        <div class="moj-message-item__text moj-message-item__text--sent">Additionally, your invoice for the Child psychologist on the 27 April 2024 does not include VAT. Is this correct?</div>
+                        <div class="moj-message-item__meta">
+                          <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:53am">10:53am</time>
+                        </div>
+                      </div>
+                      <div class="moj-message-item moj-message-item--sent">
+                        <div class="moj-message-item__text moj-message-item__text--sent">Dear provider. Please send evidence in support of claim item for train journey to Hull on the 14 April 2024.</div>
+                        <div class="moj-message-item__meta">
+                          <span class="moj-message-item__meta--sender">Caseworker name</span> at <time class="moj-message-item__meta--timestamp" datetime="10:55am">10:55am</time>
+                        </div>
+                      </div>                  
+                    </div>               
+                  </div>
+                  {{ govukTextarea({
+                    name: "moreDetail",
+                    id: "more-detail",
+                    label: {
+                      text: "Enter a message",
+                      classes: "govuk-label--l",
+                      isPageHeading: false
+                    },
+                    hint: {
+                      text: "Please type your message here."
+                    }
+                  }) }}
+              
+                  {{ govukFileUpload({
+                    id: "file-upload-1",
+                    name: "file-upload-1",
+                    isPageHeading: false,
+                    label: {
+                      text: "Upload documents (optional)",
+                      classes: 'govuk-label--m'
+                    },
+                    hint: {
+                      text: 'Files must be a PDF, CSV, JPG, XLS, XLSX, DOC, DOCX, ODT, ODS, TXT, RTF'
+                    }
+                  }) }}
+              
+              
+                  {{ govukButton({
+                    text: "Send"
+                  }) }}
+            </div>
+      </div>
+    </div>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+
+
+
+  <script type="module">
+    new MOJFrontend.ButtonMenu({
+  container: document.querySelector(".moj-button-menu"),
+  mq: "(min-width: 200em)",
+  buttonText: "Actions",
+  menuClasses: "moj-button-menu__wrapper--right",
+  });
+  
+  </script>
+
+
+
+
+{% endblock %}

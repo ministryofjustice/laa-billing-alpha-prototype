@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Expenses (travel and subsistence) assessment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- tabs: claim details, supporting evidence, adjustment history, notes and messages -->
+{% set activeSubNav = [false, true, false, false] %}
+{% set sortBy = data['sortBy'] | default('oldest') %}
+{% set whatGroupBy = data['whatGroupBy'] | default('claimDate') %}
+{% set mySort = 'true' %}
+{% set sendingPage = 'expenses' %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <!-- SET CLAIM REF FOR TESTING -->
+        {# {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}#}
+        {% set claimRef = '1000004CR' %}
+        {% set claimRecord = data.sampleClaimsCrime %}  
+        <!-- Set the claimtype to return on this page -->
+        {% set claimCategory = 'Expenses (travel and subsistence)'%}
+
+        <span class="govuk-caption-l">Claim reference {{ claimRef }}</span>
+        <h1 class="govuk-heading-l">Expenses (travel and subsistence)</h1>
+        <!-- FIND RECORD AND RETURN ROW FOR EXPENSES SPECIFICALLY -->
+        {% set foundClaim = false %}
+        <p class="govuk-body govuk-!-font-size-24">£465.60</p>
+        {% for item in claimRecord %}
+            {% if item.claimRef == claimRef %}
+              {% set foundClaim = true %}
+              {% set foundType = false %}
+              {% for item in item.claimsTotalRows %}
+                {% if item.claimType == claimCategory %}
+                  {% set foundType = true %}
+                  {% set expensesSummaryHtml %}
+                  <table class="govuk-table claim-table" style="width:80%">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Description</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+                      </tr>
+                    </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Provider requested</th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeNet | currency }}</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">{{ item.claimTypeTotal | currency }}</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Caseworker allowed</th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£665.00</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£798.00</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  {% endset %}
+
+                  {{ govukDetails({
+                    summaryText: "Cost summary",
+                    open: true,
+                    html: expensesSummaryHtml
+                  }) }}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+        {% endfor %}
+      </div>
+</div>
+    {% include "v2/_includes/core-journey/v2-claim-adjustment-sub-navigation" %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {% include "../_includes/sample-evidence-table.njk" %}    
+  </div>
+</div>
+
+
+
+{% endblock %}
+

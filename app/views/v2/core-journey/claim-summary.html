@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+  Claim summary – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right moj-width-container">
+	<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+<!-- tabs: claim summary, assessment, related claims, claims history, messages -->
+{% set activeSubNav = [true, false, false, false, false] %}
+{% set loggedInUser = data['logged-in-user'] | default(data.loggedInUser) %}  
+
+{% block content %}
+<!-- <p>Claim ref for debug: [{{ claimRef }}]</p>
+<p>Logged in user: [{{ loggedInUser }}]</p> -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% if loggedInUser == 'Crime caseworker'%}
+          <!-- set caseRef var or default if page visited directly -->
+          {% set claimRef = data['claim-ref'] | default(data.defaultCrimeCaseNo) %}
+          <!-- call JSON files -->
+          {% set claimList = data.sampleDataCrime %}  
+          <!-- FIND RECORD AND WRITE CARDS FOR CRIME USER -->
+          {% set foundClaim = false %}
+          {% for item in claimList %}
+            {% if item.claimRef == claimRef %}
+            {% set foundClaim = true %}
+                {% include "v2/_includes/core-journey/claim-masthead.njk" %}
+                <div class="moj-width-container govuk-!-margin-top-5">
+                {% include "/_includes/action-menu-button.njk" %}
+                  {% include "v2/_includes/core-journey/claim-sub-navigation.njk" %}
+                  <h2 class="govuk-heading-m">Claim summary</h2>
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                    <!-- Shared cards -->
+                    {% include "v2/_includes/claim-summary-cards/both/provider-details.njk" %}
+                    {% include "v2/_includes/claim-summary-cards/both/client-details.njk" %}
+                      <!-- Crime cards -->  
+                      {% include "v2/_includes/claim-summary-cards/crime/offence-details.njk" %}
+                      {% include "v2/_includes/claim-summary-cards/crime/rep-order-details.njk" %}
+                      {% include "v2/_includes/claim-summary-cards/crime/case-details.njk" %}
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+          {% endfor %}
+      {% else %}
+          <!-- set caseRef var or default if page visited directly -->
+          {% set claimRef = data['claim-ref'] | default(data.defaultCivilCaseNo) %}
+          <!-- call JSON files -->
+          {% set claimListCivil = data.sampleDataCivil %}
+          <!-- FIND RECORD AND WRITE CARDS FOR CIVIL USER -->
+          {% set foundClaim = false %}
+          {% for item in claimListCivil %}
+            {% if item.claimRef == claimRef %}
+            {% set foundClaim = true %}
+                {% include "v2/_includes/core-journey/claim-masthead.njk" %}
+                <div class="moj-width-container govuk-!-margin-top-5">
+                  {% include "/_includes/action-menu-button.njk" %}
+                  {% include "v2/_includes/core-journey/claim-sub-navigation.njk" %}
+                  <h2 class="govuk-heading-m">Claim summary</h2>
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                    <!-- Shared cards -->
+                    {% include "v2/_includes/claim-summary-cards/both/provider-details.njk" %}
+                    {% include "v2/_includes/claim-summary-cards/both/client-details.njk" %}
+                      <!-- Civil cards -->  
+                      {% include "v2/_includes/claim-summary-cards/civil/proceeding-type-details.njk" %}
+                      {% include "v2/_includes/claim-summary-cards/civil/certificate-details.njk" %}
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+          {% endfor %}
+      {% endif %}   
+      </div>
+
+  </div>
+</div>
+
+<script type="module">
+  new MOJFrontend.ButtonMenu({
+container: document.querySelector(".moj-button-menu"),
+mq: "(min-width: 200em)",
+buttonText: "Actions",
+menuClasses: "moj-button-menu__wrapper--right",
+});
+
+</script>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
